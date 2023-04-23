@@ -30,15 +30,16 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.manageGoodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goodsReceivedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goodsDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mangeGoodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusPaymentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mangeGoodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goodsReceivedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageGoodsToolStripMenuItem,
+            this.supplierToolStripMenuItem,
             this.manageAgentToolStripMenuItem,
             this.reportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -65,12 +67,6 @@
             this.manageGoodsToolStripMenuItem.Name = "manageGoodsToolStripMenuItem";
             this.manageGoodsToolStripMenuItem.Size = new System.Drawing.Size(150, 29);
             this.manageGoodsToolStripMenuItem.Text = "Manage Goods";
-            // 
-            // goodsReceivedToolStripMenuItem
-            // 
-            this.goodsReceivedToolStripMenuItem.Name = "goodsReceivedToolStripMenuItem";
-            this.goodsReceivedToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.goodsReceivedToolStripMenuItem.Text = "Goods Received";
             // 
             // goodsDeliveryToolStripMenuItem
             // 
@@ -93,6 +89,12 @@
             this.updateStatusToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.updateStatusToolStripMenuItem.Text = "Update Status";
             // 
+            // mangeGoodsToolStripMenuItem
+            // 
+            this.mangeGoodsToolStripMenuItem.Name = "mangeGoodsToolStripMenuItem";
+            this.mangeGoodsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.mangeGoodsToolStripMenuItem.Text = "Mange Goods";
+            // 
             // manageAgentToolStripMenuItem
             // 
             this.manageAgentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -114,17 +116,23 @@
             this.statusPaymentToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.statusPaymentToolStripMenuItem.Text = "Status Payment";
             // 
-            // mangeGoodsToolStripMenuItem
-            // 
-            this.mangeGoodsToolStripMenuItem.Name = "mangeGoodsToolStripMenuItem";
-            this.mangeGoodsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.mangeGoodsToolStripMenuItem.Text = "Mange Goods";
-            // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(81, 29);
             this.reportToolStripMenuItem.Text = "Report";
+            // 
+            // goodsReceivedToolStripMenuItem
+            // 
+            this.goodsReceivedToolStripMenuItem.Name = "goodsReceivedToolStripMenuItem";
+            this.goodsReceivedToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.goodsReceivedToolStripMenuItem.Text = "Goods Received";
+            // 
+            // supplierToolStripMenuItem
+            // 
+            this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(93, 29);
+            this.supplierToolStripMenuItem.Text = "Supplier";
             // 
             // frmMain
             // 
@@ -151,7 +159,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem manageGoodsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem goodsReceivedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goodsDeliveryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createDeliveryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateStatusToolStripMenuItem;
@@ -160,6 +167,8 @@
         private System.Windows.Forms.ToolStripMenuItem statusPaymentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mangeGoodsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goodsReceivedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
     }
 }
 
