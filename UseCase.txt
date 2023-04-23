@@ -1,0 +1,22 @@
+
+Use case cho Accountant:
+Tạo Phiếu nhập kho: Accountant tạo phiếu nhập kho để ghi nhận hàng hóa khi nhà phân phối nhập hàng. Phiếu nhập kho bao gồm thông tin về hàng hóa, số lượng và giá tiền.
+Tạo Phiếu xuất kho: Accountant tạo phiếu xuất kho để ghi nhận việc chuyển hàng từ kho đến đại lý. Phiếu xuất kho bao gồm thông tin về hàng hóa, số lượng và giá tiền.
+Xem báo cáo hàng tồn kho: Accountant xem báo cáo hàng tồn kho để kiểm tra số lượng hàng hóa hiện có trong kho của nhà phân phối.
+Xem báo cáo doanh thu: Accountant xem báo cáo doanh thu để biết tổng doanh thu của nhà phân phối trong một tháng.
+
+Use case cho Agent:
+Đặt hàng: Agent đặt hàng bằng cách chọn các mặt hàng mà họ muốn mua và chọn hình thức thanh toán. Sau đó, họ nhập thông tin liên lạc để nhà phân phối có thể giao hàng đến địa chỉ của họ.
+Thanh toán: Agent có thể thanh toán cho đơn hàng của mình trực tuyến hoặc trả tiền mặt khi nhận hàng.
+Xem trạng thái đơn hàng: Agent có thể xem trạng thái của đơn hàng của mình, bao gồm thông tin về việc đơn hàng đang được chuyển và trạng thái thanh toán.
+
+Use case cho Warehouse:
+Nhập hàng: Warehouse nhập hàng từ nhà cung cấp bằng cách tạo phiếu nhập kho và ghi nhận thông tin về hàng hóa, số lượng và giá tiền.
+Xuất hàng: Warehouse xuất hàng đến đại lý bằng cách tạo phiếu xuất kho và ghi nhận thông tin về hàng hóa, số lượng và giá tiền.
+Xem báo cáo hàng tồn kho: Warehouse xem báo cáo hàng tồn kho để kiểm tra số lượng hàng hóa hiện có trong kho của nhà phân phối.
+
+
+
+
+
+Regenerate response
