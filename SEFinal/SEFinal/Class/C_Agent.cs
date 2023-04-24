@@ -8,5 +8,6 @@ namespace SEFinal.Class
 {
     public class C_Agent
     {
+       
     }
 }
