@@ -50,7 +50,7 @@
     <Compile Include="BUS\BUS_Agent.cs" />
     <Compile Include="BUS\BUS_GDelivery.cs" />
     <Compile Include="BUS\BUS_GD_Detail.cs" />
-    <Compile Include="BUS\BUS_Good.cs" />
+    <Compile Include="BUS\BUS_Goods.cs" />
     <Compile Include="BUS\BUS_GReceipt.cs" />
     <Compile Include="BUS\BUS_GR_Detail.cs" />
     <Compile Include="BUS\BUS_Order.cs" />
@@ -64,7 +64,7 @@
     <Compile Include="Class\C_GDelivery.cs" />
     <Compile Include="Class\C_GR_Detail.cs" />
     <Compile Include="Class\C_GReceipt.cs" />
-    <Compile Include="Class\C_Good.cs" />
+    <Compile Include="Class\C_Goods.cs" />
     <Compile Include="Class\C_O_Detail.cs" />
     <Compile Include="Class\C_Order.cs" />
     <Compile Include="Class\C_Payment.cs" />
@@ -72,13 +72,19 @@
     <Compile Include="DTA\DTA_Agent.cs" />
     <Compile Include="DTA\DTA_GDelivery.cs" />
     <Compile Include="DTA\DTA_GD_Detail.cs" />
-    <Compile Include="DTA\DTA_Good.cs" />
+    <Compile Include="DTA\DTA_Goods.cs" />
     <Compile Include="DTA\DTA_GReceipt.cs" />
     <Compile Include="DTA\DTA_GR_Detail.cs" />
     <Compile Include="DTA\DTA_Order.cs" />
     <Compile Include="DTA\DTA_O_Detail.cs" />
     <Compile Include="DTA\DTA_Payment.cs" />
     <Compile Include="DTA\DTA_Supplier.cs" />
+    <Compile Include="frmAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgent.Designer.cs">
+      <DependentUpon>frmAgent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,13 +97,43 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGoods.Designer.cs">
+      <DependentUpon>frmGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAgent.resx">
+      <DependentUpon>frmAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGoods.resx">
+      <DependentUpon>frmGoods.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
