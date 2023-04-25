@@ -13,7 +13,7 @@ namespace SEFinal.Class
 
         public C_Warehouse() 
         {
-            this.GoodsID "";
+            this.GoodsID = "";
             this.Quan = 0;
         }
         public C_Warehouse(string goodsID, int quan)
