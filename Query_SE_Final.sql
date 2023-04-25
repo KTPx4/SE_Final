@@ -121,10 +121,11 @@ go
 Create table GoodsDelivery
 (
 	DeliveryID varchar(10) Primary Key, 
-	OrderID varchar(10),
+	OrderID varchar(10) Unique,
 	Employee varchar(10), 
 	DeliveryDate date, 
 	Status int, -- 0 for is waiting delivery, 1 success, -1 for failed
+
 	FOREIGN KEY (OrderID) REFERENCES  [Order](OrderID),
 	FOREIGN KEY (Employee) REFERENCES Accountant(AID)
 )
@@ -184,7 +185,6 @@ Insert into Accountant values
 	('A0013', 'Dragon Monkey D', 'dragon', '14345'),
 	('A0014', 'Grap MD', 'MDGrap', '11111'),
 	('A0015', 'Admin', 'admin', '12345')
-
 go
 
 insert into Agent values
@@ -236,12 +236,8 @@ insert into [Order] values
 	('O0007', 'AG0003', '2022/05/25', 'P0002', 18900),
 	('O0008', 'AG0003', '2022/09/11', 'P0001', 51300)
 
-
 go
- --DetailID varchar(10) Primary Key, 
---	OrderID varchar(10), 
-	--GoodsID varchar(10), 
-	--Quantity int,
+
 Insert into OrderDetail values
 	('OD0001', 'O0001', 'G0001', 5),
 	('OD0002', 'O0001', 'G0005', 7),
@@ -282,20 +278,60 @@ Insert into PaymentDetail values
 	('PD0005', 'O0005', 0),
 	('PD0006', 'O0006', 1),
 	('PD0007', 'O0007', 1),
-	('PD0008', 'O0008', 1),
-	('PD0009', 'O0009', 0),
-	('PD0010', 'O0010', 0)
+	('PD0008', 'O0008', 1)
 
 go
 
 Insert into GoodsDelivery values
-	('GD0001', 'O0002', 'A0001', '2023/01/12'),	
-	('GD0003', 'O0004', 'A0001', '2023/02/12'),
-	('GD0004', 'O0005', 'A0003', '2023/03/11'),
-	('GD0005', 'O0006', 'A0002', '2023/03/19'),
-	('GD0006', 'O0007', 'A0004', '2023/04/16'),
-	('GD0007', 'O0008', 'A0006', '2023/05/21')
+	('GD0001', 'O0002', 'A0001', '2023/01/12', 0),	
+	('GD0003', 'O0004', 'A0001', '2023/02/12', 0),
+	('GD0004', 'O0005', 'A0003', '2023/03/11', 1),
+	('GD0005', 'O0006', 'A0002', '2023/03/19', 1),
+	('GD0006', 'O0007', 'A0004', '2023/04/16', 0),
+	('GD0007', 'O0008', 'A0006', '2023/05/21', 1)
 
+go
+
+Insert Into GoodsReceipt values
+	('GR0001', '2023/04/25', 'S0001', 'A0001', 17500),
+	('GR0002', '2023/05/24', 'S0002', 'A0001', 27300),
+	('GR0003', '2023/05/23', 'S0003', 'A0003', 12000),
+	('GR0004', '2023/06/22', 'S0002', 'A0002', 33000),
+	('GR0005', '2023/07/19', 'S0007', 'A0004', 33000),
+	('GR0006', '2023/08/18', 'S0006', 'A0003', 192300),
+	('GR0007', '2023/09/17', 'S0003', 'A0002', 123000)
 	
+go
+
+Insert into GoodsReceiptDetail values
+	('GRD0001', 'GR0001', 'G0001', 3, 3000),
+	('GRD0002', 'GR0001', 'G0002', 4, 6000),
+	('GRD0003', 'GR0001', 'G0003', 5, 8500),
+
+	('GRD0004', 'GR0002', 'G0001', 3, 3000),
+	('GRD0005', 'GR0002', 'G0002', 1, 1500),
+	('GRD0006', 'GR0002', 'G0003', 6, 10200),
+	('GRD0007', 'GR0002', 'G0004', 7, 12600),
+
+	('GRD0008', 'GR0003', 'G0005', 3, 6000),
+	('GRD0009', 'GR0003', 'G0006', 4, 6000),
+
+	('GRD0010', 'GR0004', 'G0007', 3, 9000),
+	('GRD0011', 'GR0004', 'G0008', 9, 10800),
+	('GRD0012', 'GR0004', 'G0009', 12, 13200),
+
+	('GRD0013', 'GR0005', 'G0001', 15, 15000),
+	('GRD0014', 'GR0005', 'G0002', 12, 18000),
+
+	('GRD0015', 'GR0006', 'G0001', 32, 32000),
+	('GRD0016', 'GR0006', 'G0002', 31, 46500),
+	('GRD0017', 'GR0006', 'G0003', 32, 54400),
+	('GRD0018', 'GR0006', 'G0004', 33, 59400),
+
+	('GRD0019', 'GR0007', 'G0001', 23, 23000),
+	('GRD0020', 'GR0007', 'G0002', 13, 19500),
+	('GRD0021', 'GR0007', 'G0005', 23, 46000),
+	('GRD0022', 'GR0007', 'G0006', 23, 34500)
+
 --select* from goods
 --select* from Warehouse
