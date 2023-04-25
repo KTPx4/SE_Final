@@ -1,7 +1,7 @@
 Create database SE_Final
 
 go
-
+--drop database SE_Final
 use SE_Final
 
 go
@@ -10,9 +10,16 @@ Create table Goods
 	GoodsID varchar(10) Primary Key,
 	GoodsName varchar(50),
 	Unit varchar(50),
-	Quan int,
 	Price money,
 	Country varchar(100)
+)
+go
+Create table Warehouse
+(
+	
+	GoodsID varchar(10) ,
+	Quan int,
+	FOREIGN KEY (GoodsID) REFERENCES Goods(GoodsID)
 )
 go
 Create table Agent
@@ -21,7 +28,7 @@ Create table Agent
 	AgentName varchar(50),
 	Phone varchar(10),
 	Address varchar(50),
-	Users varchar(50),
+	Users varchar(50) Unique,
 	Pass varchar(50)
 
 )
@@ -30,7 +37,7 @@ Create table Accountant
 (
 	AID varchar(10) Primary Key,
 	AName varchar(50),
-	Auser varchar(50),
+	Auser varchar(50) Unique,
 	Apass varchar(50)
 )
 go
@@ -52,14 +59,14 @@ Create table [Order]
 (
 	OrderID varchar(10) Primary Key, 
 	AgentID varchar(10),
-	date date, 
-	Payment varchar(10), 
+	Odate date, 
+	PaymentID varchar(10), 
 	TotalAmount Money,
 
 	CONSTRAINT FK_O_A FOREIGN KEY (AgentID)
     REFERENCES Agent(AgentID),
 
-	CONSTRAINT FK_O_P FOREIGN KEY (Payment)
+	CONSTRAINT FK_O_P FOREIGN KEY (PaymentID)
     REFERENCES Payment(PaymentID),
 
 )
@@ -82,8 +89,9 @@ go
 Create table PaymentDetail
 (
 	PDID varchar(10) Primary Key,
-	OrderID varchar(10),
-	Status varchar(10),
+	OrderID varchar(10) Unique,
+	Status int, -- 0 for waiting, 1 for success , -1 for failed
+	
 	FOREIGN KEY (OrderID) REFERENCES [Order](OrderID)
 )
 go
@@ -109,14 +117,185 @@ Create table GoodsReceiptDetail
 	FOREIGN KEY (GoodsID) REFERENCES Goods(GoodsID)
 )
 go
+
 Create table GoodsDelivery
 (
 	DeliveryID varchar(10) Primary Key, 
 	OrderID varchar(10),
 	Employee varchar(10), 
 	DeliveryDate date, 
-	Status varchar(10),
+	Status int, -- 0 for is waiting delivery, 1 success, -1 for failed
 	FOREIGN KEY (OrderID) REFERENCES  [Order](OrderID),
 	FOREIGN KEY (Employee) REFERENCES Accountant(AID)
 )
 
+
+go
+insert into Goods values
+	('G0001', 'Iphone 6', 'one', 1000, 'USA'),
+	('G0002', 'Iphone 7', 'one', 1500, 'USA'),
+	('G0003', 'Iphone 8', 'one', 1700, 'USA'),
+	('G0004', 'Iphone 9', 'one', 1800, 'USA'),
+	('G0005', 'Iphone 10', 'one', 2000, 'USA'),
+	('G0006', 'Iphone 11', 'one', 1500, 'USA'),
+	('G0007', 'Iphone 12', 'one', 3000, 'USA'),
+	('G0008', 'SamSung XS', 'one', 1200, 'Kore'),
+	('G0009', 'Redmi not 8', 'one', 1100, 'China'),
+	('G0010', 'Redmi not 9', 'one', 2300, 'China'),
+	('G0011', 'Redmi not 10', 'one', 2500, 'China'),
+	('G0012', 'Redmi not 11', 'one', 2200, 'China'),
+	('G0013', 'Xiaomi Pocolo 11', 'one', 2200, 'China'),
+	('G0014', 'SamSung Note 9', 'one', 2400, 'India'),
+	('G0015', 'SamSung J2 Pro', 'one', 1200, 'Thailands')
+
+go
+insert into Warehouse values
+	('G0001', 4),
+	('G0002', 1),
+	('G0003', 6),
+	('G0004', 7),
+	('G0005', 3),
+	('G0006', 8),
+	('G0007', 2),
+	('G0008', 9),
+	('G0009', 12),
+	('G0010', 35),
+	('G0011', 11),
+	('G0012', 12),
+	('G0013', 14),
+	('G0014', 32),
+	('G0015', 11)	
+	
+go
+
+Insert into Accountant values
+	('A0001', 'Joinh William', 'Join12', '12345'),
+	('A0002', 'Kio Charles', 'kio', '12345'),
+	('A0003', 'Lio Smith', 'lio', '12345'),
+	('A0004', 'Kevin Nguyen', 'kevin12', '12345'),
+	('A0005', 'Luxi M', 'luxix', '12345'),
+	('A0006', 'Luffy Monkey D', 'luffyy', '12345'),
+	('A0007', 'Zoro Chiro', 'zoroo', '12345'),
+	('A0008', 'Usop Gods', 'Udau', '12345'),
+	('A0009', 'Choper Meem', 'chopercute', '13345'),
+	('A0010', 'Nami William', 'nami111', '12345'),
+	('A0011', 'Sanji Vinsmoke', 'sj123', '12345'),
+	('A0012', 'Kaido Dilo', 'kaido', '123345'),
+	('A0013', 'Dragon Monkey D', 'dragon', '14345'),
+	('A0014', 'Grap MD', 'MDGrap', '11111'),
+	('A0015', 'Admin', 'admin', '12345')
+
+go
+
+insert into Agent values
+	('AG0001', 'Shop Kaio', '0901010111', '123, abc, USA', 'shopkaio', '12345'),
+	('AG0002', 'Shop Gao', '0905410111', '123, abc, USA', 'gao123', '12345'),
+	('AG0003', 'Shop Laya', '0950032451', '123, abc, USA', 'lay111', '12345'),
+	('AG0004', 'Shop Hayo', '0914455115', '123, abc, USA', 'hayoo', '12345'),
+	('AG0005', 'Shop Youuu', '090645212', '123, abc, USA', 'yuu1', '12345'),
+	('AG0006', 'Shop Laika', '095423131', '123, abc, USA', 'laikaka', '12345'),
+	('AG0007', 'Shop Jika', '0944342113', '123, abc, USA', 'jikala', '12345'),
+	('AG0008', 'Shop Hio', '0900101114', '123, abc, USA', 'hiooo', '12345'),
+	('AG0009', 'Shop Alio', '0900010111', '123, abc, USA', 'aliio', '12345'),
+	('AG0010', 'Shop Libabo', '0964010111', '123, abc, USA', 'sliba', '12345'),
+	('AG0011', 'Shop Laught', '0963610111', '123, abc, USA', 'laughts', '12345'),
+	('AG0012', 'Shop Tells', '0954929111', '123, abc, USA', 'theo123', '12345'),
+	('AG0013', 'Shop IT', '0947395729', '123, abc, USA', 'ito11', '12345'),
+	('AG0014', 'Shop Nisi', '0989034211', '123, abc, USA', 'shopnisi', '12345'),
+	('AG0015', 'Shop Kawasi', '0988883111', '123, abc, USA', 'kawasi', '12345'),
+	('AG0016', 'Shop ADMIN', '9999999999', '1234, aaa, VietNam', 'admin', '12345')
+
+Go
+Insert into Payment values
+	('P0001', 'Payment by Online'),
+	('P0002', 'Payment by Cash')
+
+go
+Insert into Supplier values
+	('S0001', 'Company Alent', '241, Laika, USA', '0101374011'),
+	('S0002', 'Company Azenka', '111, Qaka, VietNam', '0101936511'),
+	('S0003', 'Company Erilent', '11, Haka, Thailands', '0186330101'),
+	('S0004', 'Company Kakalot', '12, Liva, China', '0193657101'),
+	('S0005', 'Company Hayalot', '141, Nisa, Cambodia', '0101010101'),
+	('S0006', 'Company Biroshin', '221, Haka, France', '0101010101'),
+	('S0007', 'Company Ihihi', '411, Ohio, India', '0101010101'),
+	('S0008', 'Company Ghensin', '911,  hfk,USA', '0101010101'),
+	('S0009', 'Company Leighi', '521, Shaga, USA', '0101010101'),
+	('S0010', 'Company Reileiy', '999, Qisa, China', '0101010101'),
+	('S0011', 'Company Locaco', '183, Loila, Thailand', '0101010101'),
+	('S0012', 'Company Haido', '981, Nasaa, VietNam', '0101010101')
+go
+
+insert into [Order] values
+	('O0001', 'AG0001', '2022/09/16', 'P0001', 19000), 
+	('O0002', 'AG0002', '2022/08/13', 'P0001', 66900) , 
+	('O0003', 'AG0001', '2022/01/18', 'P0001', 76500),
+	('O0004', 'AG0001', '2022/07/17', 'P0001', 52500),
+	('O0005', 'AG0003', '2022/04/16', 'P0001', 66900),
+	('O0006', 'AG0004', '2022/05/22', 'P0002', 27700),
+	('O0007', 'AG0003', '2022/05/25', 'P0002', 18900),
+	('O0008', 'AG0003', '2022/09/11', 'P0001', 51300)
+
+
+go
+ --DetailID varchar(10) Primary Key, 
+--	OrderID varchar(10), 
+	--GoodsID varchar(10), 
+	--Quantity int,
+Insert into OrderDetail values
+	('OD0001', 'O0001', 'G0001', 5),
+	('OD0002', 'O0001', 'G0005', 7),
+
+	('OD0003', 'O0002', 'G0003', 9),
+	('OD0004', 'O0002', 'G0004', 12),
+	('OD0005', 'O0002', 'G0005', 15),
+
+	('OD0006', 'O0003', 'G0006', 11),
+	('OD0007', 'O0003', 'G0007', 20),
+
+	('OD0008', 'O0004', 'G0002', 35),
+
+	('OD0009', 'O0005', 'G0003', 3),
+	('OD0010', 'O0005', 'G0005', 6),
+	('OD0011', 'O0005', 'G0006', 8),
+	('OD0012', 'O0005', 'G0007', 9),
+	('OD0013', 'O0005', 'G0008', 9),
+
+	('OD0014', 'O0006', 'G0001', 7),
+	('OD0015', 'O0006', 'G0002', 7),
+	('OD0016', 'O0006', 'G0003', 6),
+
+	('OD0017', 'O0007', 'G0004', 5),
+	('OD0018', 'O0007', 'G0009', 9),
+
+	('OD0019', 'O0008', 'G0010', 9),
+	('OD0020', 'O0008', 'G0013', 9),
+	('OD0021', 'O0008', 'G0015', 9)
+
+
+go
+Insert into PaymentDetail values
+	('PD0001', 'O0001', 0),
+	('PD0002', 'O0002', 1),
+	('PD0003', 'O0003', -1),
+	('PD0004', 'O0004', 0),
+	('PD0005', 'O0005', 0),
+	('PD0006', 'O0006', 1),
+	('PD0007', 'O0007', 1),
+	('PD0008', 'O0008', 1),
+	('PD0009', 'O0009', 0),
+	('PD0010', 'O0010', 0)
+
+go
+
+Insert into GoodsDelivery values
+	('GD0001', 'O0002', 'A0001', '2023/01/12'),	
+	('GD0003', 'O0004', 'A0001', '2023/02/12'),
+	('GD0004', 'O0005', 'A0003', '2023/03/11'),
+	('GD0005', 'O0006', 'A0002', '2023/03/19'),
+	('GD0006', 'O0007', 'A0004', '2023/04/16'),
+	('GD0007', 'O0008', 'A0006', '2023/05/21')
+
+	
+--select* from goods
+--select* from Warehouse
