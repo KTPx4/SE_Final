@@ -12,7 +12,7 @@ namespace SEFinal.Class
         public string AgentID { get; set; }
         public string ODate { get; set; }
         public string PaymentID { get; set; }
-        public int TotalAmount { get; set; }
+        public double TotalAmount { get; set; }
 
         public C_Order()
         {
@@ -23,7 +23,7 @@ namespace SEFinal.Class
             this.TotalAmount = 0;
         }
 
-        public C_Order(string orderID, string agentID, string oDate, string paymentID, int totalAmount)
+        public C_Order(string orderID, string agentID, string oDate, string paymentID, double totalAmount)
         {
             OrderID = orderID;
             AgentID = agentID;

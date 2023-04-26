@@ -168,7 +168,7 @@ insert into Warehouse values
 	('G0015', 11)	
 	
 go
-
+	select * from Accountant
 Insert into Accountant values
 	('A0001', 'Joinh William', 'Join12', '12345'),
 	('A0002', 'Kio Charles', 'kio', '12345'),
@@ -331,7 +331,13 @@ Insert into GoodsReceiptDetail values
 	('GRD0019', 'GR0007', 'G0001', 23, 23000),
 	('GRD0020', 'GR0007', 'G0002', 13, 19500),
 	('GRD0021', 'GR0007', 'G0005', 23, 46000),
-	('GRD0022', 'GR0007', 'G0006', 23, 34500)
+	('GRD0022', 'GR0007', 'G0006', 23, 34500)	 
 
+
+
+go
 --select* from goods
 --select* from Warehouse
+
+select * from agent
+select top 1 AgentID from Agent order by AgentID desc

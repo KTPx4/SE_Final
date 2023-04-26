@@ -59,8 +59,8 @@
     <Compile Include="BUS\BUS_Supplier.cs" />
     <Compile Include="Class\C_Accountant.cs" />
     <Compile Include="Class\C_Agent.cs" />
+    <Compile Include="Class\C_P_Details.cs" />
     <Compile Include="Class\C_Supplier.cs" />
-    <Compile Include="Class\C_GD_Detail.cs" />
     <Compile Include="Class\C_GDelivery.cs" />
     <Compile Include="Class\C_GR_Detail.cs" />
     <Compile Include="Class\C_GReceipt.cs" />
@@ -69,10 +69,10 @@
     <Compile Include="Class\C_Order.cs" />
     <Compile Include="Class\C_Payment.cs" />
     <Compile Include="Class\C_Warehouse.cs" />
+    <Compile Include="DTA\Connection.cs" />
     <Compile Include="DTA\DTA_Accountant.cs" />
     <Compile Include="DTA\DTA_Agent.cs" />
     <Compile Include="DTA\DTA_GDelivery.cs" />
-    <Compile Include="DTA\DTA_GD_Detail.cs" />
     <Compile Include="DTA\DTA_Goods.cs" />
     <Compile Include="DTA\DTA_GReceipt.cs" />
     <Compile Include="DTA\DTA_GR_Detail.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="DTA\DTA_O_Detail.cs" />
     <Compile Include="DTA\DTA_Payment.cs" />
     <Compile Include="DTA\DTA_Supplier.cs" />
+    <Compile Include="DTA\DTA_Warehouse.cs" />
     <Compile Include="frmAgent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,5 +172,6 @@
   <ItemGroup>
     <None Include="Resources\padlock.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

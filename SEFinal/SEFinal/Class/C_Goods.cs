@@ -11,7 +11,7 @@ namespace SEFinal.Class
         public string GoodsID { get; set; }
         public string GoodsName { get; set; }
         public string Unit { get; set; }
-        public int Price { get; set; }
+        public double Price { get; set; }
         public string Country { get; set; }
 
         public C_Goods()
@@ -23,7 +23,7 @@ namespace SEFinal.Class
             this.Country = "";
         }
 
-        public C_Goods(string goodsID, string goodsName, string unit, int price, string country)
+        public C_Goods(string goodsID, string goodsName, string unit, double price, string country)
         {
             this.GoodsID = goodsID;
             this.GoodsName = goodsName;

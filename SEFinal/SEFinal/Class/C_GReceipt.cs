@@ -12,7 +12,7 @@ namespace SEFinal.Class
         public string ReceiptDate { get; set; }
         public string SupID { get; set; }
         public string Employee { get; set; }
-        public int TotalAmount { get; set; }
+        public double TotalAmount { get; set; }
 
         public C_GReceipt()
         {
@@ -23,13 +23,13 @@ namespace SEFinal.Class
             this.TotalAmount = 0;
         }
 
-        public C_GReceipt(string receiptID, string receiptDate, string supID, string employee, int totalAmount)
+        public C_GReceipt(string receiptID, string receiptDate, string supID, string employee, double totalAmount)
         {
-            ReceiptID = receiptID;
-            ReceiptDate = receiptDate;
-            SupID = supID;
-            Employee = employee;
-            TotalAmount = totalAmount;
+            this.ReceiptID = receiptID;
+            this.ReceiptDate = receiptDate;
+            this.SupID = supID;
+            this.Employee = employee;
+            this.TotalAmount = totalAmount;
         }
     }
 }

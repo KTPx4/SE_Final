@@ -16,6 +16,7 @@ namespace SEFinal.Class
             this.GoodsID = "";
             this.Quan = 0;
         }
+
         public C_Warehouse(string goodsID, int quan)
         {
             this.GoodsID = goodsID; 
