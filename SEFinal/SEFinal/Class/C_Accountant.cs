@@ -9,24 +9,25 @@ namespace SEFinal.Class
 {
     public class C_Accountant
     {
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public string User { get; set; }
-        public string Password { get; set; }
+        public string AID { get; set; }
+        public string AName { get; set; }
+        public string AUser { get; set; }
+        public string APassword { get; set; }
 
-        public C_Accountant() 
+        public C_Accountant()
         {
-            this.ID = "";
-            this.Name = "";
-            this.User = "";
-            this.Password = "";
+            this.AID = "";
+            this.AName = "";
+            this.AUser = "";
+            this.APassword = "";
         }
-        public C_Accountant(string id, string name, string user, string pass)
+
+        public C_Accountant(string aID, string aName, string aUser, string aPass)
         {
-            this.ID = id;
-            this.Name = name;
-            this.User = user;
-            this.Password = pass;
+            this.AID = aID;
+            this.AName = aName;
+            this.AUser = aUser;
+            this.APassword = aPass;
         }
     }
 }
