@@ -68,6 +68,7 @@
     <Compile Include="Class\C_O_Detail.cs" />
     <Compile Include="Class\C_Order.cs" />
     <Compile Include="Class\C_Payment.cs" />
+    <Compile Include="Class\C_Warehouse.cs" />
     <Compile Include="DTA\DTA_Accountant.cs" />
     <Compile Include="DTA\DTA_Agent.cs" />
     <Compile Include="DTA\DTA_GDelivery.cs" />
