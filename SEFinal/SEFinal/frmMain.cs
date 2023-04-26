@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using SEFinal.DTA;
 
 namespace SEFinal
 {
@@ -108,6 +109,33 @@ namespace SEFinal
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChildForm(3);
+        }
+
+        private void goodsReceivedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+     
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //DTA_Agent ag = new DTA_Agent("Nguyen Van B", "0000101010", "123, 456", "user131", "pass");
+            //if (ag.add_())
+            //{
+            //    MessageBox.Show("add success");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("add failled");
+            //}
+            //MessageBox.Show(ag.getID());
+            MessageBox.Show((new DTA_Agent()).getNextID_());
+            //DTA_Agent ag = new DTA_Agent();
+            //DataTable tb = ag.test();
+            //foreach(DataRow r in tb.Rows)
+            //{
+            //    MessageBox.Show(r[0].ToString());
+            //}
         }
     }
 }

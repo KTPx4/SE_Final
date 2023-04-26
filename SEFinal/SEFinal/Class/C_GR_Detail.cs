@@ -12,7 +12,7 @@ namespace SEFinal.Class
         public string ReceiptID { get; set; }
         public string GoodsID { get; set; }
         public int Quan { get; set; }
-        public int Amount { get; set; }
+        public double Amount { get; set; }
 
         public C_GR_Detail()
         {
@@ -23,7 +23,7 @@ namespace SEFinal.Class
             this.Amount = 0;
         }
 
-        public C_GR_Detail(string rDID, string receiptID, string goodsID, int quan, int amount)
+        public C_GR_Detail(string rDID, string receiptID, string goodsID, int quan, double amount)
         {
             RDID = rDID;
             ReceiptID = receiptID;
