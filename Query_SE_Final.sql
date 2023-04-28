@@ -11,7 +11,8 @@ Create table Goods
 	GoodsName varchar(50),
 	Unit varchar(50),
 	Price money,
-	Country varchar(100)
+	Country varchar(100)   ,
+	is_deleted bit	  -- new update
 )
 go
 Create table Warehouse
@@ -29,8 +30,8 @@ Create table Agent
 	Phone varchar(10),
 	Address varchar(50),
 	Users varchar(50) Unique,
-	Pass varchar(50)
-
+	Pass varchar(50)	,
+	is_deleted bit	  -- new update
 )
 go
 Create table Accountant
@@ -38,13 +39,15 @@ Create table Accountant
 	AID varchar(10) Primary Key,
 	AName varchar(50),
 	Auser varchar(50) Unique,
-	Apass varchar(50)
+	Apass varchar(50)		  ,
+	is_deleted bit	  -- new update
 )
 go
 Create table Payment
 (
 	PaymentID varchar(10) Primary Key,
-	Name varchar(50)
+	Name varchar(50)	 ,
+	is_deleted bit	  -- new update
 )
 go
 Create table Supplier
@@ -52,7 +55,8 @@ Create table Supplier
 	SupID varchar(10) Primary Key, 
 	Name varchar(50), 
 	Address varchar(100), 
-	Phone varchar(10)
+	Phone varchar(10)	  ,
+	is_deleted bit	  -- new update
 )
 go
 Create table [Order]
@@ -62,6 +66,8 @@ Create table [Order]
 	Odate date, 
 	PaymentID varchar(10), 
 	TotalAmount Money,
+
+	is_Hide bit	   -- new update
 
 	CONSTRAINT FK_O_A FOREIGN KEY (AgentID)
     REFERENCES Agent(AgentID),
@@ -130,24 +136,34 @@ Create table GoodsDelivery
 	FOREIGN KEY (Employee) REFERENCES Accountant(AID)
 )
 
-
+go
+Create table AdminSystem
+(
+	AdminID varchar(10),
+	user varchar(50),
+	pass varchar(50) ,
+	name varchar(100)
+)
+go
+Insert into AdminSystem values
+	('admin01', 'admin', '12345', 'ADMIN SYSTEM')
 go
 insert into Goods values
-	('G0001', 'Iphone 6', 'one', 1000, 'USA'),
-	('G0002', 'Iphone 7', 'one', 1500, 'USA'),
-	('G0003', 'Iphone 8', 'one', 1700, 'USA'),
-	('G0004', 'Iphone 9', 'one', 1800, 'USA'),
-	('G0005', 'Iphone 10', 'one', 2000, 'USA'),
-	('G0006', 'Iphone 11', 'one', 1500, 'USA'),
-	('G0007', 'Iphone 12', 'one', 3000, 'USA'),
-	('G0008', 'SamSung XS', 'one', 1200, 'Kore'),
-	('G0009', 'Redmi not 8', 'one', 1100, 'China'),
-	('G0010', 'Redmi not 9', 'one', 2300, 'China'),
-	('G0011', 'Redmi not 10', 'one', 2500, 'China'),
-	('G0012', 'Redmi not 11', 'one', 2200, 'China'),
-	('G0013', 'Xiaomi Pocolo 11', 'one', 2200, 'China'),
-	('G0014', 'SamSung Note 9', 'one', 2400, 'India'),
-	('G0015', 'SamSung J2 Pro', 'one', 1200, 'Thailands')
+	('G0001', 'Iphone 6', 'one', 1000, 'USA', 0),
+	('G0002', 'Iphone 7', 'one', 1500, 'USA', 0),
+	('G0003', 'Iphone 8', 'one', 1700, 'USA', 0),
+	('G0004', 'Iphone 9', 'one', 1800, 'USA', 0),
+	('G0005', 'Iphone 10', 'one', 2000, 'USA', 0),
+	('G0006', 'Iphone 11', 'one', 1500, 'USA', 0),
+	('G0007', 'Iphone 12', 'one', 3000, 'USA', 0),
+	('G0008', 'SamSung XS', 'one', 1200, 'Kore', 0),
+	('G0009', 'Redmi not 8', 'one', 1100, 'China', 0),
+	('G0010', 'Redmi not 9', 'one', 2300, 'China', 0),
+	('G0011', 'Redmi not 10', 'one', 2500, 'China', 0),
+	('G0012', 'Redmi not 11', 'one', 2200, 'China', 0),
+	('G0013', 'Xiaomi Pocolo 11', 'one', 2200, 'China', 0),
+	('G0014', 'SamSung Note 9', 'one', 2400, 'India', 0),
+	('G0015', 'SamSung J2 Pro', 'one', 1200, 'Thailands', 0)
 
 go
 insert into Warehouse values
@@ -170,71 +186,71 @@ insert into Warehouse values
 go
 	select * from Accountant
 Insert into Accountant values
-	('A0001', 'Joinh William', 'Join12', '12345'),
-	('A0002', 'Kio Charles', 'kio', '12345'),
-	('A0003', 'Lio Smith', 'lio', '12345'),
-	('A0004', 'Kevin Nguyen', 'kevin12', '12345'),
-	('A0005', 'Luxi M', 'luxix', '12345'),
-	('A0006', 'Luffy Monkey D', 'luffyy', '12345'),
-	('A0007', 'Zoro Chiro', 'zoroo', '12345'),
-	('A0008', 'Usop Gods', 'Udau', '12345'),
-	('A0009', 'Choper Meem', 'chopercute', '13345'),
-	('A0010', 'Nami William', 'nami111', '12345'),
-	('A0011', 'Sanji Vinsmoke', 'sj123', '12345'),
-	('A0012', 'Kaido Dilo', 'kaido', '123345'),
-	('A0013', 'Dragon Monkey D', 'dragon', '14345'),
-	('A0014', 'Grap MD', 'MDGrap', '11111'),
-	('A0015', 'Admin', 'admin', '12345')
+	('A0001', 'Joinh William', 'Join12', '12345', 0),
+	('A0002', 'Kio Charles', 'kio', '12345', 0),
+	('A0003', 'Lio Smith', 'lio', '12345', 0),
+	('A0004', 'Kevin Nguyen', 'kevin12', '12345', 0),
+	('A0005', 'Luxi M', 'luxix', '12345', 0),
+	('A0006', 'Luffy Monkey D', 'luffyy', '12345', 0),
+	('A0007', 'Zoro Chiro', 'zoroo', '12345', 0),
+	('A0008', 'Usop Gods', 'Udau', '12345', 0),
+	('A0009', 'Choper Meem', 'chopercute', '13345', 0),
+	('A0010', 'Nami William', 'nami111', '12345', 0),
+	('A0011', 'Sanji Vinsmoke', 'sj123', '12345', 0),
+	('A0012', 'Kaido Dilo', 'kaido', '123345', 0),
+	('A0013', 'Dragon Monkey D', 'dragon', '14345', 0),
+	('A0014', 'Grap MD', 'MDGrap', '11111', 0),
+	('A0015', 'Admin', 'admin', '12345', 0)
 go
 
 insert into Agent values
-	('AG0001', 'Shop Kaio', '0901010111', '123, abc, USA', 'shopkaio', '12345'),
-	('AG0002', 'Shop Gao', '0905410111', '123, abc, USA', 'gao123', '12345'),
-	('AG0003', 'Shop Laya', '0950032451', '123, abc, USA', 'lay111', '12345'),
-	('AG0004', 'Shop Hayo', '0914455115', '123, abc, USA', 'hayoo', '12345'),
-	('AG0005', 'Shop Youuu', '090645212', '123, abc, USA', 'yuu1', '12345'),
-	('AG0006', 'Shop Laika', '095423131', '123, abc, USA', 'laikaka', '12345'),
-	('AG0007', 'Shop Jika', '0944342113', '123, abc, USA', 'jikala', '12345'),
-	('AG0008', 'Shop Hio', '0900101114', '123, abc, USA', 'hiooo', '12345'),
-	('AG0009', 'Shop Alio', '0900010111', '123, abc, USA', 'aliio', '12345'),
-	('AG0010', 'Shop Libabo', '0964010111', '123, abc, USA', 'sliba', '12345'),
-	('AG0011', 'Shop Laught', '0963610111', '123, abc, USA', 'laughts', '12345'),
-	('AG0012', 'Shop Tells', '0954929111', '123, abc, USA', 'theo123', '12345'),
-	('AG0013', 'Shop IT', '0947395729', '123, abc, USA', 'ito11', '12345'),
-	('AG0014', 'Shop Nisi', '0989034211', '123, abc, USA', 'shopnisi', '12345'),
-	('AG0015', 'Shop Kawasi', '0988883111', '123, abc, USA', 'kawasi', '12345'),
-	('AG0016', 'Shop ADMIN', '9999999999', '1234, aaa, VietNam', 'admin', '12345')
+	('AG0001', 'Shop Kaio', '0901010111', '123, abc, USA', 'shopkaio', '12345', 0),
+	('AG0002', 'Shop Gao', '0905410111', '123, abc, USA', 'gao123', '12345', 0),
+	('AG0003', 'Shop Laya', '0950032451', '123, abc, USA', 'lay111', '12345', 0),
+	('AG0004', 'Shop Hayo', '0914455115', '123, abc, USA', 'hayoo', '12345', 0),
+	('AG0005', 'Shop Youuu', '090645212', '123, abc, USA', 'yuu1', '12345', 0),
+	('AG0006', 'Shop Laika', '095423131', '123, abc, USA', 'laikaka', '12345', 0),
+	('AG0007', 'Shop Jika', '0944342113', '123, abc, USA', 'jikala', '12345', 0),
+	('AG0008', 'Shop Hio', '0900101114', '123, abc, USA', 'hiooo', '12345', 0),
+	('AG0009', 'Shop Alio', '0900010111', '123, abc, USA', 'aliio', '12345', 0),
+	('AG0010', 'Shop Libabo', '0964010111', '123, abc, USA', 'sliba', '12345', 0),
+	('AG0011', 'Shop Laught', '0963610111', '123, abc, USA', 'laughts', '12345', 0),
+	('AG0012', 'Shop Tells', '0954929111', '123, abc, USA', 'theo123', '12345', 0),
+	('AG0013', 'Shop IT', '0947395729', '123, abc, USA', 'ito11', '12345', 0),
+	('AG0014', 'Shop Nisi', '0989034211', '123, abc, USA', 'shopnisi', '12345', 0),
+	('AG0015', 'Shop Kawasi', '0988883111', '123, abc, USA', 'kawasi', '12345', 0),
+	('AG0016', 'Shop ADMIN', '9999999999', '1234, aaa, VietNam', 'admin', '12345', 0)
 
 Go
 Insert into Payment values
-	('P0001', 'Payment by Online'),
-	('P0002', 'Payment by Cash')
+	('P0001', 'Payment by Online' , 0),
+	('P0002', 'Payment by Cash', 0)
 
 go
 Insert into Supplier values
-	('S0001', 'Company Alent', '241, Laika, USA', '0101374011'),
-	('S0002', 'Company Azenka', '111, Qaka, VietNam', '0101936511'),
-	('S0003', 'Company Erilent', '11, Haka, Thailands', '0186330101'),
-	('S0004', 'Company Kakalot', '12, Liva, China', '0193657101'),
-	('S0005', 'Company Hayalot', '141, Nisa, Cambodia', '0101010101'),
-	('S0006', 'Company Biroshin', '221, Haka, France', '0101010101'),
-	('S0007', 'Company Ihihi', '411, Ohio, India', '0101010101'),
-	('S0008', 'Company Ghensin', '911,  hfk,USA', '0101010101'),
-	('S0009', 'Company Leighi', '521, Shaga, USA', '0101010101'),
-	('S0010', 'Company Reileiy', '999, Qisa, China', '0101010101'),
-	('S0011', 'Company Locaco', '183, Loila, Thailand', '0101010101'),
-	('S0012', 'Company Haido', '981, Nasaa, VietNam', '0101010101')
+	('S0001', 'Company Alent', '241, Laika, USA', '0101374011', 0),
+	('S0002', 'Company Azenka', '111, Qaka, VietNam', '0101936511', 0),
+	('S0003', 'Company Erilent', '11, Haka, Thailands', '0186330101', 0),
+	('S0004', 'Company Kakalot', '12, Liva, China', '0193657101', 0),
+	('S0005', 'Company Hayalot', '141, Nisa, Cambodia', '0101010101', 0),
+	('S0006', 'Company Biroshin', '221, Haka, France', '0101010101', 0),
+	('S0007', 'Company Ihihi', '411, Ohio, India', '0101010101', 0),
+	('S0008', 'Company Ghensin', '911,  hfk,USA', '0101010101', 0),
+	('S0009', 'Company Leighi', '521, Shaga, USA', '0101010101', 0),
+	('S0010', 'Company Reileiy', '999, Qisa, China', '0101010101', 0),
+	('S0011', 'Company Locaco', '183, Loila, Thailand', '0101010101', 0),
+	('S0012', 'Company Haido', '981, Nasaa, VietNam', '0101010101', 0)
 go
 
 insert into [Order] values
-	('O0001', 'AG0001', '2022/09/16', 'P0001', 19000), 
-	('O0002', 'AG0002', '2022/08/13', 'P0001', 66900) , 
-	('O0003', 'AG0001', '2022/01/18', 'P0001', 76500),
-	('O0004', 'AG0001', '2022/07/17', 'P0001', 52500),
-	('O0005', 'AG0003', '2022/04/16', 'P0001', 66900),
-	('O0006', 'AG0004', '2022/05/22', 'P0002', 27700),
-	('O0007', 'AG0003', '2022/05/25', 'P0002', 18900),
-	('O0008', 'AG0003', '2022/09/11', 'P0001', 51300)
+	('O0001', 'AG0001', '2022/09/16', 'P0001', 19000, 0), 
+	('O0002', 'AG0002', '2022/08/13', 'P0001', 66900, 0) , 
+	('O0003', 'AG0001', '2022/01/18', 'P0001', 76500, 0),
+	('O0004', 'AG0001', '2022/07/17', 'P0001', 52500, 0),
+	('O0005', 'AG0003', '2022/04/16', 'P0001', 66900, 0),
+	('O0006', 'AG0004', '2022/05/22', 'P0002', 27700, 0),
+	('O0007', 'AG0003', '2022/05/25', 'P0002', 18900, 0),
+	('O0008', 'AG0003', '2022/09/11', 'P0001', 51300, 0)
 
 go
 
@@ -340,4 +356,17 @@ go
 --select* from Warehouse
 
 select * from agent
-select top 1 AgentID from Agent order by AgentID desc
+select top 1 AgentID from Agent order by AgentID desc	  2
+
+
+
+select g.GoodsID, g.GoodsName, g.Price, od.Quantity
+from orderdetail od, Goods g
+where od.OrderID in 
+				 (select o.OrderID
+					from [order] o, Agent a
+					where a.AgentID ='AG0002' and a.AgentID = o.AgentID)
+					and od.GoodsID = g.GoodsID
+
+
+SELECT * FROM Goods WHERE GoodsName LIKE 'samsung xs'
