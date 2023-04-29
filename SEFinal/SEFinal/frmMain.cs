@@ -15,6 +15,9 @@ namespace SEFinal
 {
     public partial class frmMain : Form
     {
+        private bool _dragging = false;
+        private Point _startPoint = new Point(0, 0);
+
         public frmMain()
         {
             InitializeComponent();
@@ -51,22 +54,29 @@ namespace SEFinal
             //    c.Close();                       
             //}
             Form f;
+            string title = "Manage System";
+
             if(index == 0)  // Child form is Goods
             {
-                 f = new frmGoods();             
+                f = new frmGoods();
+                title = "Goods";
             }
             else if(index == 1)// Child form is Supplier
             {
-                f = new frmSupplier();              
+                f = new frmSupplier();
+                title = "Supplier";
             }
             else if (index == 2) // Child form is Agent (Manage Agent and Update Status Payment)
             {
-                f = new frmAgent();               
+                f = new frmAgent();
+                title = "Agent";
+
             }
             else if(index == 3) // Child form is Order( Manage Delivery, Receipt Goods)
             {
+                title = "Order Goods";
 
-                if(tab == 1) // if tab = 1 -> open tab for goods delivery
+                if (tab == 1) // if tab = 1 -> open tab for goods delivery
                 {
                     f = new frmOrder(1);
                 }
@@ -78,12 +88,16 @@ namespace SEFinal
             }
             else   // last int is child form for Report
             {
+                title = "Report";
+
                 f = new frmReport();               
             }
 
             //f.MdiParent = this; // set parent of child form is frmMain (this)
             //f.Dock = DockStyle.Fill; // set full screen of childform when open in parent
             //f.Show(); // show form
+           
+            lbTitle.Text = title;
 
             f.TopLevel = false;
             f.Visible = true;
@@ -138,6 +152,31 @@ namespace SEFinal
         private void btnMini_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            _dragging = true;  // _dragging là biến cờ của bạn
+            _startPoint = new Point(e.X, e.Y);
+        }
+
+        private void pnControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this._startPoint.X, p.Y - this._startPoint.Y);
+            }
+        }
+
+        private void pnControl_MouseUp(object sender, MouseEventArgs e)
+        {
+            _dragging = false;
         }
     }
 }
