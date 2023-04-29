@@ -26,3 +26,37 @@ D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\
 D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmGoods.resources
 D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmReport.resources
 D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmSupplier.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.AssemblyReference.cache
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.SuggestedBindingRedirects.cache
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmAgent.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmGoods.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmLogin.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmMain.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmReport.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmSupplier.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.Properties.Resources.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.GenerateResource.cache
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.CoreCompileInputs.cache
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.exe
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.pdb
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\bin\Debug\SEFinal.exe.config
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\bin\Debug\SEFinal.exe
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\bin\Debug\SEFinal.pdb
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmOrder.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\bin\Debug\SEFinal.exe.config
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\bin\Debug\SEFinal.exe
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\bin\Debug\SEFinal.pdb
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.AssemblyReference.cache
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.SuggestedBindingRedirects.cache
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmAgent.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmGoods.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmLogin.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmMain.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmOrder.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmReport.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmSupplier.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.Properties.Resources.resources
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.GenerateResource.cache
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.CoreCompileInputs.cache
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.exe
+C:\Users\dang khoa\Downloads\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.pdb

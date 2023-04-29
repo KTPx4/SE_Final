@@ -26,8 +26,10 @@ namespace SEFinal.DTA
         public bool add_()
         {
             bool isExists_id = cn.is_Exists_data("GoodsReceipt", "ReceiptID", gr.ReceiptID);
+            bool isExists_sup = cn.is_Exists_data("Supplier", "SupID", gr.SupID, "is_deleted");// check suplier
+            bool isExists_emp = cn.is_Exists_data("Accountant", "AID", gr.Employee, "is_deleted");// check employee
 
-            if (isExists_id)
+            if (isExists_id || !isExists_sup || !isExists_emp)
             {
                 return false;
             }
@@ -44,6 +46,15 @@ namespace SEFinal.DTA
             {
                 return false;
             }
+
+            // if in table detail have id of Receip-> delete detail before delete receipt (foreign key)
+            bool isExists_detail = cn.is_Exists_data("GoodsReceiptDetail", "ReceiptID", gr.ReceiptID);
+            if (isExists_id)
+            {
+                string d = $"detele from GoodsReceiptDetail where ReceiptID='{gr.ReceiptID}'";
+                cn.actionQuery(d);
+            }
+
             string s = $"detele from GoodsReceipt where ReceiptID='{gr.ReceiptID}'";
             cn.actionQuery(s);
             return true;
@@ -56,14 +67,14 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"update from GoodsReceipt set ReceiptDate='{gr.ReceiptDate}', SupID ='{gr.SupID}', Employee ='{gr.Employee}', TotalAmount={gr.TotalAmount} where ReceiptID='{gr.ReceiptID}'";
+            string s = $"update GoodsReceipt set ReceiptDate='{gr.ReceiptDate}', SupID ='{gr.SupID}', Employee ='{gr.Employee}', TotalAmount={gr.TotalAmount} where ReceiptID='{gr.ReceiptID}'";
             cn.actionQuery(s);
             return true;
         }
 
-        public string getNextID_() // return next id of table in db
+        public string getNextID_(string defaultID) // return next id of table in db
         {
-            return cn.getID("ReceiptID", "GoodsReceipt", "GR0001");
+            return cn.getID("ReceiptID", "GoodsReceipt", defaultID);
         }
 
         public string getID()

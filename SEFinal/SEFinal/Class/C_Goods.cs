@@ -14,6 +14,7 @@ namespace SEFinal.Class
         public double Price { get; set; }
         public string Country { get; set; }
 
+        public int is_deleted { get; set; }
         public C_Goods()
         {
             this.GoodsID = "";
@@ -21,15 +22,17 @@ namespace SEFinal.Class
             this.Unit = "";
             this.Price = 0;
             this.Country = "";
+            this.is_deleted = 0;
         }
 
-        public C_Goods(string goodsID, string goodsName, string unit, double price, string country)
+        public C_Goods(string goodsID, string goodsName, string unit, double price, string country, int is_deleted)
         {
             this.GoodsID = goodsID;
             this.GoodsName = goodsName;
             this.Unit = unit;
             this.Price = price;
             this.Country = country;
+            this.is_deleted = is_deleted;
         }
     }
 }
