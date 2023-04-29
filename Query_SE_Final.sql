@@ -59,7 +59,7 @@ Create table Supplier
 	is_deleted bit	  -- new update
 )
 go
-Create table [Order]
+Create table [Order]	 -- insert row at webform
 (
 	OrderID varchar(10) Primary Key, 
 	AgentID varchar(10),
@@ -77,7 +77,7 @@ Create table [Order]
 
 )
 go
-Create table OrderDetail
+Create table OrderDetail	 -- insert row at webform
 ( 
 	DetailID varchar(10) Primary Key, 
 	OrderID varchar(10), 
@@ -92,7 +92,7 @@ Create table OrderDetail
 )
 
 go
-Create table PaymentDetail
+Create table PaymentDetail	  -- insert row at webform
 (
 	PDID varchar(10) Primary Key,
 	OrderID varchar(10) Unique,
@@ -140,7 +140,7 @@ go
 Create table AdminSystem
 (
 	AdminID varchar(10),
-	user varchar(50),
+	users varchar(50),
 	pass varchar(50) ,
 	name varchar(100)
 )
@@ -184,7 +184,7 @@ insert into Warehouse values
 	('G0015', 11)	
 	
 go
-	select * from Accountant
+
 Insert into Accountant values
 	('A0001', 'Joinh William', 'Join12', '12345', 0),
 	('A0002', 'Kio Charles', 'kio', '12345', 0),
@@ -352,11 +352,13 @@ Insert into GoodsReceiptDetail values
 
 
 go
+update Accountant set AName ='kkk' where AID ='A0001'
 --select* from goods
 --select* from Warehouse
 
+select* from Accountant
 select * from agent
-select top 1 AgentID from Agent order by AgentID desc	  2
+select top 1 AgentID from Agent order by AgentID desc	  
 
 
 

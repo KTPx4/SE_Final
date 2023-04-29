@@ -13,6 +13,7 @@ namespace SEFinal.Class
         public string ODate { get; set; }
         public string PaymentID { get; set; }
         public double TotalAmount { get; set; }
+        public int is_Hide { get; set; }    
 
         public C_Order()
         {
@@ -21,15 +22,17 @@ namespace SEFinal.Class
             this.ODate = "";
             this.PaymentID = "";
             this.TotalAmount = 0;
+            this.is_Hide = 0;
         }
 
-        public C_Order(string orderID, string agentID, string oDate, string paymentID, double totalAmount)
+        public C_Order(string orderID, string agentID, string oDate, string paymentID, double totalAmount, int is_HIDE)
         {
             OrderID = orderID;
             AgentID = agentID;
             ODate = oDate;
             PaymentID = paymentID;
             TotalAmount = totalAmount;
+            this.is_Hide = is_Hide;
         }
     }
 }

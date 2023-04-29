@@ -89,6 +89,17 @@ namespace SEFinal.DTA
             return true;
         }
 
+        //function check exists of value and is not hide/deleted
+        public bool is_Exists_data(string table, string field, string id, string field_check)
+        {
+            string s = $"select* from {table} where {field} = '{id}' and {field_check} = 0";
+            DataTable tb = selectQuery(s);
+            if (tb.Rows.Count < 1)
+            {
+                return false;
+            }
+            return true;
+        }
         public DataTable selectTop(string field, string table)
         {
             string s = $"select top 1 {field} from {table} order by {field} desc";

@@ -17,21 +17,21 @@ namespace SEFinal.DTA
             cn = new Connection();
             ac = new C_Accountant();
         }
-        public DTA_Accountant(string aID, string aName, string aUser, string aPass)
+        public DTA_Accountant(string aID, string aName, string aUser, string aPass, int isDel)
         {
             cn = new Connection();
-            ac = new C_Accountant(aID, aName, aUser, aPass);
+            ac = new C_Accountant(aID, aName, aUser, aPass, isDel);
         }
 
         public bool add_()
         {
             bool isExists_id = cn.is_Exists_data("Accountant", "AID", ac.AID);
-            bool isExists_user = cn.is_Exists_data("Accountant", "Auser", ac.AUser);
+            bool isExists_user = cn.is_Exists_data("Accountant", "Auser", ac.AUser); // check unique for user
             if (isExists_id || isExists_user)
             {
                 return false;
             }
-            string s = "insert into Accountant values('" + ac.AID + "', '" + ac.AName + "', '" + ac.AUser + "', '" + ac.APassword + "')";
+            string s = $"insert into Accountant values('{ac.AID}', '{ac.AName}', '{ac.AUser}', '{ac.APassword}', {ac.is_deleted})";
             cn.actionQuery(s);
             return true;
 
@@ -44,7 +44,7 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = "detele from Accountant where AID ='" + ac.AID + "'";
+            string s = $"update Accountant set is_deleted = 1 where AID ='{ac.AID}'"; // hide accountant when delete
             cn.actionQuery(s);
             return true;
         }
@@ -56,14 +56,14 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = "update Accountant set AName='" + ac.AName + "', Auser ='" +ac.AUser+ "',Apass ='" +ac.APassword+"' where AID ='"+ac.AID+"'";
+            string s = $"update Accountant set AName='{ac.AName}', Auser ='{ac.AUser}', Apass ='{ac.APassword}', is_deleted={ac.is_deleted} where AID ='{ac.AID}'";
             cn.actionQuery(s);
             return true;
         }
         
-        public string getNextID_() // return next id in table of db
+        public string getNextID_(string defaultID) // return next id in table of db
         {
-            return cn.getID("AID", "Accountant", "A0001");
+            return cn.getID("AID", "Accountant", defaultID);
         }
         
         public string getID_()

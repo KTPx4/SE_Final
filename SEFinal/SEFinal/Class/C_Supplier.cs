@@ -12,6 +12,7 @@ namespace SEFinal.Class
         public string Name { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public int is_deleted { get; set; }
 
         public C_Supplier()
         {
@@ -19,14 +20,16 @@ namespace SEFinal.Class
             this.Name = "";
             this.Address = "";
             this.Phone = "";
+            this.is_deleted= 0;
         }
 
-        public C_Supplier(string supId, string name, string address, string phone)
+        public C_Supplier(string supId, string name, string address, string phone, int is_deleted)
         {
             SupId = supId;
             Name = name;
             Address = address;
             Phone = phone;
+            this.is_deleted = is_deleted;
         }
     }
 }

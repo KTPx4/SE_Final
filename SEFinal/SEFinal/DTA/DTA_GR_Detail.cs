@@ -30,7 +30,10 @@ namespace SEFinal.DTA
         {
             bool isExists_id = cn.is_Exists_data("GoodsReceiptDetail", "RDID", gr.RDID);
 
-            if (isExists_id)
+            bool isExists_RID = cn.is_Exists_data("GoodsReceipt", "ReceiptID", gr.ReceiptID);// check exists receipt
+            bool isExists_G = cn.is_Exists_data("Goods", "GoodsID", gr.GoodsID, "is_deleted");// check exists goods
+
+            if (isExists_id || !isExists_RID || !isExists_G)
             {
                 return false;
             }
@@ -56,18 +59,21 @@ namespace SEFinal.DTA
         public bool edit_()
         {
             bool isExists_id = cn.is_Exists_data("GoodsReceiptDetail", "RDID", gr.RDID);
-            if (!isExists_id)
+            bool isExists_RID = cn.is_Exists_data("GoodsReceipt", "ReceiptID", gr.ReceiptID);// check exists receipt
+            bool isExists_G = cn.is_Exists_data("Goods", "GoodsID", gr.GoodsID, "is_deleted");// check exists goods
+
+            if (!isExists_id || !isExists_RID || !isExists_G)
             {
                 return false;
             }
-            string s = $"update from GoodsReceiptDetail set ReceiptID ='{gr.ReceiptID}', GoodsID='{gr.GoodsID}', Quan ={gr.Quan}, Amount = {gr.Amount} where RDID ='{gr.RDID}'";
+            string s = $"update  GoodsReceiptDetail set ReceiptID ='{gr.ReceiptID}', GoodsID='{gr.GoodsID}', Quan ={gr.Quan}, Amount = {gr.Amount} where RDID ='{gr.RDID}'";
             cn.actionQuery(s);
             return true;
         }
 
-        public string getNextID_() // return next id of table in db
+        public string getNextID_(string defaultID) // return next id of table in db
         {
-            return cn.getID("RDID", "GoodsReceiptDetail", "GRD0001");
+            return cn.getID("RDID", "GoodsReceiptDetail", defaultID);
         }
 
         public string getID()

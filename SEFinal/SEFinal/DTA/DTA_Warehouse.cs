@@ -57,7 +57,7 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"update from Warehouse set quan={w.Quan} where GoodsID='{w.GoodsID}'";
+            string s = $"update Warehouse set quan={w.Quan} where GoodsID='{w.GoodsID}'";
             cn.actionQuery(s);
             return true;
         }
