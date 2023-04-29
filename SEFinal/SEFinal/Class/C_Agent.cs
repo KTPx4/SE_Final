@@ -14,6 +14,7 @@ namespace SEFinal.Class
         public string Address { get; set; }
         public string User { get; set; }
         public string Pass { get; set; }
+        public int is_deleted { get; set; }
 
         public C_Agent()
         {
@@ -23,9 +24,10 @@ namespace SEFinal.Class
             this.Address = "";
             this.User = "";
             this.Pass = "";
+            this.is_deleted = 0;
         }
 
-        public C_Agent(string agtID, string agtName, string phone, string address, string user, string pass)
+        public C_Agent(string agtID, string agtName, string phone, string address, string user, string pass, int is_deleted)
         {
             this.AgentID = agtID;
             this.AgentName = agtName;
@@ -33,6 +35,7 @@ namespace SEFinal.Class
             this.Address = address;
             this.User = user;
             this.Pass = pass;
+            this.is_deleted = is_deleted;
         }
     }
 }

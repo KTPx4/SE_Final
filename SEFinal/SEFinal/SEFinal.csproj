@@ -58,6 +58,7 @@
     <Compile Include="BUS\BUS_Payment.cs" />
     <Compile Include="BUS\BUS_Supplier.cs" />
     <Compile Include="Class\C_Accountant.cs" />
+    <Compile Include="Class\C_AdminSystem.cs" />
     <Compile Include="Class\C_Agent.cs" />
     <Compile Include="Class\C_P_Details.cs" />
     <Compile Include="Class\C_Supplier.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Class\C_Warehouse.cs" />
     <Compile Include="DTA\Connection.cs" />
     <Compile Include="DTA\DTA_Accountant.cs" />
+    <Compile Include="DTA\DTA_AdminSystem.cs" />
     <Compile Include="DTA\DTA_Agent.cs" />
     <Compile Include="DTA\DTA_GDelivery.cs" />
     <Compile Include="DTA\DTA_Goods.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="DTA\DTA_Order.cs" />
     <Compile Include="DTA\DTA_O_Detail.cs" />
     <Compile Include="DTA\DTA_Payment.cs" />
+    <Compile Include="DTA\DTA_PaymentDetail.cs" />
     <Compile Include="DTA\DTA_Supplier.cs" />
     <Compile Include="DTA\DTA_Warehouse.cs" />
     <Compile Include="frmAgent.cs">
@@ -105,6 +108,12 @@
     <Compile Include="frmGoods.Designer.cs">
       <DependentUpon>frmGoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>

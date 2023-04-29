@@ -18,10 +18,10 @@ namespace SEFinal.DTA
             p = new C_Payment();
         }
 
-        public DTA_Payment(string paymentID, string name)
+        public DTA_Payment(string paymentID, string name, int is_Del)
         {
             cn = new Connection();
-            p = new C_Payment(paymentID, name);
+            p = new C_Payment(paymentID, name, is_Del);
         }
 
         public bool add_()
@@ -32,7 +32,7 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"insert into Payment values('{p.PaymentID}', '{p.Name}')";
+            string s = $"insert into Payment values('{p.PaymentID}', '{p.Name}', {p.is_deleted})";
             cn.actionQuery(s);
             return true;
 
@@ -45,7 +45,7 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"delete from Payment where PaymentID='{p.PaymentID}'";
+            string s = $"update Payment set is_deleted = 1 where PaymentID='{p.PaymentID}'";
             cn.actionQuery(s);
             return true;
         }
@@ -57,14 +57,14 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"update from Payment set Name='{p.Name}' where PaymentID='{p.PaymentID}'";
+            string s = $"update Payment set Name='{p.Name}', is_deleted={p.is_deleted} where PaymentID='{p.PaymentID}'";
             cn.actionQuery(s);
             return true;
         }
 
-        public string getNextID_() // return next id of table in db
+        public string getNextID_(string defaultID) // return next id of table in db
         {
-            return cn.getID("PaymentID", "Payment", "P0001");
+            return cn.getID("PaymentID", "Payment", defaultID);
         }
 
         public string getID()

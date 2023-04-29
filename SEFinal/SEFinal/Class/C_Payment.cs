@@ -10,17 +10,20 @@ namespace SEFinal.Class
     {
         public string PaymentID { get; set; }
         public string Name { get; set; }
+        public int is_deleted { get; set; }
 
         public C_Payment()
         {
             this.PaymentID = "";
             this.Name = "";
+            this.is_deleted= 0;
         }
 
-        public C_Payment(string paymentID, string name)
+        public C_Payment(string paymentID, string name, int is_delete)
         {
-            PaymentID = paymentID;
-            Name = name;
+            this.PaymentID = paymentID;
+            this.Name = name;
+            this.is_deleted= is_delete;
         }
     }
 }

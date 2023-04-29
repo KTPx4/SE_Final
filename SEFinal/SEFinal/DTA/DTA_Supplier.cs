@@ -18,10 +18,10 @@ namespace SEFinal.DTA
             cn = new Connection();
             p = new C_Supplier();
         }
-        public DTA_Supplier(string supId, string name, string address, string phone)
+        public DTA_Supplier(string supId, string name, string address, string phone, int is_deleted)
         {
             cn = new Connection();
-            p = new C_Supplier(supId, name, address, phone);
+            p = new C_Supplier(supId, name, address, phone, is_deleted);
         }
 
         public bool add_()
@@ -32,7 +32,7 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"insert into Supplier values('{p.SupId}', '{p.Name}', '{p.Address}', '{p.Phone}')";
+            string s = $"insert into Supplier values('{p.SupId}', '{p.Name}', '{p.Address}', '{p.Phone}', {p.is_deleted})";
             cn.actionQuery(s);
             return true;
 
@@ -45,7 +45,8 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"delete from Supplier where SupID='{p.SupId}'";
+            string s = $"update Supplier set is_deleted= 1 where SupID='{p.SupId}'";
+
             cn.actionQuery(s);
             return true;
         }
@@ -57,14 +58,14 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"update from Supplier set  Name='{p.Name}', address='{p.Address}', phone='{p.Phone}' where SupID='{p.SupId}'";
+            string s = $"update Supplier set  Name='{p.Name}', address='{p.Address}', phone='{p.Phone}', is_deleted={p.is_deleted} where SupID='{p.SupId}'";
             cn.actionQuery(s);
             return true;
         }
 
-        public string getNextID_() // return next id of table in db
+        public string getNextID_(string defaultID) // return next id of table in db
         {
-            return cn.getID("SupID", "Supplier", "S0001");
+            return cn.getID("SupID", "Supplier", defaultID);
         }
 
         public string getID()

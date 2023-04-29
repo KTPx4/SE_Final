@@ -25,9 +25,9 @@ namespace SEFinal.DTA
 
         public bool add_()
         {
-            bool isExists_id = cn.is_Exists_data("GoodsDelivery", "DeliveryID", gd.DeliveryID);
-            bool isExists_user = cn.is_Exists_data("GoodsDelivery", "OrderID", gd.OrderID);
-            if (isExists_id || isExists_user)
+            bool isExists_id = cn.is_Exists_data("GoodsDelivery", "DeliveryID", gd.DeliveryID); // exists id -> not add new
+            bool isExists_order = cn.is_Exists_data("[Order]", "OrderID", gd.OrderID, "is_Hide");// exists or and not hide
+            if (isExists_id || !isExists_order)
             {
                 return false;
             }
@@ -55,15 +55,27 @@ namespace SEFinal.DTA
             {
                 return false;
             }
-            string s = $"update from GoodsDelivery set OrderID='{gd.OrderID}' , " +
+            string s = $"update GoodsDelivery set OrderID='{gd.OrderID}' , " +
                 $"Employee = '{gd.Employee}' , DeliveryDate = '{gd.DeliveryDate}', status = {gd.Status} where DeliveryID='{gd.DeliveryID}'";
             cn.actionQuery(s);
             return true;
         }
 
-        public string getNextID_() // return next id in db
+        public bool set_Status()
         {
-            return cn.getID("DeliveryID", "GoodsDelivery", "GD0001");
+            bool isExists_id = cn.is_Exists_data("GoodsDelivery", "DeliveryID", gd.DeliveryID);
+            if (!isExists_id)
+            {
+                return false;
+            }
+            string s = $"update GoodsDelivery set status = {gd.Status} where DeliveryID='{gd.DeliveryID}'";
+            cn.actionQuery(s);
+            return true;
+        }
+
+        public string getNextID_(string defaultID) // return next id in db
+        {
+            return cn.getID("DeliveryID", "GoodsDelivery", defaultID);
         }
 
         public string getID()

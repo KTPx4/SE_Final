@@ -22,12 +22,13 @@ namespace SEFinal
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //Style();
+            Style();
         }
 
         public void Style() 
         {
-            foreach (Control ctl in this.Controls)
+            
+            /*foreach (Control ctl in this.Controls)
             {
                 try
                 {
@@ -39,103 +40,104 @@ namespace SEFinal
                 catch (Exception e)
                 {
                 }
-            }
+            }*/
+           
         }
 
-        private void ChildForm(int index)
+        private void open_ChildForm(int index, int tab)
         {
-            foreach (Form c in this.MdiChildren)
+            //foreach (Form c in this.MdiChildren) // close all form is open before open new form
+            //{               
+            //    c.Close();                       
+            //}
+            Form f;
+            if(index == 0)  // Child form is Goods
             {
-               
-                    c.Close();
-                       
+                 f = new frmGoods();             
             }
-       
-            if(index == 0)
+            else if(index == 1)// Child form is Supplier
             {
-                frmGoods f = new frmGoods();
-                f.MdiParent = this;
-                f.Dock = DockStyle.Fill;
-                
-                f.Show();
+                f = new frmSupplier();              
             }
-            else if(index == 1)
+            else if (index == 2) // Child form is Agent (Manage Agent and Update Status Payment)
             {
-                frmSupplier f = new frmSupplier();
-                f.MdiParent = this;
-                f.Dock = DockStyle.Fill;
-              
-                f.Show();
+                f = new frmAgent();               
             }
-            else if (index == 2)
+            else if(index == 3) // Child form is Order( Manage Delivery, Receipt Goods)
             {
-                frmAgent f = new frmAgent();
-                f.MdiParent = this;
-                f.Dock = DockStyle.Fill;
-               
-                f.Show();
+
+                if(tab == 1) // if tab = 1 -> open tab for goods delivery
+                {
+                    f = new frmOrder(1);
+                }
+                else // open tab for goods Receipt
+                {
+                    f = new frmOrder();
+                }
+
             }
-            else if (index == 3)
+            else   // last int is child form for Report
             {
-                frmReport f = new frmReport();
-                f.MdiParent = this;
-                f.Dock = DockStyle.Fill;
-              
-                f.Show();
+                f = new frmReport();               
             }
 
+            //f.MdiParent = this; // set parent of child form is frmMain (this)
+            //f.Dock = DockStyle.Fill; // set full screen of childform when open in parent
+            //f.Show(); // show form
+
+            f.TopLevel = false;
+            f.Visible = true;
+            f.Dock = DockStyle.Fill;
+
+            pnContent.Controls.Clear();
+            pnContent.Controls.Add(f);
+        }  
+      
+
+         
+        private void manageGoodsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            open_ChildForm(0, 0); 
         }
 
-        private void mangeGoodsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void manageSupplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChildForm(0);
-        }
+            open_ChildForm(1, 0);
 
-        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChildForm(1);
         }
 
         private void createAgentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChildForm(2);
-        }
+            open_ChildForm(2, 0);
 
-        private void statusPaymentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChildForm(2);
-        }
-
-        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChildForm(3);
         }
 
         private void goodsReceivedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-        }
-     
+            open_ChildForm(3, 0);
 
-        private void button1_Click_1(object sender, EventArgs e)
+        }
+
+        private void goodsDeliveryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //DTA_Agent ag = new DTA_Agent("Nguyen Van B", "0000101010", "123, 456", "user131", "pass");
-            //if (ag.add_())
-            //{
-            //    MessageBox.Show("add success");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("add failled");
-            //}
-            //MessageBox.Show(ag.getID());
-            MessageBox.Show((new DTA_Agent()).getNextID_());
-            //DTA_Agent ag = new DTA_Agent();
-            //DataTable tb = ag.test();
-            //foreach(DataRow r in tb.Rows)
-            //{
-            //    MessageBox.Show(r[0].ToString());
-            //}
+            open_ChildForm(3, 1);
+
+        }
+
+      
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            open_ChildForm(4, 0);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
