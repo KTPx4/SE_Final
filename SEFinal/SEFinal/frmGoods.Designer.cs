@@ -28,6 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(806, 57);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+=======
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -170,29 +183,41 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(821, 235);
             this.dataGridView1.TabIndex = 0;
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
             // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(848, 500);
+            this.Controls.Add(this.button1);
+=======
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(848, 500);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmGoods";
             this.Text = "Goods";
+<<<<<<< HEAD
+=======
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+<<<<<<< HEAD
+        private System.Windows.Forms.Button button1;
+=======
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -203,5 +228,6 @@
         private System.Windows.Forms.ToolTip toolTipText;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.DataGridView dataGridView1;
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
     }
 }

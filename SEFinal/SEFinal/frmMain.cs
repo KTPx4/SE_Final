@@ -54,6 +54,24 @@ namespace SEFinal
             //    c.Close();                       
             //}
             Form f;
+<<<<<<< HEAD
+            if(index == 0)  // Child form is Goods
+            {
+                 f = new frmGoods();             
+            }
+            else if(index == 1)// Child form is Supplier
+            {
+                f = new frmSupplier();              
+            }
+            else if (index == 2) // Child form is Agent (Manage Agent and Update Status Payment)
+            {
+                f = new frmAgent();               
+            }
+            else if(index == 3) // Child form is Order( Manage Delivery, Receipt Goods)
+            {
+
+                if(tab == 1) // if tab = 1 -> open tab for goods delivery
+=======
             string title = "Manage System";
 
             if(index == 0)  // Child form is Goods
@@ -77,6 +95,7 @@ namespace SEFinal
                 title = "Order Goods";
 
                 if (tab == 1) // if tab = 1 -> open tab for goods delivery
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
                 {
                     f = new frmOrder(1);
                 }
@@ -88,16 +107,22 @@ namespace SEFinal
             }
             else   // last int is child form for Report
             {
+<<<<<<< HEAD
+=======
                 title = "Report";
 
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
                 f = new frmReport();               
             }
 
             //f.MdiParent = this; // set parent of child form is frmMain (this)
             //f.Dock = DockStyle.Fill; // set full screen of childform when open in parent
             //f.Show(); // show form
+<<<<<<< HEAD
+=======
            
             lbTitle.Text = title;
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
 
             f.TopLevel = false;
             f.Visible = true;
@@ -152,6 +177,8 @@ namespace SEFinal
         private void btnMini_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+<<<<<<< HEAD
+=======
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -177,6 +204,7 @@ namespace SEFinal
         private void pnControl_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false;
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
         }
     }
 }

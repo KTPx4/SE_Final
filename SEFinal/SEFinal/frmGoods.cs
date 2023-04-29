@@ -17,6 +17,10 @@ namespace SEFinal
             InitializeComponent();
         }
 
+<<<<<<< HEAD
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+=======
         public void Mouse_Hover(string text, Button b)
         {
            
@@ -83,6 +87,7 @@ namespace SEFinal
         private void btnRefresh_MouseLeave(object sender, EventArgs e)
         {
             Mouse_Leave(btnRefresh);
+>>>>>>> e6387c0c283b234d2341d7f7341c40b8738671fb
 
         }
     }
