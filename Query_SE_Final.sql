@@ -107,7 +107,7 @@ Create table GoodsReceipt
 	ReceiptDate date, 
 	SupID varchar(10), 
 	Employee varchar(10),
-	TotalAmount money,
+	TotalAmount money,			  -- auto insert in winform
 	FOREIGN KEY (SupID) REFERENCES Supplier(SupID),
 	FOREIGN KEY (Employee) REFERENCES Accountant(AID)
 )

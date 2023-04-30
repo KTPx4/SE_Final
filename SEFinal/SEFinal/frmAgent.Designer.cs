@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvViews = new System.Windows.Forms.DataGridView();
             this.grbView = new System.Windows.Forms.GroupBox();
             this.panelTab = new System.Windows.Forms.Panel();
             this.btnStatus = new System.Windows.Forms.Button();
@@ -48,11 +48,6 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAName = new System.Windows.Forms.TextBox();
             this.txtAID = new System.Windows.Forms.TextBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.grbStatus = new System.Windows.Forms.GroupBox();
             this.cbbStatus = new System.Windows.Forms.ComboBox();
             this.cbbANameview = new System.Windows.Forms.ComboBox();
@@ -60,36 +55,41 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.btnRefStatus = new System.Windows.Forms.Button();
             this.btnSaveStatus = new System.Windows.Forms.Button();
             this.btnEditstatus = new System.Windows.Forms.Button();
-            this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).BeginInit();
             this.grbView.SuspendLayout();
             this.panelTab.SuspendLayout();
             this.grbMana.SuspendLayout();
             this.grbStatus.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvViews
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 15);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 222);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvViews.AllowUserToAddRows = false;
+            this.dgvViews.AllowUserToDeleteRows = false;
+            this.dgvViews.AllowUserToOrderColumns = true;
+            this.dgvViews.AllowUserToResizeColumns = false;
+            this.dgvViews.AllowUserToResizeRows = false;
+            this.dgvViews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvViews.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dgvViews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViews.Location = new System.Drawing.Point(6, 15);
+            this.dgvViews.Name = "dgvViews";
+            this.dgvViews.RowHeadersVisible = false;
+            this.dgvViews.Size = new System.Drawing.Size(821, 222);
+            this.dgvViews.TabIndex = 0;
             // 
             // grbView
             // 
-            this.grbView.Controls.Add(this.dataGridView1);
+            this.grbView.Controls.Add(this.dgvViews);
             this.grbView.Location = new System.Drawing.Point(6, 247);
             this.grbView.Name = "grbView";
             this.grbView.Padding = new System.Windows.Forms.Padding(0);
@@ -287,87 +287,6 @@
             this.txtAID.Size = new System.Drawing.Size(124, 28);
             this.txtAID.TabIndex = 11;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackgroundImage = global::SEFinal.Properties.Resources.refresh;
-            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(646, 145);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(39, 42);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
-            this.btnRefresh.MouseHover += new System.EventHandler(this.btnRefresh_MouseHover);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.BackgroundImage = global::SEFinal.Properties.Resources.delete;
-            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(526, 145);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(43, 42);
-            this.btnRemove.TabIndex = 2;
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            this.btnRemove.MouseHover += new System.EventHandler(this.btnRemove_MouseHover);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = global::SEFinal.Properties.Resources.save;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(398, 145);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(45, 42);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            this.btnSave.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackgroundImage = global::SEFinal.Properties.Resources.edit;
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(269, 145);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(41, 42);
-            this.btnEdit.TabIndex = 4;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
-            this.btnEdit.MouseHover += new System.EventHandler(this.btnEdit_MouseHover);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnAdd.BackgroundImage = global::SEFinal.Properties.Resources.add;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(152, 145);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(56, 51);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            this.btnAdd.MouseHover += new System.EventHandler(this.btnAdd_MouseHover);
-            // 
             // grbStatus
             // 
             this.grbStatus.Controls.Add(this.cbbStatus);
@@ -482,6 +401,87 @@
             this.btnEditstatus.TabIndex = 4;
             this.btnEditstatus.UseVisualStyleBackColor = true;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackgroundImage = global::SEFinal.Properties.Resources.refresh;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Location = new System.Drawing.Point(646, 145);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(39, 42);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
+            this.btnRefresh.MouseHover += new System.EventHandler(this.btnRefresh_MouseHover);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackgroundImage = global::SEFinal.Properties.Resources.delete;
+            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Location = new System.Drawing.Point(526, 145);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(43, 42);
+            this.btnRemove.TabIndex = 2;
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            this.btnRemove.MouseHover += new System.EventHandler(this.btnRemove_MouseHover);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = global::SEFinal.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(398, 145);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(45, 42);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            this.btnSave.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackgroundImage = global::SEFinal.Properties.Resources.edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Location = new System.Drawing.Point(269, 145);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(41, 42);
+            this.btnEdit.TabIndex = 4;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
+            this.btnEdit.MouseHover += new System.EventHandler(this.btnEdit_MouseHover);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnAdd.BackgroundImage = global::SEFinal.Properties.Resources.add;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(152, 145);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(56, 51);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
+            this.btnAdd.MouseHover += new System.EventHandler(this.btnAdd_MouseHover);
+            // 
             // frmAgent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,7 +497,7 @@
             this.Name = "frmAgent";
             this.Text = "frmAgent";
             this.Load += new System.EventHandler(this.frmAgent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).EndInit();
             this.grbView.ResumeLayout(false);
             this.panelTab.ResumeLayout(false);
             this.grbMana.ResumeLayout(false);
@@ -510,7 +510,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvViews;
         private System.Windows.Forms.GroupBox grbView;
         private System.Windows.Forms.Panel panelTab;
         private System.Windows.Forms.Button btnStatus;
