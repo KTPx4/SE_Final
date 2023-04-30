@@ -226,5 +226,14 @@
   <ItemGroup>
     <None Include="Resources\expand-arrows.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

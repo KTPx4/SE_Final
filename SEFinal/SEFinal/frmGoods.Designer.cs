@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grbView = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvViews = new System.Windows.Forms.DataGridView();
             this.grbInputGoods = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,28 +38,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQuan = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtUnit = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.grbControl = new System.Windows.Forms.GroupBox();
-            this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.grbView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).BeginInit();
             this.grbInputGoods.SuspendLayout();
             this.grbControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbView
             // 
-            this.grbView.Controls.Add(this.dataGridView1);
+            this.grbView.Controls.Add(this.dgvViews);
             this.grbView.Location = new System.Drawing.Point(6, 245);
             this.grbView.Name = "grbView";
             this.grbView.Size = new System.Drawing.Size(833, 250);
@@ -67,21 +67,21 @@
             this.grbView.TabStop = false;
             this.grbView.Paint += new System.Windows.Forms.PaintEventHandler(this.grbView_Paint);
             // 
-            // dataGridView1
+            // dgvViews
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 9);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(821, 235);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvViews.AllowUserToAddRows = false;
+            this.dgvViews.AllowUserToDeleteRows = false;
+            this.dgvViews.AllowUserToOrderColumns = true;
+            this.dgvViews.AllowUserToResizeColumns = false;
+            this.dgvViews.AllowUserToResizeRows = false;
+            this.dgvViews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvViews.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dgvViews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViews.Location = new System.Drawing.Point(6, 9);
+            this.dgvViews.Name = "dgvViews";
+            this.dgvViews.RowHeadersVisible = false;
+            this.dgvViews.Size = new System.Drawing.Size(821, 235);
+            this.dgvViews.TabIndex = 0;
             // 
             // grbInputGoods
             // 
@@ -91,12 +91,12 @@
             this.grbInputGoods.Controls.Add(this.label2);
             this.grbInputGoods.Controls.Add(this.label4);
             this.grbInputGoods.Controls.Add(this.label1);
-            this.grbInputGoods.Controls.Add(this.textBox6);
-            this.grbInputGoods.Controls.Add(this.textBox5);
-            this.grbInputGoods.Controls.Add(this.textBox3);
-            this.grbInputGoods.Controls.Add(this.textBox4);
-            this.grbInputGoods.Controls.Add(this.textBox2);
-            this.grbInputGoods.Controls.Add(this.textBox1);
+            this.grbInputGoods.Controls.Add(this.txtQuan);
+            this.grbInputGoods.Controls.Add(this.txtPrice);
+            this.grbInputGoods.Controls.Add(this.txtCountry);
+            this.grbInputGoods.Controls.Add(this.txtUnit);
+            this.grbInputGoods.Controls.Add(this.txtName);
+            this.grbInputGoods.Controls.Add(this.txtID);
             this.grbInputGoods.Location = new System.Drawing.Point(6, 6);
             this.grbInputGoods.Name = "grbInputGoods";
             this.grbInputGoods.Size = new System.Drawing.Size(833, 142);
@@ -164,59 +164,59 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Goods ID";
             // 
-            // textBox6
+            // txtQuan
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(675, 19);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(124, 28);
-            this.textBox6.TabIndex = 0;
+            this.txtQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuan.Location = new System.Drawing.Point(675, 19);
+            this.txtQuan.Multiline = true;
+            this.txtQuan.Name = "txtQuan";
+            this.txtQuan.Size = new System.Drawing.Size(124, 28);
+            this.txtQuan.TabIndex = 0;
             // 
-            // textBox5
+            // txtPrice
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(675, 82);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 28);
-            this.textBox5.TabIndex = 0;
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(675, 82);
+            this.txtPrice.Multiline = true;
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(124, 28);
+            this.txtPrice.TabIndex = 0;
             // 
-            // textBox3
+            // txtCountry
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(387, 82);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 28);
-            this.textBox3.TabIndex = 0;
+            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCountry.Location = new System.Drawing.Point(387, 82);
+            this.txtCountry.Multiline = true;
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(124, 28);
+            this.txtCountry.TabIndex = 0;
             // 
-            // textBox4
+            // txtUnit
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(102, 82);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(124, 28);
-            this.textBox4.TabIndex = 0;
+            this.txtUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnit.Location = new System.Drawing.Point(102, 82);
+            this.txtUnit.Multiline = true;
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.Size = new System.Drawing.Size(124, 28);
+            this.txtUnit.TabIndex = 0;
             // 
-            // textBox2
+            // txtName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(387, 19);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 28);
-            this.textBox2.TabIndex = 0;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(387, 19);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(124, 28);
+            this.txtName.TabIndex = 0;
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(102, 19);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(124, 28);
-            this.textBox1.TabIndex = 0;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(102, 19);
+            this.txtID.Multiline = true;
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(124, 28);
+            this.txtID.TabIndex = 0;
             // 
             // grbControl
             // 
@@ -328,7 +328,7 @@
             this.Text = "Goods";
             this.Load += new System.EventHandler(this.frmGoods_Load);
             this.grbView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).EndInit();
             this.grbInputGoods.ResumeLayout(false);
             this.grbInputGoods.PerformLayout();
             this.grbControl.ResumeLayout(false);
@@ -347,18 +347,18 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ToolTip toolTipText;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvViews;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCountry;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtQuan;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtUnit;
     }
 }
