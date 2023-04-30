@@ -205,5 +205,26 @@
   <ItemGroup>
     <None Include="Resources\cross.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logov2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logov3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bunny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-to-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand-arrows.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

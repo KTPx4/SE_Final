@@ -30,53 +30,99 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnControl = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.pnContent = new System.Windows.Forms.Panel();
             this.menutrip = new System.Windows.Forms.MenuStrip();
+            this.goodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageGoodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goodsReceivedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goodsDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnMini = new System.Windows.Forms.Button();
+            this.ptbContent = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMini = new System.Windows.Forms.Button();
             this.pnControl.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.pnContent.SuspendLayout();
             this.menutrip.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbContent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnControl
             // 
             this.pnControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(38)))));
+            this.pnControl.Controls.Add(this.panel3);
+            this.pnControl.Controls.Add(this.panel2);
             this.pnControl.Controls.Add(this.panel1);
-            this.pnControl.Controls.Add(this.btnMini);
-            this.pnControl.Controls.Add(this.btnClose);
             this.pnControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnControl.Location = new System.Drawing.Point(0, 0);
             this.pnControl.Name = "pnControl";
-            this.pnControl.Size = new System.Drawing.Size(929, 49);
+            this.pnControl.Size = new System.Drawing.Size(931, 59);
             this.pnControl.TabIndex = 2;
             this.pnControl.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.pnControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseDown);
             this.pnControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseMove);
             this.pnControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseUp);
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(83, 59);
+            this.panel3.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnClose);
+            this.panel2.Controls.Add(this.btnMini);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(830, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(101, 59);
+            this.panel2.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lbTitle);
+            this.panel1.Location = new System.Drawing.Point(416, 11);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(211, 39);
+            this.panel1.TabIndex = 4;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseUp);
+            // 
             // lbTitle
             // 
+            this.lbTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(33)))), ((int)(((byte)(136)))));
-            this.lbTitle.Location = new System.Drawing.Point(20, 6);
+            this.lbTitle.Location = new System.Drawing.Point(13, 6);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(180, 25);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "Manage System";
+            this.lbTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseDown);
+            this.lbTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseMove);
+            this.lbTitle.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseUp);
             // 
             // toolStripContainer1
             // 
@@ -86,11 +132,11 @@
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pnContent);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.menutrip);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(929, 500);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(931, 500);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer1.Location = new System.Drawing.Point(0, 49);
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 59);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(929, 500);
+            this.toolStripContainer1.Size = new System.Drawing.Size(931, 500);
             this.toolStripContainer1.TabIndex = 3;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
@@ -98,11 +144,12 @@
             // pnContent
             // 
             this.pnContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.pnContent.Controls.Add(this.ptbContent);
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnContent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnContent.Location = new System.Drawing.Point(83, 0);
             this.pnContent.Name = "pnContent";
-            this.pnContent.Size = new System.Drawing.Size(846, 500);
+            this.pnContent.Size = new System.Drawing.Size(848, 500);
             this.pnContent.TabIndex = 2;
             // 
             // menutrip
@@ -123,6 +170,17 @@
             this.menutrip.Size = new System.Drawing.Size(83, 500);
             this.menutrip.TabIndex = 1;
             this.menutrip.Text = "menuStrip1";
+            // 
+            // goodsToolStripMenuItem
+            // 
+            this.goodsToolStripMenuItem.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.goodsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(33)))), ((int)(((byte)(136)))));
+            this.goodsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.goodsToolStripMenuItem.Name = "goodsToolStripMenuItem";
+            this.goodsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
+            this.goodsToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
+            this.goodsToolStripMenuItem.Text = "Goods";
+            this.goodsToolStripMenuItem.Click += new System.EventHandler(this.manageGoodsToolStripMenuItem1_Click);
             // 
             // supplierToolStripMenuItem
             // 
@@ -148,9 +206,6 @@
             // 
             // manageGoodsToolStripMenuItem
             // 
-            this.manageGoodsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.goodsReceivedToolStripMenuItem,
-            this.goodsDeliveryToolStripMenuItem});
             this.manageGoodsToolStripMenuItem.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageGoodsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(33)))), ((int)(((byte)(136)))));
             this.manageGoodsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
@@ -158,20 +213,7 @@
             this.manageGoodsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
             this.manageGoodsToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
             this.manageGoodsToolStripMenuItem.Text = "Order";
-            // 
-            // goodsReceivedToolStripMenuItem
-            // 
-            this.goodsReceivedToolStripMenuItem.Name = "goodsReceivedToolStripMenuItem";
-            this.goodsReceivedToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.goodsReceivedToolStripMenuItem.Text = "Goods Received";
-            this.goodsReceivedToolStripMenuItem.Click += new System.EventHandler(this.goodsReceivedToolStripMenuItem_Click);
-            // 
-            // goodsDeliveryToolStripMenuItem
-            // 
-            this.goodsDeliveryToolStripMenuItem.Name = "goodsDeliveryToolStripMenuItem";
-            this.goodsDeliveryToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.goodsDeliveryToolStripMenuItem.Text = "Goods Delivery";
-            this.goodsDeliveryToolStripMenuItem.Click += new System.EventHandler(this.goodsDeliveryToolStripMenuItem_Click);
+            this.manageGoodsToolStripMenuItem.Click += new System.EventHandler(this.goodsReceivedToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
@@ -184,31 +226,28 @@
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
-            // goodsToolStripMenuItem
+            // ptbContent
             // 
-            this.goodsToolStripMenuItem.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goodsToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(33)))), ((int)(((byte)(136)))));
-            this.goodsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.goodsToolStripMenuItem.Name = "goodsToolStripMenuItem";
-            this.goodsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
-            this.goodsToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
-            this.goodsToolStripMenuItem.Text = "Goods";
-            this.goodsToolStripMenuItem.Click += new System.EventHandler(this.manageGoodsToolStripMenuItem1_Click);
+            this.ptbContent.Image = global::SEFinal.Properties.Resources.bunny;
+            this.ptbContent.Location = new System.Drawing.Point(305, 136);
+            this.ptbContent.Name = "ptbContent";
+            this.ptbContent.Size = new System.Drawing.Size(274, 230);
+            this.ptbContent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbContent.TabIndex = 0;
+            this.ptbContent.TabStop = false;
             // 
-            // btnMini
+            // pictureBox1
             // 
-            this.btnMini.BackColor = System.Drawing.Color.Transparent;
-            this.btnMini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMini.BackgroundImage")));
-            this.btnMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMini.FlatAppearance.BorderSize = 0;
-            this.btnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
-            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMini.Location = new System.Drawing.Point(844, 7);
-            this.btnMini.Name = "btnMini";
-            this.btnMini.Size = new System.Drawing.Size(39, 31);
-            this.btnMini.TabIndex = 3;
-            this.btnMini.UseVisualStyleBackColor = false;
-            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::SEFinal.Properties.Resources.logov3;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(83, 59);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnClose
             // 
@@ -218,31 +257,38 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(889, 7);
+            this.btnClose.Location = new System.Drawing.Point(58, 15);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 31);
             this.btnClose.TabIndex = 2;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel1
+            // btnMini
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.Controls.Add(this.lbTitle);
-            this.panel1.Location = new System.Drawing.Point(425, 7);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(292, 39);
-            this.panel1.TabIndex = 4;
+            this.btnMini.BackColor = System.Drawing.Color.Transparent;
+            this.btnMini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMini.BackgroundImage")));
+            this.btnMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMini.FlatAppearance.BorderSize = 0;
+            this.btnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMini.Location = new System.Drawing.Point(13, 15);
+            this.btnMini.Name = "btnMini";
+            this.btnMini.Size = new System.Drawing.Size(39, 31);
+            this.btnMini.TabIndex = 3;
+            this.btnMini.UseVisualStyleBackColor = false;
+            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(929, 549);
+            this.ClientSize = new System.Drawing.Size(931, 559);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.pnControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmMain";
@@ -251,14 +297,19 @@
             this.Text = "Accountant -  Nhớ siawr logo";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnControl.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.pnContent.ResumeLayout(false);
             this.menutrip.ResumeLayout(false);
             this.menutrip.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbContent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,11 +325,13 @@
         private System.Windows.Forms.ToolStripMenuItem supplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageAgentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageGoodsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem goodsReceivedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem goodsDeliveryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.Panel pnContent;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbContent;
     }
 }
 

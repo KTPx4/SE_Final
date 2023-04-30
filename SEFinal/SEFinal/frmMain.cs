@@ -30,7 +30,7 @@ namespace SEFinal
 
         public void Style() 
         {
-            
+        
             /*foreach (Control ctl in this.Controls)
             {
                 try
@@ -44,7 +44,7 @@ namespace SEFinal
                 {
                 }
             }*/
-           
+
         }
 
         private void open_ChildForm(int index, int tab)
@@ -177,6 +177,13 @@ namespace SEFinal
         private void pnControl_MouseUp(object sender, MouseEventArgs e)
         {
             _dragging = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            lbTitle.Text = "Manage System";
+            pnContent.Controls.Clear();
+            pnContent.Controls.Add(ptbContent);
         }
     }
 }
