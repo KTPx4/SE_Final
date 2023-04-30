@@ -28,65 +28,271 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.grbView = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.grbControl = new System.Windows.Forms.GroupBox();
+            this.grbInputGoods = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSupaddr = new System.Windows.Forms.TextBox();
+            this.txtSupphone = new System.Windows.Forms.TextBox();
+            this.txtSupName = new System.Windows.Forms.TextBox();
+            this.txtSupID = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.grbView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.grbControl.SuspendLayout();
+            this.grbInputGoods.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // grbView
+            // 
+            this.grbView.Controls.Add(this.dataGridView1);
+            this.grbView.Location = new System.Drawing.Point(6, 245);
+            this.grbView.Name = "grbView";
+            this.grbView.Padding = new System.Windows.Forms.Padding(0);
+            this.grbView.Size = new System.Drawing.Size(836, 241);
+            this.grbView.TabIndex = 3;
+            this.grbView.TabStop = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 9);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(821, 235);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // grbControl
+            // 
+            this.grbControl.Controls.Add(this.btnRefresh);
+            this.grbControl.Controls.Add(this.btnRemove);
+            this.grbControl.Controls.Add(this.btnSave);
+            this.grbControl.Controls.Add(this.btnEdit);
+            this.grbControl.Controls.Add(this.btnAdd);
+            this.grbControl.Location = new System.Drawing.Point(51, 154);
+            this.grbControl.Name = "grbControl";
+            this.grbControl.Size = new System.Drawing.Size(754, 85);
+            this.grbControl.TabIndex = 4;
+            this.grbControl.TabStop = false;
+            // 
+            // grbInputGoods
+            // 
+            this.grbInputGoods.Controls.Add(this.label6);
+            this.grbInputGoods.Controls.Add(this.label2);
+            this.grbInputGoods.Controls.Add(this.label4);
+            this.grbInputGoods.Controls.Add(this.label1);
+            this.grbInputGoods.Controls.Add(this.txtSupaddr);
+            this.grbInputGoods.Controls.Add(this.txtSupphone);
+            this.grbInputGoods.Controls.Add(this.txtSupName);
+            this.grbInputGoods.Controls.Add(this.txtSupID);
+            this.grbInputGoods.Location = new System.Drawing.Point(6, 6);
+            this.grbInputGoods.Name = "grbInputGoods";
+            this.grbInputGoods.Size = new System.Drawing.Size(833, 142);
+            this.grbInputGoods.TabIndex = 5;
+            this.grbInputGoods.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(446, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Address";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(435, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Supplier Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(177, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Phone";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(307, 124);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(169, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "supplier";
+            this.label1.Text = "Supplier ID";
             // 
-            // dataGridView1
+            // txtSupaddr
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 214);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(826, 275);
-            this.dataGridView1.TabIndex = 2;
+            this.txtSupaddr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupaddr.Location = new System.Drawing.Point(514, 88);
+            this.txtSupaddr.Multiline = true;
+            this.txtSupaddr.Name = "txtSupaddr";
+            this.txtSupaddr.Size = new System.Drawing.Size(158, 28);
+            this.txtSupaddr.TabIndex = 0;
             // 
-            // button1
+            // txtSupphone
             // 
-            this.button1.Location = new System.Drawing.Point(445, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtSupphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupphone.Location = new System.Drawing.Point(229, 88);
+            this.txtSupphone.Multiline = true;
+            this.txtSupphone.Name = "txtSupphone";
+            this.txtSupphone.Size = new System.Drawing.Size(158, 28);
+            this.txtSupphone.TabIndex = 0;
+            // 
+            // txtSupName
+            // 
+            this.txtSupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupName.Location = new System.Drawing.Point(514, 25);
+            this.txtSupName.Multiline = true;
+            this.txtSupName.Name = "txtSupName";
+            this.txtSupName.Size = new System.Drawing.Size(158, 28);
+            this.txtSupName.TabIndex = 0;
+            // 
+            // txtSupID
+            // 
+            this.txtSupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSupID.Location = new System.Drawing.Point(229, 25);
+            this.txtSupID.Multiline = true;
+            this.txtSupID.Name = "txtSupID";
+            this.txtSupID.Size = new System.Drawing.Size(158, 28);
+            this.txtSupID.TabIndex = 0;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackgroundImage = global::SEFinal.Properties.Resources.refresh;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Location = new System.Drawing.Point(606, 23);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(39, 42);
+            this.btnRefresh.TabIndex = 0;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackgroundImage = global::SEFinal.Properties.Resources.delete;
+            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Location = new System.Drawing.Point(486, 23);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(43, 42);
+            this.btnRemove.TabIndex = 0;
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = global::SEFinal.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(358, 23);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(45, 42);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackgroundImage = global::SEFinal.Properties.Resources.edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Location = new System.Drawing.Point(229, 23);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(41, 42);
+            this.btnEdit.TabIndex = 0;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.btnAdd.BackgroundImage = global::SEFinal.Properties.Resources.add;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(112, 23);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(56, 51);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // frmSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(848, 500);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.grbControl);
+            this.Controls.Add(this.grbInputGoods);
+            this.Controls.Add(this.grbView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSupplier";
             this.Text = "frmSupplier";
+            this.grbView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.grbControl.ResumeLayout(false);
+            this.grbInputGoods.ResumeLayout(false);
+            this.grbInputGoods.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox grbView;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox grbControl;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.GroupBox grbInputGoods;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtSupaddr;
+        private System.Windows.Forms.TextBox txtSupphone;
+        private System.Windows.Forms.TextBox txtSupName;
+        private System.Windows.Forms.TextBox txtSupID;
     }
 }
