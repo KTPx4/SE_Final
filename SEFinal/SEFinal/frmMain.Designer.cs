@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMini = new System.Windows.Forms.Button();
@@ -41,6 +41,7 @@
             this.pnContent = new System.Windows.Forms.Panel();
             this.ptbContent = new System.Windows.Forms.PictureBox();
             this.menutrip = new System.Windows.Forms.MenuStrip();
+            this.tmiAccountant = new System.Windows.Forms.ToolStripMenuItem();
             this.goodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,7 @@
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnControl.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -67,7 +68,7 @@
             this.pnControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnControl.Location = new System.Drawing.Point(0, 0);
             this.pnControl.Name = "pnControl";
-            this.pnControl.Size = new System.Drawing.Size(931, 59);
+            this.pnControl.Size = new System.Drawing.Size(1018, 59);
             this.pnControl.TabIndex = 2;
             this.pnControl.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.pnControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseDown);
@@ -76,32 +77,33 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.ptbLogo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(83, 59);
+            this.panel3.Size = new System.Drawing.Size(113, 59);
             this.panel3.TabIndex = 4;
             // 
-            // pictureBox1
+            // ptbLogo
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::SEFinal.Properties.Resources.logov3;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 59);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.ptbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ptbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbLogo.Image = global::SEFinal.Properties.Resources.logov3;
+            this.ptbLogo.Location = new System.Drawing.Point(0, 0);
+            this.ptbLogo.Name = "ptbLogo";
+            this.ptbLogo.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.ptbLogo.Size = new System.Drawing.Size(113, 59);
+            this.ptbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbLogo.TabIndex = 0;
+            this.ptbLogo.TabStop = false;
+            this.ptbLogo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Controls.Add(this.btnMini);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(830, 0);
+            this.panel2.Location = new System.Drawing.Point(917, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(101, 59);
             this.panel2.TabIndex = 4;
@@ -144,7 +146,7 @@
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Location = new System.Drawing.Point(416, 11);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 39);
+            this.panel1.Size = new System.Drawing.Size(298, 39);
             this.panel1.TabIndex = 4;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnControl_MouseMove);
@@ -175,11 +177,11 @@
             this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pnContent);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.menutrip);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(931, 500);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1018, 500);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 59);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(931, 500);
+            this.toolStripContainer1.Size = new System.Drawing.Size(1018, 500);
             this.toolStripContainer1.TabIndex = 3;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
@@ -189,11 +191,11 @@
             this.pnContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.pnContent.Controls.Add(this.ptbContent);
             this.pnContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContent.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnContent.Location = new System.Drawing.Point(83, 0);
+            this.pnContent.Location = new System.Drawing.Point(170, 0);
             this.pnContent.Name = "pnContent";
             this.pnContent.Size = new System.Drawing.Size(848, 500);
             this.pnContent.TabIndex = 2;
+            this.pnContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContent_Paint);
             // 
             // ptbContent
             // 
@@ -211,6 +213,7 @@
             this.menutrip.Dock = System.Windows.Forms.DockStyle.Left;
             this.menutrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menutrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tmiAccountant,
             this.goodsToolStripMenuItem,
             this.supplierToolStripMenuItem,
             this.manageAgentToolStripMenuItem,
@@ -220,9 +223,20 @@
             this.menutrip.Margin = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.menutrip.Name = "menutrip";
             this.menutrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menutrip.Size = new System.Drawing.Size(83, 500);
+            this.menutrip.Size = new System.Drawing.Size(170, 500);
             this.menutrip.TabIndex = 1;
             this.menutrip.Text = "menuStrip1";
+            // 
+            // tmiAccountant
+            // 
+            this.tmiAccountant.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tmiAccountant.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(33)))), ((int)(((byte)(136)))));
+            this.tmiAccountant.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.tmiAccountant.Name = "tmiAccountant";
+            this.tmiAccountant.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
+            this.tmiAccountant.Size = new System.Drawing.Size(161, 42);
+            this.tmiAccountant.Text = "Manage Accountant";
+            this.tmiAccountant.Click += new System.EventHandler(this.tmiAccountant_Click);
             // 
             // goodsToolStripMenuItem
             // 
@@ -231,7 +245,7 @@
             this.goodsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.goodsToolStripMenuItem.Name = "goodsToolStripMenuItem";
             this.goodsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
-            this.goodsToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
+            this.goodsToolStripMenuItem.Size = new System.Drawing.Size(161, 42);
             this.goodsToolStripMenuItem.Text = "Goods";
             this.goodsToolStripMenuItem.Click += new System.EventHandler(this.manageGoodsToolStripMenuItem1_Click);
             // 
@@ -242,7 +256,7 @@
             this.supplierToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
             this.supplierToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(161, 42);
             this.supplierToolStripMenuItem.Text = "Supplier";
             this.supplierToolStripMenuItem.Click += new System.EventHandler(this.manageSupplierToolStripMenuItem_Click);
             // 
@@ -253,7 +267,7 @@
             this.manageAgentToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.manageAgentToolStripMenuItem.Name = "manageAgentToolStripMenuItem";
             this.manageAgentToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
-            this.manageAgentToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
+            this.manageAgentToolStripMenuItem.Size = new System.Drawing.Size(161, 42);
             this.manageAgentToolStripMenuItem.Text = "Agent";
             this.manageAgentToolStripMenuItem.Click += new System.EventHandler(this.createAgentToolStripMenuItem_Click);
             // 
@@ -264,7 +278,7 @@
             this.manageGoodsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.manageGoodsToolStripMenuItem.Name = "manageGoodsToolStripMenuItem";
             this.manageGoodsToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
-            this.manageGoodsToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
+            this.manageGoodsToolStripMenuItem.Size = new System.Drawing.Size(161, 42);
             this.manageGoodsToolStripMenuItem.Text = "Order";
             this.manageGoodsToolStripMenuItem.Click += new System.EventHandler(this.goodsReceivedToolStripMenuItem_Click);
             // 
@@ -275,7 +289,7 @@
             this.reportToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 10, 4, 10);
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(74, 42);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(161, 42);
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
@@ -284,7 +298,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(931, 559);
+            this.ClientSize = new System.Drawing.Size(1018, 559);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.pnControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -298,7 +312,7 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnControl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -330,8 +344,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbLogo;
         private System.Windows.Forms.PictureBox ptbContent;
+        private System.Windows.Forms.ToolStripMenuItem tmiAccountant;
     }
 }
 

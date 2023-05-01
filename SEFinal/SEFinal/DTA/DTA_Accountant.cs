@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SEFinal.DTA
 {
@@ -23,6 +24,16 @@ namespace SEFinal.DTA
             ac = new C_Accountant(aID, aName, aUser, aPass, isDel);
         }
 
+        public bool is_Exists_()
+        {
+            bool isExists_id = cn.is_Exists_data("Accountant", "AID", ac.AID);
+            bool isExists_user = cn.is_Exists_data("Accountant", "Auser", ac.AUser); // check unique for user
+            if(isExists_id || isExists_user)
+            {
+                return true;
+            }
+            return false;
+        }
         public bool add_()
         {
             bool isExists_id = cn.is_Exists_data("Accountant", "AID", ac.AID);
@@ -52,7 +63,8 @@ namespace SEFinal.DTA
         public bool edit_()
         {
             bool isExists = cn.is_Exists_data("Accountant", "AID", ac.AID);
-            if (!isExists)
+            bool isExists_user = cn.is_Exists_data("Accountant", "Auser", ac.AUser);
+            if (!isExists || isExists_user)
             {
                 return false;
             }
@@ -60,7 +72,19 @@ namespace SEFinal.DTA
             cn.actionQuery(s);
             return true;
         }
-        
+
+        public bool update_status(string fieldID, string id, string fieldStatus, int status)
+        {
+            bool isExists = cn.is_Exists_data("Accountant", "AID", id);
+            if (!isExists)
+            {
+                return false;
+            }
+            string s = $"update Accountant set {fieldStatus}='{status}' where {fieldID}='{id}'"; 
+            cn.actionQuery(s);
+            return true;
+        }
+
         public string getNextID_(string defaultID) // return next id in table of db
         {
             return cn.getID("AID", "Accountant", defaultID);
@@ -69,6 +93,15 @@ namespace SEFinal.DTA
         public string getID_()
         {
             return ac.AID;
+        }
+        public string getUser_()
+        {
+            return ac.AUser;
+        }
+
+        public string getPass_()
+        {
+            return ac.APassword;
         }
 
         public string is_Accountant() // check accountant is true user and pass
@@ -83,6 +116,54 @@ namespace SEFinal.DTA
             {
                 return tb.Rows[0][0].ToString();
             }
+        }
+
+        public string ID_from_User_Pass()
+        {
+            string s = "select AID from Accountant where Auser='" + ac.AUser + "' and Apass = '" + ac.APassword + "'";
+            DataTable tb = cn.selectQuery(s);
+            if (tb.Rows.Count < 1)
+            {
+                return "";
+            }
+            else
+            {
+                return tb.Rows[0][0].ToString();
+            }
+        }   
+
+        public string ID_from_User()
+        {
+            string s = "select AID from Accountant where Auser='" + ac.AUser + "'";
+            DataTable tb = cn.selectQuery(s);
+            if (tb.Rows.Count < 1)
+            {
+                return "";
+            }
+            else
+            {
+                return tb.Rows[0][0].ToString();
+            }
+        }
+
+        public bool is_old_Accountant() // check account is status is deleted
+        {
+            //MessageBox.Show("" + ac.AName + " " + ac.AUser + " " + ac.APassword);
+            string s = $"select * from Accountant where AName='{ac.AName}' and Auser='{ac.AUser}' and Apass='{ac.APassword}' and is_deleted= 1";
+            DataTable tb = cn.selectQuery(s);
+            if (tb.Rows.Count < 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public DataTable Query(string s)
+        {
+            return cn.selectQuery(s);
         }
     }
 }

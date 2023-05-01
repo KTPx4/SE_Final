@@ -1,9 +1,11 @@
 ﻿using SEFinal.Class;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SEFinal.DTA
 {
@@ -70,10 +72,46 @@ namespace SEFinal.DTA
         {
             return cn.getID("GoodsID", "Goods", defaultID);
         }
-
+        public void setID(string id)
+        {
+            gs.GoodsID= id;
+        }
         public string getID()
         {
             return gs.GoodsID;
+        }
+        public string getName()
+        {
+            return gs.GoodsName;
+        }
+        public DataTable Query(string s)
+        {
+            return cn.selectQuery(s);
+        }
+        public void QueryAction(string s)
+        {
+            cn.actionQuery(s);
+            
+        }
+
+        public bool isExists()
+        {
+            return cn.is_Exists_data("Goods", "GoodsID", gs.GoodsID);
+        
+        }
+        public bool is_old_()
+        {
+            //MessageBox.Show("" + ac.AName + " " + ac.AUser + " " + ac.APassword);
+            string s = $"select * from Goods where GoodsName='{gs.GoodsName}' and is_deleted= 1";
+            DataTable tb = cn.selectQuery(s);
+            if (tb.Rows.Count < 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

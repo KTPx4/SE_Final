@@ -57,7 +57,7 @@ namespace SEFinal.DTA
 
         }
 
-        public  void actionQuery(string sql)
+        public void actionQuery(string sql)
         {
             connect();
 

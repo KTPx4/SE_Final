@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\BUS_Acoountant.cs" />
+    <Compile Include="BUS\BUS_AdminSystem.cs" />
     <Compile Include="BUS\BUS_Agent.cs" />
     <Compile Include="BUS\BUS_GDelivery.cs" />
     <Compile Include="BUS\BUS_GD_Detail.cs" />
@@ -84,6 +85,12 @@
     <Compile Include="DTA\DTA_PaymentDetail.cs" />
     <Compile Include="DTA\DTA_Supplier.cs" />
     <Compile Include="DTA\DTA_Warehouse.cs" />
+    <Compile Include="frmAccountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccountant.Designer.cs">
+      <DependentUpon>frmAccountant.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAgent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +135,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViews.Designer.cs">
+      <DependentUpon>frmViews.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAccountant.resx">
+      <DependentUpon>frmAccountant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAgent.resx">
       <DependentUpon>frmAgent.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +175,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="frmViews.resx">
+      <DependentUpon>frmViews.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

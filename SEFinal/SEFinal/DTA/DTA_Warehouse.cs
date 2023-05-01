@@ -61,6 +61,10 @@ namespace SEFinal.DTA
             cn.actionQuery(s);
             return true;
         }
+        public void setID(string id)
+        {
+            w.GoodsID = id;
+        }
 
      
     }

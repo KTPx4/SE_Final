@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.grbView = new System.Windows.Forms.GroupBox();
             this.dgvViews = new System.Windows.Forms.DataGridView();
-            this.grbInputGoods = new System.Windows.Forms.GroupBox();
+            this.grbInput = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.grbView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).BeginInit();
-            this.grbInputGoods.SuspendLayout();
+            this.grbInput.SuspendLayout();
             this.grbControl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,27 +82,28 @@
             this.dgvViews.RowHeadersVisible = false;
             this.dgvViews.Size = new System.Drawing.Size(821, 235);
             this.dgvViews.TabIndex = 0;
+            this.dgvViews.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViews_CellClick);
             // 
-            // grbInputGoods
+            // grbInput
             // 
-            this.grbInputGoods.Controls.Add(this.label6);
-            this.grbInputGoods.Controls.Add(this.label3);
-            this.grbInputGoods.Controls.Add(this.label5);
-            this.grbInputGoods.Controls.Add(this.label2);
-            this.grbInputGoods.Controls.Add(this.label4);
-            this.grbInputGoods.Controls.Add(this.label1);
-            this.grbInputGoods.Controls.Add(this.txtQuan);
-            this.grbInputGoods.Controls.Add(this.txtPrice);
-            this.grbInputGoods.Controls.Add(this.txtCountry);
-            this.grbInputGoods.Controls.Add(this.txtUnit);
-            this.grbInputGoods.Controls.Add(this.txtName);
-            this.grbInputGoods.Controls.Add(this.txtID);
-            this.grbInputGoods.Location = new System.Drawing.Point(6, 6);
-            this.grbInputGoods.Name = "grbInputGoods";
-            this.grbInputGoods.Size = new System.Drawing.Size(833, 142);
-            this.grbInputGoods.TabIndex = 1;
-            this.grbInputGoods.TabStop = false;
-            this.grbInputGoods.Paint += new System.Windows.Forms.PaintEventHandler(this.grbInputGoods_Paint);
+            this.grbInput.Controls.Add(this.label6);
+            this.grbInput.Controls.Add(this.label3);
+            this.grbInput.Controls.Add(this.label5);
+            this.grbInput.Controls.Add(this.label2);
+            this.grbInput.Controls.Add(this.label4);
+            this.grbInput.Controls.Add(this.label1);
+            this.grbInput.Controls.Add(this.txtQuan);
+            this.grbInput.Controls.Add(this.txtPrice);
+            this.grbInput.Controls.Add(this.txtCountry);
+            this.grbInput.Controls.Add(this.txtUnit);
+            this.grbInput.Controls.Add(this.txtName);
+            this.grbInput.Controls.Add(this.txtID);
+            this.grbInput.Location = new System.Drawing.Point(6, 6);
+            this.grbInput.Name = "grbInput";
+            this.grbInput.Size = new System.Drawing.Size(833, 142);
+            this.grbInput.TabIndex = 1;
+            this.grbInput.TabStop = false;
+            this.grbInput.Paint += new System.Windows.Forms.PaintEventHandler(this.grbInputGoods_Paint);
             // 
             // label6
             // 
@@ -166,6 +167,7 @@
             // 
             // txtQuan
             // 
+            this.txtQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuan.Location = new System.Drawing.Point(675, 19);
             this.txtQuan.Multiline = true;
@@ -175,6 +177,7 @@
             // 
             // txtPrice
             // 
+            this.txtPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.Location = new System.Drawing.Point(675, 82);
             this.txtPrice.Multiline = true;
@@ -184,6 +187,7 @@
             // 
             // txtCountry
             // 
+            this.txtCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCountry.Location = new System.Drawing.Point(387, 82);
             this.txtCountry.Multiline = true;
@@ -193,6 +197,7 @@
             // 
             // txtUnit
             // 
+            this.txtUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit.Location = new System.Drawing.Point(102, 82);
             this.txtUnit.Multiline = true;
@@ -202,6 +207,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(387, 19);
             this.txtName.Multiline = true;
@@ -211,6 +217,7 @@
             // 
             // txtID
             // 
+            this.txtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(102, 19);
             this.txtID.Multiline = true;
@@ -225,9 +232,9 @@
             this.grbControl.Controls.Add(this.btnSave);
             this.grbControl.Controls.Add(this.btnEdit);
             this.grbControl.Controls.Add(this.btnAdd);
-            this.grbControl.Location = new System.Drawing.Point(51, 154);
+            this.grbControl.Location = new System.Drawing.Point(6, 154);
             this.grbControl.Name = "grbControl";
-            this.grbControl.Size = new System.Drawing.Size(754, 85);
+            this.grbControl.Size = new System.Drawing.Size(833, 85);
             this.grbControl.TabIndex = 1;
             this.grbControl.TabStop = false;
             this.grbControl.Paint += new System.Windows.Forms.PaintEventHandler(this.grbControl_Paint);
@@ -240,11 +247,12 @@
             this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(606, 23);
+            this.btnRefresh.Location = new System.Drawing.Point(664, 19);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(39, 42);
+            this.btnRefresh.Size = new System.Drawing.Size(43, 42);
             this.btnRefresh.TabIndex = 0;
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
             this.btnRefresh.MouseHover += new System.EventHandler(this.btnRefresh_MouseHover);
             // 
@@ -256,11 +264,12 @@
             this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(486, 23);
+            this.btnRemove.Location = new System.Drawing.Point(544, 19);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(43, 42);
             this.btnRemove.TabIndex = 0;
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             this.btnRemove.MouseLeave += new System.EventHandler(this.btnRemove_MouseLeave);
             this.btnRemove.MouseHover += new System.EventHandler(this.btnRemove_MouseHover);
             // 
@@ -272,11 +281,12 @@
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(358, 23);
+            this.btnSave.Location = new System.Drawing.Point(416, 19);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(45, 42);
             this.btnSave.TabIndex = 0;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             this.btnSave.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
             // 
@@ -288,11 +298,12 @@
             this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(229, 23);
+            this.btnEdit.Location = new System.Drawing.Point(287, 19);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(41, 42);
             this.btnEdit.TabIndex = 0;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
             this.btnEdit.MouseHover += new System.EventHandler(this.btnEdit_MouseHover);
             // 
@@ -305,11 +316,12 @@
             this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(112, 23);
+            this.btnAdd.Location = new System.Drawing.Point(170, 19);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 51);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
             this.btnAdd.MouseHover += new System.EventHandler(this.btnAdd_MouseHover);
             // 
@@ -320,7 +332,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(848, 500);
             this.Controls.Add(this.grbControl);
-            this.Controls.Add(this.grbInputGoods);
+            this.Controls.Add(this.grbInput);
             this.Controls.Add(this.grbView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -329,8 +341,8 @@
             this.Load += new System.EventHandler(this.frmGoods_Load);
             this.grbView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).EndInit();
-            this.grbInputGoods.ResumeLayout(false);
-            this.grbInputGoods.PerformLayout();
+            this.grbInput.ResumeLayout(false);
+            this.grbInput.PerformLayout();
             this.grbControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -339,7 +351,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbView;
-        private System.Windows.Forms.GroupBox grbInputGoods;
+        private System.Windows.Forms.GroupBox grbInput;
         private System.Windows.Forms.GroupBox grbControl;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRefresh;
