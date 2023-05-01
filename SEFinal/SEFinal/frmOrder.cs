@@ -58,5 +58,17 @@ namespace SEFinal
         {
 
         }
+
+        private void btnOpenEmployee_Click(object sender, EventArgs e)
+        {
+            frmViews views = new frmViews();
+            views.Show();
+        }
+
+        private void btnOpenSup_Click(object sender, EventArgs e)
+        {
+            frmViews views = new frmViews();
+            views.Show();
+        }
     }
 }

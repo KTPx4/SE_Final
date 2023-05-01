@@ -40,7 +40,7 @@ Create table Accountant
 	AName varchar(50),
 	Auser varchar(50) Unique,
 	Apass varchar(50)		  ,
-	is_deleted bit	  -- new update
+	is_deleted bit	  -- new update 1 for delete, 0 for not delete
 )
 go
 Create table Payment
@@ -166,6 +166,27 @@ insert into Goods values
 	('G0015', 'SamSung J2 Pro', 'one', 1200, 'Thailands', 0)
 
 go
+	 /*
+select* from Goods
+select* from Warehouse
+
+go
+SELECT Goods.GoodsID, Goods.GoodsName, Goods.Unit, Goods.Price, Goods.Country, Warehouse.Quan
+FROM Goods
+JOIN Warehouse ON Goods.GoodsID = Warehouse.GoodsID
+GROUP BY Goods.GoodsID, Goods.GoodsName, Goods.Unit, Goods.Price, Goods.Country,  Warehouse.Quan
+
+
+update  goods set is_deleted = 1 where Goods.GoodsID = 'G0016'
+delete from Warehouse where Warehouse.GoodsID = 'G00017'
+
+
+Select Goods.GoodsID, Goods.GoodsName, Goods.Unit, Goods.Price, Goods.Country, Warehouse.Quan
+From goods
+inner join  Warehouse ON Goods.GoodsID = Warehouse.GoodsID and Goods.is_deleted = 0
+--GROUP BY g.GoodsID, g.GoodsName, g.Unit, g.Price, g.Country, w.Quan
+	   */
+
 insert into Warehouse values
 	('G0001', 4),
 	('G0002', 1),
@@ -181,7 +202,8 @@ insert into Warehouse values
 	('G0012', 12),
 	('G0013', 14),
 	('G0014', 32),
-	('G0015', 11)	
+	('G0015', 11),
+	('G0017', 4)
 	
 go
 
@@ -352,17 +374,17 @@ Insert into GoodsReceiptDetail values
 
 
 go
-update Accountant set AName ='kkk' where AID ='A0001'
+--update Accountant set AName ='kkk' where AID ='A0001'
 --select* from goods
 --select* from Warehouse
 
-select* from Accountant
-select * from agent
-select top 1 AgentID from Agent order by AgentID desc	  
+--select* from Accountant
+--select * from agent
+--select top 1 AgentID from Agent order by AgentID desc	  
 
 
 
-select g.GoodsID, g.GoodsName, g.Price, od.Quantity
+/*select g.GoodsID, g.GoodsName, g.Price, od.Quantity
 from orderdetail od, Goods g
 where od.OrderID in 
 				 (select o.OrderID
@@ -371,4 +393,4 @@ where od.OrderID in
 					and od.GoodsID = g.GoodsID
 
 
-SELECT * FROM Goods WHERE GoodsName LIKE 'samsung xs'
+SELECT * FROM Goods WHERE GoodsName LIKE 'samsung xs'  */

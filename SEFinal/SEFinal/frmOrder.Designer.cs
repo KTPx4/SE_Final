@@ -68,16 +68,16 @@
             this.dgvItem = new System.Windows.Forms.DataGridView();
             this.grbViews = new System.Windows.Forms.GroupBox();
             this.dgvViews = new System.Windows.Forms.DataGridView();
-            this.btnDorder = new System.Windows.Forms.Button();
-            this.btnDEm = new System.Windows.Forms.Button();
-            this.btnRaddG = new System.Windows.Forms.Button();
-            this.btnOpenSup = new System.Windows.Forms.Button();
-            this.btnOpenEmployee = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnRaddG = new System.Windows.Forms.Button();
+            this.btnOpenSup = new System.Windows.Forms.Button();
+            this.btnOpenEmployee = new System.Windows.Forms.Button();
+            this.btnDorder = new System.Windows.Forms.Button();
+            this.btnDEm = new System.Windows.Forms.Button();
             this.grbStatus.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.grbMana.SuspendLayout();
@@ -124,6 +124,7 @@
             // 
             // cbbDstatus
             // 
+            this.cbbDstatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbDstatus.FormattingEnabled = true;
             this.cbbDstatus.Location = new System.Drawing.Point(673, 42);
             this.cbbDstatus.Name = "cbbDstatus";
@@ -142,6 +143,7 @@
             // 
             // cbbDorderID
             // 
+            this.cbbDorderID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbDorderID.FormattingEnabled = true;
             this.cbbDorderID.Location = new System.Drawing.Point(454, 63);
             this.cbbDorderID.Name = "cbbDorderID";
@@ -150,6 +152,7 @@
             // 
             // cbbDEmp
             // 
+            this.cbbDEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbDEmp.FormattingEnabled = true;
             this.cbbDEmp.Location = new System.Drawing.Point(185, 64);
             this.cbbDEmp.Name = "cbbDEmp";
@@ -158,6 +161,7 @@
             // 
             // txtDid
             // 
+            this.txtDid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtDid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDid.Location = new System.Drawing.Point(185, 19);
             this.txtDid.Name = "txtDid";
@@ -166,6 +170,7 @@
             // 
             // txtDdate
             // 
+            this.txtDdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtDdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDdate.Location = new System.Drawing.Point(454, 19);
             this.txtDdate.Name = "txtDdate";
@@ -254,6 +259,7 @@
             // 
             // txtRDate
             // 
+            this.txtRDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtRDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRDate.Location = new System.Drawing.Point(351, 24);
             this.txtRDate.Name = "txtRDate";
@@ -262,6 +268,7 @@
             // 
             // txtRID
             // 
+            this.txtRID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtRID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRID.Location = new System.Drawing.Point(82, 24);
             this.txtRID.Name = "txtRID";
@@ -314,10 +321,11 @@
             // 
             // cbbRGoodsName
             // 
+            this.cbbRGoodsName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbRGoodsName.FormattingEnabled = true;
             this.cbbRGoodsName.Location = new System.Drawing.Point(86, 47);
             this.cbbRGoodsName.Name = "cbbRGoodsName";
-            this.cbbRGoodsName.Size = new System.Drawing.Size(121, 21);
+            this.cbbRGoodsName.Size = new System.Drawing.Size(111, 21);
             this.cbbRGoodsName.TabIndex = 18;
             // 
             // label6
@@ -331,18 +339,20 @@
             // 
             // txtRQuan
             // 
+            this.txtRQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtRQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRQuan.Location = new System.Drawing.Point(86, 74);
             this.txtRQuan.Name = "txtRQuan";
-            this.txtRQuan.Size = new System.Drawing.Size(72, 22);
+            this.txtRQuan.Size = new System.Drawing.Size(111, 22);
             this.txtRQuan.TabIndex = 11;
             // 
             // cbbRGoodsID
             // 
+            this.cbbRGoodsID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbRGoodsID.FormattingEnabled = true;
             this.cbbRGoodsID.Location = new System.Drawing.Point(86, 20);
             this.cbbRGoodsID.Name = "cbbRGoodsID";
-            this.cbbRGoodsID.Size = new System.Drawing.Size(121, 21);
+            this.cbbRGoodsID.Size = new System.Drawing.Size(111, 21);
             this.cbbRGoodsID.TabIndex = 18;
             // 
             // label7
@@ -397,6 +407,7 @@
             // 
             // cbbRSupID
             // 
+            this.cbbRSupID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbRSupID.FormattingEnabled = true;
             this.cbbRSupID.Location = new System.Drawing.Point(351, 68);
             this.cbbRSupID.Name = "cbbRSupID";
@@ -405,6 +416,7 @@
             // 
             // cbbREmployee
             // 
+            this.cbbREmployee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbREmployee.FormattingEnabled = true;
             this.cbbREmployee.Location = new System.Drawing.Point(82, 69);
             this.cbbREmployee.Name = "cbbREmployee";
@@ -506,66 +518,6 @@
             this.dgvViews.Size = new System.Drawing.Size(518, 222);
             this.dgvViews.TabIndex = 0;
             // 
-            // btnDorder
-            // 
-            this.btnDorder.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnDorder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDorder.FlatAppearance.BorderSize = 0;
-            this.btnDorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDorder.Location = new System.Drawing.Point(557, 62);
-            this.btnDorder.Name = "btnDorder";
-            this.btnDorder.Size = new System.Drawing.Size(21, 21);
-            this.btnDorder.TabIndex = 19;
-            this.btnDorder.UseVisualStyleBackColor = true;
-            // 
-            // btnDEm
-            // 
-            this.btnDEm.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnDEm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDEm.FlatAppearance.BorderSize = 0;
-            this.btnDEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDEm.Location = new System.Drawing.Point(288, 63);
-            this.btnDEm.Name = "btnDEm";
-            this.btnDEm.Size = new System.Drawing.Size(21, 21);
-            this.btnDEm.TabIndex = 19;
-            this.btnDEm.UseVisualStyleBackColor = true;
-            // 
-            // btnRaddG
-            // 
-            this.btnRaddG.BackgroundImage = global::SEFinal.Properties.Resources.add_to_cart;
-            this.btnRaddG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRaddG.FlatAppearance.BorderSize = 0;
-            this.btnRaddG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRaddG.Location = new System.Drawing.Point(245, 9);
-            this.btnRaddG.Name = "btnRaddG";
-            this.btnRaddG.Size = new System.Drawing.Size(41, 41);
-            this.btnRaddG.TabIndex = 19;
-            this.btnRaddG.UseVisualStyleBackColor = true;
-            // 
-            // btnOpenSup
-            // 
-            this.btnOpenSup.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnOpenSup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenSup.FlatAppearance.BorderSize = 0;
-            this.btnOpenSup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenSup.Location = new System.Drawing.Point(454, 67);
-            this.btnOpenSup.Name = "btnOpenSup";
-            this.btnOpenSup.Size = new System.Drawing.Size(21, 21);
-            this.btnOpenSup.TabIndex = 19;
-            this.btnOpenSup.UseVisualStyleBackColor = true;
-            // 
-            // btnOpenEmployee
-            // 
-            this.btnOpenEmployee.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnOpenEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenEmployee.FlatAppearance.BorderSize = 0;
-            this.btnOpenEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenEmployee.Location = new System.Drawing.Point(185, 68);
-            this.btnOpenEmployee.Name = "btnOpenEmployee";
-            this.btnOpenEmployee.Size = new System.Drawing.Size(21, 21);
-            this.btnOpenEmployee.TabIndex = 19;
-            this.btnOpenEmployee.UseVisualStyleBackColor = true;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.BackgroundImage = global::SEFinal.Properties.Resources.refresh;
@@ -636,6 +588,68 @@
             this.btnAdd.Size = new System.Drawing.Size(56, 51);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // btnRaddG
+            // 
+            this.btnRaddG.BackgroundImage = global::SEFinal.Properties.Resources.add_to_cart;
+            this.btnRaddG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRaddG.FlatAppearance.BorderSize = 0;
+            this.btnRaddG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaddG.Location = new System.Drawing.Point(245, 9);
+            this.btnRaddG.Name = "btnRaddG";
+            this.btnRaddG.Size = new System.Drawing.Size(41, 41);
+            this.btnRaddG.TabIndex = 19;
+            this.btnRaddG.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenSup
+            // 
+            this.btnOpenSup.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnOpenSup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenSup.FlatAppearance.BorderSize = 0;
+            this.btnOpenSup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenSup.Location = new System.Drawing.Point(454, 67);
+            this.btnOpenSup.Name = "btnOpenSup";
+            this.btnOpenSup.Size = new System.Drawing.Size(21, 21);
+            this.btnOpenSup.TabIndex = 19;
+            this.btnOpenSup.UseVisualStyleBackColor = true;
+            this.btnOpenSup.Click += new System.EventHandler(this.btnOpenSup_Click);
+            // 
+            // btnOpenEmployee
+            // 
+            this.btnOpenEmployee.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnOpenEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenEmployee.FlatAppearance.BorderSize = 0;
+            this.btnOpenEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenEmployee.Location = new System.Drawing.Point(185, 68);
+            this.btnOpenEmployee.Name = "btnOpenEmployee";
+            this.btnOpenEmployee.Size = new System.Drawing.Size(21, 21);
+            this.btnOpenEmployee.TabIndex = 19;
+            this.btnOpenEmployee.UseVisualStyleBackColor = true;
+            this.btnOpenEmployee.Click += new System.EventHandler(this.btnOpenEmployee_Click);
+            // 
+            // btnDorder
+            // 
+            this.btnDorder.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnDorder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDorder.FlatAppearance.BorderSize = 0;
+            this.btnDorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDorder.Location = new System.Drawing.Point(557, 62);
+            this.btnDorder.Name = "btnDorder";
+            this.btnDorder.Size = new System.Drawing.Size(21, 21);
+            this.btnDorder.TabIndex = 19;
+            this.btnDorder.UseVisualStyleBackColor = true;
+            // 
+            // btnDEm
+            // 
+            this.btnDEm.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnDEm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDEm.FlatAppearance.BorderSize = 0;
+            this.btnDEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDEm.Location = new System.Drawing.Point(288, 63);
+            this.btnDEm.Name = "btnDEm";
+            this.btnDEm.Size = new System.Drawing.Size(21, 21);
+            this.btnDEm.TabIndex = 19;
+            this.btnDEm.UseVisualStyleBackColor = true;
             // 
             // frmOrder
             // 

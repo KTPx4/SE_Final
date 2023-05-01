@@ -17,20 +17,72 @@ namespace SEFinal
     {
         private bool _dragging = false;
         private Point _startPoint = new Point(0, 0);
+        private bool is_Admin;
+        private string AccountantID;
+
 
         public frmMain()
         {
+            this.is_Admin = true;
+            this.AccountantID = "";
+            InitializeComponent();
+        }
+
+        public frmMain(string AccountantID)
+        {
+            this.is_Admin = false;
+            this.AccountantID = AccountantID;
             InitializeComponent();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             Style();
+            loadForm();
         }
 
+        public void loadForm()
+        {
+            
+        }
         public void Style() 
         {
-        
+            if (!is_Admin)
+            {
+                foreach (ToolStripMenuItem item in menutrip.Items)
+                {
+                    if (item.Name == "tmiAccountant")
+                    {
+                        item.Visible = false;
+                    }
+                    else
+                    {
+                        item.Visible = true;
+                    }
+
+                }
+                //tmiAccountant.Visible = false;
+                this.Size = new Size(931, 559); // set size for form
+                ptbLogo.Padding = new Padding(0, 0, 0, 0); // padding  for logo
+            }
+            else
+            {
+                foreach (ToolStripMenuItem item in menutrip.Items)
+                {
+                    if (item.Name == "tmiAccountant")
+                    {
+                        item.Visible = true;
+                    }
+                    else
+                    {
+                        item.Visible = false;
+                    }
+
+                }
+                //tmiAccountant.Visible = true;
+                this.Size = new Size(1018, 559);
+                ptbLogo.Padding = new Padding(50, 0, 0, 0);
+            }
             /*foreach (Control ctl in this.Controls)
             {
                 try
@@ -55,8 +107,12 @@ namespace SEFinal
             //}
             Form f;
             string title = "Manage System";
-
-            if(index == 0)  // Child form is Goods
+            if(index == -1)
+            {
+                f = new frmAccountant();
+                title = "Manage Accountant";
+            }
+            else if(index == 0)  // Child form is Goods
             {
                 f = new frmGoods();
                 title = "Goods";
@@ -105,10 +161,14 @@ namespace SEFinal
 
             pnContent.Controls.Clear();
             pnContent.Controls.Add(f);
-        }  
-      
+        }
 
-         
+        private void tmiAccountant_Click(object sender, EventArgs e)
+        {
+            open_ChildForm(-1, 0);
+
+        }
+
         private void manageGoodsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             open_ChildForm(0, 0); 
@@ -158,7 +218,7 @@ namespace SEFinal
         {
 
         }
-
+         // move panel - use for move windown as normal
         private void pnControl_MouseDown(object sender, MouseEventArgs e)
         {
             _dragging = true;  // _dragging là biến cờ của bạn
@@ -179,11 +239,20 @@ namespace SEFinal
             _dragging = false;
         }
 
+
+        // use logo as button home
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             lbTitle.Text = "Manage System";
             pnContent.Controls.Clear();
             pnContent.Controls.Add(ptbContent);
         }
+
+        private void pnContent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       
     }
 }

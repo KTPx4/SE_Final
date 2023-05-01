@@ -160,22 +160,24 @@
             this.btnAll.FlatAppearance.BorderSize = 0;
             this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAll.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAll.Location = new System.Drawing.Point(207, 210);
+            this.btnAll.Location = new System.Drawing.Point(235, 208);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(42, 23);
+            this.btnAll.Size = new System.Drawing.Size(57, 23);
             this.btnAll.TabIndex = 6;
             this.btnAll.Text = "All";
             this.btnAll.UseVisualStyleBackColor = false;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(207, 175);
+            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.txtYear.Location = new System.Drawing.Point(235, 171);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(42, 20);
+            this.txtYear.Size = new System.Drawing.Size(57, 20);
             this.txtYear.TabIndex = 5;
             // 
             // cbbTop
             // 
+            this.cbbTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbTop.FormattingEnabled = true;
             this.cbbTop.Items.AddRange(new object[] {
             "5",
@@ -189,13 +191,14 @@
             "80",
             "90",
             "100"});
-            this.cbbTop.Location = new System.Drawing.Point(112, 212);
+            this.cbbTop.Location = new System.Drawing.Point(118, 207);
             this.cbbTop.Name = "cbbTop";
-            this.cbbTop.Size = new System.Drawing.Size(42, 21);
+            this.cbbTop.Size = new System.Drawing.Size(55, 21);
             this.cbbTop.TabIndex = 4;
             // 
             // cbbMonth
             // 
+            this.cbbMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbMonth.FormattingEnabled = true;
             this.cbbMonth.Items.AddRange(new object[] {
             "1",
@@ -210,68 +213,73 @@
             "10",
             "11",
             "12"});
-            this.cbbMonth.Location = new System.Drawing.Point(112, 175);
+            this.cbbMonth.Location = new System.Drawing.Point(118, 170);
             this.cbbMonth.Name = "cbbMonth";
-            this.cbbMonth.Size = new System.Drawing.Size(42, 21);
+            this.cbbMonth.Size = new System.Drawing.Size(55, 21);
             this.cbbMonth.TabIndex = 4;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(174, 178);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(191, 171);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.Size = new System.Drawing.Size(43, 20);
             this.label8.TabIndex = 3;
             this.label8.Text = "Year";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(63, 215);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(36, 208);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 13);
+            this.label9.Size = new System.Drawing.Size(37, 20);
             this.label9.TabIndex = 3;
             this.label9.Text = "Top";
             // 
             // cbbFilter
             // 
+            this.cbbFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbFilter.FormattingEnabled = true;
             this.cbbFilter.Items.AddRange(new object[] {
             "Goods Delivery",
             "Goods Receipt",
             "Best-selling",
             "Revenue report"});
-            this.cbbFilter.Location = new System.Drawing.Point(112, 133);
+            this.cbbFilter.Location = new System.Drawing.Point(118, 128);
             this.cbbFilter.Name = "cbbFilter";
-            this.cbbFilter.Size = new System.Drawing.Size(137, 21);
+            this.cbbFilter.Size = new System.Drawing.Size(174, 21);
             this.cbbFilter.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(60, 178);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(33, 171);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Month";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(51, 136);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(88, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "Type Filter";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(146, 98);
+            this.label5.Location = new System.Drawing.Point(128, 62);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 16);
+            this.label5.Size = new System.Drawing.Size(81, 31);
             this.label5.TabIndex = 2;
             this.label5.Text = "Filter";
             // 

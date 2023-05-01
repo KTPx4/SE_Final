@@ -84,9 +84,9 @@
             this.grbControl.Controls.Add(this.btnSave);
             this.grbControl.Controls.Add(this.btnEdit);
             this.grbControl.Controls.Add(this.btnAdd);
-            this.grbControl.Location = new System.Drawing.Point(51, 154);
+            this.grbControl.Location = new System.Drawing.Point(6, 154);
             this.grbControl.Name = "grbControl";
-            this.grbControl.Size = new System.Drawing.Size(754, 85);
+            this.grbControl.Size = new System.Drawing.Size(836, 85);
             this.grbControl.TabIndex = 4;
             this.grbControl.TabStop = false;
             // 
@@ -98,7 +98,7 @@
             this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(606, 23);
+            this.btnRefresh.Location = new System.Drawing.Point(675, 23);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(39, 42);
             this.btnRefresh.TabIndex = 0;
@@ -112,7 +112,7 @@
             this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(486, 23);
+            this.btnRemove.Location = new System.Drawing.Point(555, 23);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(43, 42);
             this.btnRemove.TabIndex = 0;
@@ -126,7 +126,7 @@
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(358, 23);
+            this.btnSave.Location = new System.Drawing.Point(427, 23);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(45, 42);
             this.btnSave.TabIndex = 0;
@@ -140,7 +140,7 @@
             this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(229, 23);
+            this.btnEdit.Location = new System.Drawing.Point(298, 23);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(41, 42);
             this.btnEdit.TabIndex = 0;
@@ -155,7 +155,7 @@
             this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(112, 23);
+            this.btnAdd.Location = new System.Drawing.Point(181, 23);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 51);
             this.btnAdd.TabIndex = 0;
@@ -173,7 +173,7 @@
             this.grbInputGoods.Controls.Add(this.txtSupID);
             this.grbInputGoods.Location = new System.Drawing.Point(6, 6);
             this.grbInputGoods.Name = "grbInputGoods";
-            this.grbInputGoods.Size = new System.Drawing.Size(833, 142);
+            this.grbInputGoods.Size = new System.Drawing.Size(836, 142);
             this.grbInputGoods.TabIndex = 5;
             this.grbInputGoods.TabStop = false;
             // 
@@ -219,6 +219,7 @@
             // 
             // txtSupaddr
             // 
+            this.txtSupaddr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtSupaddr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupaddr.Location = new System.Drawing.Point(514, 88);
             this.txtSupaddr.Multiline = true;
@@ -228,6 +229,7 @@
             // 
             // txtSupphone
             // 
+            this.txtSupphone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtSupphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupphone.Location = new System.Drawing.Point(229, 88);
             this.txtSupphone.Multiline = true;
@@ -237,6 +239,7 @@
             // 
             // txtSupName
             // 
+            this.txtSupName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtSupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupName.Location = new System.Drawing.Point(514, 25);
             this.txtSupName.Multiline = true;
@@ -246,6 +249,7 @@
             // 
             // txtSupID
             // 
+            this.txtSupID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.txtSupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSupID.Location = new System.Drawing.Point(229, 25);
             this.txtSupID.Multiline = true;

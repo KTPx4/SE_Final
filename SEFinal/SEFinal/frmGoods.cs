@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEFinal.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace SEFinal
 {
     public partial class frmGoods : Form
     {
+        private bool is_edit = false;
+
         public frmGoods()
         {
             InitializeComponent();
@@ -19,21 +22,235 @@ namespace SEFinal
 
         private void frmGoods_Load(object sender, EventArgs e)
         {
+            loadForm();
+
+            // check type of values of price and quantity
+        }
+
+        public void loadForm()
+        {
+            clearInput();
+            //block input
+            grbInput.Enabled = false;
+            grbInput.BackColor = Color.Gray;
+            //block btn
+            btnEdit.Enabled = false;
+            btnEdit.BackColor = Color.Gray;
+
+            btnRemove.Enabled = false;
+            btnRemove.BackColor = Color.Gray;
+
+            btnSave.Enabled = false;
+            btnSave.BackColor = Color.Gray;
+            //set name header of column
+            dgvViews.DataSource = (new BUS_Goods()).getALL();
+            
+            dgvViews.Columns[0].HeaderText = "Goods ID";
+            dgvViews.Columns[1].HeaderText = "Goods Name";
+            dgvViews.Columns[2].HeaderText = "Unit";
+            dgvViews.Columns[3].HeaderText = "Price";
+            dgvViews.Columns[4].HeaderText = "Country";
+            dgvViews.Columns[5].HeaderText = "Quantity In Warehouse";
+
+            //set color
+            dgvViews.ColumnHeadersDefaultCellStyle.BackColor = Color.SkyBlue;
+            dgvViews.ColumnHeadersDefaultCellStyle.ForeColor = Color.Crimson;
+            dgvViews.EnableHeadersVisualStyles = false;
 
         }
+
+
+
+
+        public void clearInput()
+        {
+            txtID.Text = "";
+            txtName.Text = "";
+            txtCountry.Text = "";
+            txtPrice.Text = "";
+            txtQuan.Text = "";
+            txtUnit.Text = "";
+        }
+        public bool check_txtNull()
+        {
+            if (txtID.Text == "" || txtName.Text == "" || txtCountry.Text == "" || txtPrice.Text == "" || txtQuan.Text =="" || txtUnit.Text =="")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            is_edit = false;
+            clearInput();
+            //auto ID
+            txtID.Text = (new BUS_Goods()).get_Next_ID();
+
+            grbInput.Enabled = true;
+            grbInput.BackColor = Color.Transparent;
+
+            btnSave.Enabled = true;
+            btnSave.BackColor = Color.Transparent;
+
+            btnEdit.Enabled = false;
+            btnEdit.BackColor = Color.Gray;
+
+            btnRemove.Enabled = false;
+            btnRemove.BackColor = Color.Gray;
+        }
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            is_edit = true;
+
+            grbInput.Enabled = true;
+            grbInput.BackColor = Color.Transparent;
+
+            btnSave.Enabled = true;
+            btnSave.BackColor = Color.Transparent;
+
+            btnEdit.Enabled = false;
+            btnEdit.BackColor = Color.Gray;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (check_txtNull())
+            {
+                MessageBox.Show("Please Input Full Values!");
+                return;
+            }
+            string id = txtID.Text;
+            string name = txtName.Text;
+            string unit = txtUnit.Text;
+            double price = float.Parse(txtPrice.Text);
+            string country = txtCountry.Text;
+            int quan = int.Parse(txtQuan.Text);
+
+            BUS_Goods goods = new BUS_Goods(id, name, unit, price, country, quan);
+        
+            if(is_edit) // edit 
+            {
+                goods.edit();
+            }
+            else // add new
+            {
+                //if(!goods.add())
+                //{
+                //    MessageBox.Show("ID is Exists or Invalid, Try again!");
+                //    return;
+                //}
+                int status = goods.checkAdd();
+                if (status == 0)
+                {
+                    DialogResult result = MessageBox.Show("That Goods Exists in data. Do you want to restore?", "Confirmation", MessageBoxButtons.YesNoCancel);
+                    if (result == DialogResult.Yes) // call edit and edit status of is_deleted
+                    {
+                        // Call edit
+                        string ids = goods.getID_from_Name(); // find old id contain that old employee from user and pass
+                        goods.restore(ids);
+                    }
+                    else if (result == DialogResult.No) // add rows with new id and user
+                    {
+                        if (!goods.add() )
+                        {
+                            MessageBox.Show("Error Add new Goods, Or User Exists in data!");
+                        }
+
+                    }
+                }
+                else if (status == 2)
+                {
+                    MessageBox.Show("ID  Exists in data, Try again!");
+                    return;
+                }
+                else if (status == 1)
+                {
+                    goods.add();
+                }
+            }
+            loadForm();     
+                
+        
+        }
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+         
+            if (check_txtNull())
+            {
+                MessageBox.Show("Please Input Full Values!");
+                return;
+            }
+            string id = txtID.Text;
+            string name = txtName.Text;
+            string unit = txtUnit.Text;
+            double price = float.Parse(txtPrice.Text);
+            string country = txtCountry.Text;
+            int quan = int.Parse(txtQuan.Text);
+
+            BUS_Goods goods = new BUS_Goods(id);
+            if(!goods.delete())
+            {
+                MessageBox.Show("Error!, Try Again");
+                return;
+            }
+            loadForm() ;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadForm();
+        }
+
+        private void dgvViews_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit.Enabled = true;
+            btnEdit.BackColor = Color.Transparent;
+
+            btnRemove.Enabled = true;
+            btnRemove.BackColor = Color.Transparent;
+
+            btnSave.Enabled = false;
+            btnSave.BackColor = Color.Gray;
+
+            grbInput.Enabled = false;
+            grbInput.BackColor = Color.Gray;
+
+            int index = dgvViews.CurrentRow.Index;
+
+            txtID.Text = dgvViews.Rows[index].Cells[0].Value.ToString();
+            txtName.Text = dgvViews.Rows[index].Cells[1].Value.ToString();
+            txtUnit.Text = dgvViews.Rows[index].Cells[2].Value.ToString();
+            txtPrice.Text = dgvViews.Rows[index].Cells[3].Value.ToString();
+            txtCountry.Text = dgvViews.Rows[index].Cells[4].Value.ToString();
+            txtQuan.Text = dgvViews.Rows[index].Cells[5].Value.ToString();
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        // Create tooltip -> show description when mouse hover
         public void Mouse_Hover(string text, Button b)
         {
            
-            toolTipText.Show(text, b, b.Width - 20, b.Height - 30);
+            toolTipText.Show(text, b, b.Width , b.Height - 30);
         }
 
-
-        // Action Form
-        public void Mouse_Leave(Button b)
+        public void Mouse_Leave(Button b) // hide when mouse leave
         {
             toolTipText.Hide(b);
         }
-
+        //
+        // create mouse hover and leave for button
         private void btnAdd_MouseHover(object sender, EventArgs e)
         {
             Mouse_Hover("Add", btnAdd);
@@ -85,7 +302,7 @@ namespace SEFinal
             Mouse_Leave(btnRefresh);
         }
 
-
+        // draw border for Groupbox
         private void grbInputGoods_Paint(object sender, PaintEventArgs e)
         {
             GroupBox box = sender as GroupBox;
@@ -105,8 +322,7 @@ namespace SEFinal
             GroupBox box = sender as GroupBox;
             Color color = ColorTranslator.FromHtml("#626262");
             BorderGrb(box, e.Graphics, Color.Red, color);
-        }
-    
+        }    
         
         private void BorderGrb(GroupBox grbBox, Graphics g, Color txtColor, Color bdColor)
         {
@@ -147,10 +363,6 @@ namespace SEFinal
             }
         }
 
-    
-    
-    
-    
-    
+      
     }
 }
