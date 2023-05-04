@@ -1,6 +1,7 @@
 ﻿using SEFinal.Class;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,7 +66,19 @@ namespace SEFinal.DTA
         {
             w.GoodsID = id;
         }
-
+        public int GetQuan()
+        {
+            string s = $"select Quan from Warehouse where GoodsID ='{w.GoodsID}'";
+            DataTable tb = cn.selectQuery(s);
+            if(tb.Rows.Count < 1)
+            {
+                return 0;
+            }
+            else
+            {
+                return int.Parse(tb.Rows[0][0].ToString());
+            }
+        }
      
     }
 }

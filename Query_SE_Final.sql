@@ -8,8 +8,8 @@ go
 Create table Goods
 (
 	GoodsID varchar(10) Primary Key,
-	GoodsName varchar(50),
-	Unit varchar(50),
+	GoodsName varchar(200),
+	Unit varchar(200),
 	Price money,
 	Country varchar(100)   ,
 	is_deleted bit	  -- new update
@@ -26,39 +26,41 @@ go
 Create table Agent
 (
 	AgentID varchar(10) Primary Key,
-	AgentName varchar(50),
+	AgentName varchar(200),
 	Phone varchar(10),
-	Address varchar(50),
-	Users varchar(50) Unique,
-	Pass varchar(50)	,
+	Address varchar(200),
+	Users varchar(200) Unique,
+	Pass varchar(200)	,
 	is_deleted bit	  -- new update
 )
+
 go
 Create table Accountant
 (
 	AID varchar(10) Primary Key,
-	AName varchar(50),
-	Auser varchar(50) Unique,
-	Apass varchar(50)		  ,
+	AName varchar(200),
+	Auser varchar(200) Unique,
+	Apass varchar(200)		  ,
 	is_deleted bit	  -- new update 1 for delete, 0 for not delete
 )
 go
 Create table Payment
 (
 	PaymentID varchar(10) Primary Key,
-	Name varchar(50)	 ,
+	Name varchar(200)	 ,
 	is_deleted bit	  -- new update
 )
 go
 Create table Supplier
 (
 	SupID varchar(10) Primary Key, 
-	Name varchar(50), 
+	Name varchar(200), 
 	Address varchar(100), 
 	Phone varchar(10)	  ,
 	is_deleted bit	  -- new update
 )
 go
+
 Create table [Order]	 -- insert row at webform
 (
 	OrderID varchar(10) Primary Key, 
@@ -75,7 +77,7 @@ Create table [Order]	 -- insert row at webform
 	CONSTRAINT FK_O_P FOREIGN KEY (PaymentID)
     REFERENCES Payment(PaymentID),
 
-)
+)			
 go
 Create table OrderDetail	 -- insert row at webform
 ( 
@@ -101,6 +103,9 @@ Create table PaymentDetail	  -- insert row at webform
 	FOREIGN KEY (OrderID) REFERENCES [Order](OrderID)
 )
 go
+
+
+
 Create table GoodsReceipt 
 (
 	ReceiptID varchar(10) Primary Key,  
@@ -111,7 +116,7 @@ Create table GoodsReceipt
 	FOREIGN KEY (SupID) REFERENCES Supplier(SupID),
 	FOREIGN KEY (Employee) REFERENCES Accountant(AID)
 )
-go
+go	 
 Create table GoodsReceiptDetail 
 (
 	RDID varchar(10) Primary Key, 
@@ -127,7 +132,7 @@ go
 Create table GoodsDelivery
 (
 	DeliveryID varchar(10) Primary Key, 
-	OrderID varchar(10) Unique,
+	OrderID varchar(10) ,
 	Employee varchar(10), 
 	DeliveryDate date, 
 	Status int, -- 0 for is waiting delivery, 1 success, -1 for failed
@@ -135,13 +140,24 @@ Create table GoodsDelivery
 	FOREIGN KEY (OrderID) REFERENCES  [Order](OrderID),
 	FOREIGN KEY (Employee) REFERENCES Accountant(AID)
 )
+select * from GoodsDelivery
+where  Status != -1 
+   /*
+ select* from GoodsDelivery 
+ go
 
+ select g.GoodsID as 'Goods ID', g.GoodsName as 'Goods Name', g.Price, od.Quantity ,g.Price*od.Quantity as 'Amount'
+ from goods g, [order] o, OrderDetail od
+ where 	 o.OrderID = 'O0002' and od.OrderID = o.OrderID and od.GoodsID = g.GoodsID
+
+ 
+	*/
 go
 Create table AdminSystem
 (
 	AdminID varchar(10),
-	users varchar(50),
-	pass varchar(50) ,
+	users varchar(200),
+	pass varchar(200) ,
 	name varchar(100)
 )
 go
@@ -185,7 +201,11 @@ Select Goods.GoodsID, Goods.GoodsName, Goods.Unit, Goods.Price, Goods.Country, W
 From goods
 inner join  Warehouse ON Goods.GoodsID = Warehouse.GoodsID and Goods.is_deleted = 0
 --GROUP BY g.GoodsID, g.GoodsName, g.Unit, g.Price, g.Country, w.Quan
-	   */
+	   
+	 select o.OrderID, a.agentID, a.AgentName, o.Odate, p.Status  
+	 from [order] o, PaymentDetail p, Agent a 
+	 where p.orderID = o.orderID and o.AgentID = a.AgentID	   */
+
 
 insert into Warehouse values
 	('G0001', 4),
@@ -202,8 +222,8 @@ insert into Warehouse values
 	('G0012', 12),
 	('G0013', 14),
 	('G0014', 32),
-	('G0015', 11),
-	('G0017', 4)
+	('G0015', 11)
+	
 	
 go
 
@@ -307,7 +327,9 @@ Insert into OrderDetail values
 	('OD0021', 'O0008', 'G0015', 9)
 
 
+	
 go
+
 Insert into PaymentDetail values
 	('PD0001', 'O0001', 0),
 	('PD0002', 'O0002', 1),
@@ -377,7 +399,7 @@ go
 --update Accountant set AName ='kkk' where AID ='A0001'
 --select* from goods
 --select* from Warehouse
-
+select* from Supplier
 --select* from Accountant
 --select * from agent
 --select top 1 AgentID from Agent order by AgentID desc	  
@@ -393,4 +415,24 @@ where od.OrderID in
 					and od.GoodsID = g.GoodsID
 
 
-SELECT * FROM Goods WHERE GoodsName LIKE 'samsung xs'  */
+SELECT * FROM Goods WHERE GoodsName LIKE 'samsung xs'  
+Select Goods.GoodsID, Goods.GoodsName, Goods.Unit, Goods.Price, Goods.Country, Warehouse.Quan 
+From goods inner join  Warehouse 
+ON Goods.GoodsID = Warehouse.GoodsID and Goods.is_deleted = 0 and Goods.GoodsID = 'G0002'	*/
+
+/*
+select * from GoodsDelivery
+
+select o.OrderID 
+from [order] o, PaymentDetail pd , GoodsDelivery gd
+where 
+	(gd.Status = -1 and gd.OrderID = o.OrderID	)
+	or (o.OrderID not in (select gd.OrderID from GoodsDelivery gd) and o.PaymentID ='P0002' and pd.OrderID = o.OrderID and pd.Status != -1)
+	or (o.OrderID not in (select gd.OrderID from GoodsDelivery gd) and o.PaymentID ='P0001' and pd.OrderID = o.OrderID and pd.Status = 1)
+group by o.OrderID 
+
+		 select* from Warehouse
+select g.GoodsID as 'Goods ID', g.GoodsName as 'Goods Name', g.Price, od.Quantity ,g.Price*od.Quantity as 'Amount'
+             from goods g, [order] o, OrderDetail od  
+            where o.OrderID = 'O0002' and od.OrderID = o.OrderID and od.GoodsID = g.GoodsID;
+	  */

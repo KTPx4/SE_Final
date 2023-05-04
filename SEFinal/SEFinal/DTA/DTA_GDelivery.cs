@@ -1,6 +1,7 @@
 ﻿using SEFinal.Class;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,8 @@ namespace SEFinal.DTA
         public bool add_()
         {
             bool isExists_id = cn.is_Exists_data("GoodsDelivery", "DeliveryID", gd.DeliveryID); // exists id -> not add new
-            bool isExists_order = cn.is_Exists_data("[Order]", "OrderID", gd.OrderID, "is_Hide");// exists or and not hide
-            if (isExists_id || !isExists_order)
+       
+            if (isExists_id )
             {
                 return false;
             }
@@ -35,6 +36,11 @@ namespace SEFinal.DTA
             cn.actionQuery(s);
             return true;
 
+        }
+        public DataTable getDelivery() // get delivery with status delivery = 0 or 1
+        {
+            string s = $"select * from GoodsDelivery where  Status != -1 ";
+            return cn.selectQuery(s);
         }
         public bool delete_()
         {
@@ -81,6 +87,15 @@ namespace SEFinal.DTA
         public string getID()
         {
             return gd.DeliveryID;
+        }
+        public string getOrder()
+        {
+            return gd.OrderID;
+        }
+
+        public DataTable Query(string s)
+        {
+            return cn.selectQuery(s);
         }
         //public string getID_()
         //{

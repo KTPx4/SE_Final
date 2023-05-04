@@ -132,14 +132,9 @@ namespace SEFinal
             {
                 title = "Order Goods";
 
-                if (tab == 1) // if tab = 1 -> open tab for goods delivery
-                {
-                    f = new frmOrder(1);
-                }
-                else // open tab for goods Receipt
-                {
-                    f = new frmOrder();
-                }
+              
+                f = new frmOrder(AccountantID);
+                
 
             }
             else   // last int is child form for Report
@@ -192,12 +187,7 @@ namespace SEFinal
 
         }
 
-        private void goodsDeliveryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            open_ChildForm(3, 1);
-
-        }
-
+      
       
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -23,8 +23,27 @@ namespace SEFinal.DTA
             cn = new Connection();
             ac = new C_Accountant(aID, aName, aUser, aPass, isDel);
         }
-
-        public bool is_Exists_()
+        public bool check_parameter()
+        {
+            if(ac.AID.Length > 10 || ac.AID == "")
+            {
+                return false;
+            }
+            else if(ac.AName.Length > 200 || ac.AName == "")
+            {
+                return false;
+            }
+            else if (ac.AUser.Length > 200 || ac.AUser == "")
+            {
+                return false;
+            }
+            else if (ac.APassword.Length > 200 || ac.APassword == "")
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool is_Exists()
         {
             bool isExists_id = cn.is_Exists_data("Accountant", "AID", ac.AID);
             bool isExists_user = cn.is_Exists_data("Accountant", "Auser", ac.AUser); // check unique for user
@@ -118,19 +137,7 @@ namespace SEFinal.DTA
             }
         }
 
-        public string ID_from_User_Pass()
-        {
-            string s = "select AID from Accountant where Auser='" + ac.AUser + "' and Apass = '" + ac.APassword + "'";
-            DataTable tb = cn.selectQuery(s);
-            if (tb.Rows.Count < 1)
-            {
-                return "";
-            }
-            else
-            {
-                return tb.Rows[0][0].ToString();
-            }
-        }   
+      
 
         public string ID_from_User()
         {
@@ -149,7 +156,7 @@ namespace SEFinal.DTA
         public bool is_old_Accountant() // check account is status is deleted
         {
             //MessageBox.Show("" + ac.AName + " " + ac.AUser + " " + ac.APassword);
-            string s = $"select * from Accountant where AName='{ac.AName}' and Auser='{ac.AUser}' and Apass='{ac.APassword}' and is_deleted= 1";
+            string s = $"select * from Accountant where AName='{ac.AName}' and Auser='{ac.AUser}'  and is_deleted= 1";
             DataTable tb = cn.selectQuery(s);
             if (tb.Rows.Count < 1)
             {
@@ -160,6 +167,7 @@ namespace SEFinal.DTA
                 return true;
             }
         }
+       
 
         public DataTable Query(string s)
         {

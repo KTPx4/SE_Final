@@ -1,6 +1,7 @@
 ﻿using SEFinal.Class;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,7 +66,10 @@ namespace SEFinal.DTA
             return cn.getID("OrderID", "[Order]", defaultID);
         }*/
 
-        
+        public DataTable Query(string s)
+        {
+            return cn.selectQuery(s);
+        }
         public string getID()
         {
             return o.OrderID;

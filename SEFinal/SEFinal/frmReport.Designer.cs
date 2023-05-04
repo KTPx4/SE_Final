@@ -54,14 +54,13 @@
             // grbView
             // 
             this.grbView.Controls.Add(this.dgvViews);
-            this.grbView.ForeColor = System.Drawing.SystemColors.Control;
+            this.grbView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.grbView.Location = new System.Drawing.Point(349, 3);
             this.grbView.Name = "grbView";
             this.grbView.Padding = new System.Windows.Forms.Padding(0);
             this.grbView.Size = new System.Drawing.Size(491, 488);
             this.grbView.TabIndex = 3;
             this.grbView.TabStop = false;
-            this.grbView.Text = "Views";
             // 
             // dgvViews
             // 
@@ -71,8 +70,9 @@
             this.dgvViews.AllowUserToResizeColumns = false;
             this.dgvViews.AllowUserToResizeRows = false;
             this.dgvViews.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvViews.BackgroundColor = System.Drawing.SystemColors.ControlDark;
+            this.dgvViews.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvViews.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvViews.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvViews.Location = new System.Drawing.Point(6, 19);
             this.dgvViews.Name = "dgvViews";
             this.dgvViews.RowHeadersVisible = false;
@@ -105,6 +105,7 @@
             this.btnFind.Size = new System.Drawing.Size(50, 46);
             this.btnFind.TabIndex = 21;
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnExportReport
             // 
@@ -133,6 +134,7 @@
             this.btnRef.Size = new System.Drawing.Size(50, 46);
             this.btnRef.TabIndex = 21;
             this.btnRef.UseVisualStyleBackColor = true;
+            this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
             // 
             // grbReport
             // 
@@ -166,6 +168,7 @@
             this.btnAll.TabIndex = 6;
             this.btnAll.Text = "All";
             this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // txtYear
             // 
@@ -180,6 +183,7 @@
             this.cbbTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbTop.FormattingEnabled = true;
             this.cbbTop.Items.AddRange(new object[] {
+            "",
             "5",
             "10",
             "20",
@@ -201,6 +205,7 @@
             this.cbbMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbMonth.FormattingEnabled = true;
             this.cbbMonth.Items.AddRange(new object[] {
+            "",
             "1",
             "2",
             "3",
@@ -251,6 +256,7 @@
             this.cbbFilter.Name = "cbbFilter";
             this.cbbFilter.Size = new System.Drawing.Size(174, 21);
             this.cbbFilter.TabIndex = 4;
+            this.cbbFilter.SelectedIndexChanged += new System.EventHandler(this.cbbFilter_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -296,6 +302,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmReport";
             this.Text = "frmReport";
+            this.Load += new System.EventHandler(this.frmReport_Load);
             this.grbView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).EndInit();
             this.grbTool.ResumeLayout(false);
