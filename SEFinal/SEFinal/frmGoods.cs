@@ -31,8 +31,8 @@ namespace SEFinal
         {
             clearInput();
             //block input
-            grbInput.Enabled = false;
-            grbInput.BackColor = Color.Gray;
+            grbInput1.Enabled = false;
+            grbInput1.BackColor = Color.Gray;
             //block btn
             btnEdit.Enabled = false;
             btnEdit.BackColor = Color.Gray;
@@ -50,7 +50,7 @@ namespace SEFinal
             dgvViews.Columns[2].HeaderText = "Unit";
             dgvViews.Columns[3].HeaderText = "Price";
             dgvViews.Columns[4].HeaderText = "Country";
-            dgvViews.Columns[5].HeaderText = "Quantity In Warehouse";
+            dgvViews.Columns[5].HeaderText = "Quantity Warehouse";
 
             //set color
             dgvViews.ColumnHeadersDefaultCellStyle.BackColor = Color.SkyBlue;
@@ -87,8 +87,8 @@ namespace SEFinal
             //auto ID
             txtID.Text = (new BUS_Goods()).get_Next_ID();
 
-            grbInput.Enabled = true;
-            grbInput.BackColor = Color.Transparent;
+            grbInput1.Enabled = true;
+            grbInput1.BackColor = Color.Transparent;
 
             btnSave.Enabled = true;
             btnSave.BackColor = Color.Transparent;
@@ -103,8 +103,8 @@ namespace SEFinal
         {
             is_edit = true;
 
-            grbInput.Enabled = true;
-            grbInput.BackColor = Color.Transparent;
+            grbInput1.Enabled = true;
+            grbInput1.BackColor = Color.Transparent;
 
             btnSave.Enabled = true;
             btnSave.BackColor = Color.Transparent;
@@ -128,10 +128,14 @@ namespace SEFinal
             int quan = int.Parse(txtQuan.Text);
 
             BUS_Goods goods = new BUS_Goods(id, name, unit, price, country, quan);
-        
-            if(is_edit) // edit 
+
+            if (is_edit) // edit 
             {
-                goods.edit();
+                if (!goods.edit())
+                {
+                    MessageBox.Show("Invalid Input, Please Check the Rules of Input");
+                    return;
+                }
             }
             else // add new
             {
@@ -146,15 +150,19 @@ namespace SEFinal
                     DialogResult result = MessageBox.Show("That Goods Exists in data. Do you want to restore?", "Confirmation", MessageBoxButtons.YesNoCancel);
                     if (result == DialogResult.Yes) // call edit and edit status of is_deleted
                     {
-                        // Call edit
-                        string ids = goods.getID_from_Name(); // find old id contain that old employee from user and pass
-                        goods.restore(ids);
+                        // Call restore
+                      
+                        if(!goods.restore())
+                        {
+                            MessageBox.Show("Error When retore, Please The rules of input!");
+                            return;
+                        }
                     }
                     else if (result == DialogResult.No) // add rows with new id and user
                     {
-                        if (!goods.add() )
+                        if (!goods.add())
                         {
-                            MessageBox.Show("Error Add new Goods, Or User Exists in data!");
+                            MessageBox.Show("Error! Invalid Input, Please check The Rules of input!");
                         }
 
                     }
@@ -166,7 +174,10 @@ namespace SEFinal
                 }
                 else if (status == 1)
                 {
-                    goods.add();
+                    if (!goods.add())
+                    {
+                        MessageBox.Show("Error! Invalid Input, Please Read The Rules of input!");
+                    }
                 }
             }
             loadForm();     
@@ -213,8 +224,8 @@ namespace SEFinal
             btnSave.Enabled = false;
             btnSave.BackColor = Color.Gray;
 
-            grbInput.Enabled = false;
-            grbInput.BackColor = Color.Gray;
+            grbInput1.Enabled = false;
+            grbInput1.BackColor = Color.Gray;
 
             int index = dgvViews.CurrentRow.Index;
 
@@ -226,14 +237,6 @@ namespace SEFinal
             txtQuan.Text = dgvViews.Rows[index].Cells[5].Value.ToString();
 
         }
-
-
-
-
-
-
-
-
 
 
 
@@ -363,6 +366,34 @@ namespace SEFinal
             }
         }
 
-      
+        private void txtQuan_TextChanged(object sender, EventArgs e)
+        {
+            if(txtQuan.Text == "")
+            {
+                return;
+            }
+            bool is_number = int.TryParse(txtQuan.Text, out int n);
+            if(!is_number)
+            {
+                MessageBox.Show("Invalid Quantity!");
+                txtQuan.Text = "";
+                return;
+            }
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPrice.Text == "")
+            {
+                return;
+            }
+            bool is_number = double.TryParse(txtPrice.Text, out double n);
+            if (!is_number)
+            {
+                MessageBox.Show("Invalid Price!");
+                txtPrice.Text = "";
+                return;
+            }
+        }
     }
 }

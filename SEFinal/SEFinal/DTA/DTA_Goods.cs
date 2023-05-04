@@ -25,6 +25,27 @@ namespace SEFinal.DTA
             gs = new C_Goods(goodsID, goodsName, unit, price, country, is_delete);
         }
 
+        public bool check_parameter()
+        {
+            if(gs.GoodsID.Length > 10 || gs.GoodsID == "")
+            {
+                return  false;
+            }
+            else if( gs.GoodsName.Length > 200 || gs.GoodsName == "")
+            {
+                return false;
+            }
+            else if(gs.Unit.Length > 200 || gs.Unit == "")
+            {
+                return false;
+            }
+            else if (gs.Country.Length > 100 || gs.Country == "")
+            {
+                return false;
+            }
+            return true;
+        }
+
         public bool add_()
         {
             bool isExists_id = cn.is_Exists_data("Goods", "GoodsID", gs.GoodsID);

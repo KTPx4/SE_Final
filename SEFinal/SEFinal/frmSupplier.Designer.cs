@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grbView = new System.Windows.Forms.GroupBox();
             this.dgvViews = new System.Windows.Forms.DataGridView();
             this.grbControl = new System.Windows.Forms.GroupBox();
@@ -36,19 +37,20 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.grbInputGoods = new System.Windows.Forms.GroupBox();
+            this.grbInput = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtSupaddr = new System.Windows.Forms.TextBox();
-            this.txtSupphone = new System.Windows.Forms.TextBox();
-            this.txtSupName = new System.Windows.Forms.TextBox();
-            this.txtSupID = new System.Windows.Forms.TextBox();
+            this.txtAddr = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
             this.grbView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).BeginInit();
             this.grbControl.SuspendLayout();
-            this.grbInputGoods.SuspendLayout();
+            this.grbInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // grbView
@@ -76,6 +78,7 @@
             this.dgvViews.RowHeadersVisible = false;
             this.dgvViews.Size = new System.Drawing.Size(821, 235);
             this.dgvViews.TabIndex = 0;
+            this.dgvViews.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViews_CellClick);
             // 
             // grbControl
             // 
@@ -103,6 +106,9 @@
             this.btnRefresh.Size = new System.Drawing.Size(39, 42);
             this.btnRefresh.TabIndex = 0;
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
+            this.btnRefresh.MouseHover += new System.EventHandler(this.btnRefresh_MouseHover);
             // 
             // btnRemove
             // 
@@ -117,6 +123,9 @@
             this.btnRemove.Size = new System.Drawing.Size(43, 42);
             this.btnRemove.TabIndex = 0;
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.btnRemove.MouseLeave += new System.EventHandler(this.btnRemove_MouseLeave);
+            this.btnRemove.MouseHover += new System.EventHandler(this.btnRemove_MouseHover);
             // 
             // btnSave
             // 
@@ -131,6 +140,9 @@
             this.btnSave.Size = new System.Drawing.Size(45, 42);
             this.btnSave.TabIndex = 0;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            this.btnSave.MouseHover += new System.EventHandler(this.btnSave_MouseHover);
             // 
             // btnEdit
             // 
@@ -145,6 +157,9 @@
             this.btnEdit.Size = new System.Drawing.Size(41, 42);
             this.btnEdit.TabIndex = 0;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.MouseLeave += new System.EventHandler(this.btnEdit_MouseLeave);
+            this.btnEdit.MouseHover += new System.EventHandler(this.btnEdit_MouseHover);
             // 
             // btnAdd
             // 
@@ -160,22 +175,25 @@
             this.btnAdd.Size = new System.Drawing.Size(56, 51);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
+            this.btnAdd.MouseHover += new System.EventHandler(this.btnAdd_MouseHover);
             // 
-            // grbInputGoods
+            // grbInput
             // 
-            this.grbInputGoods.Controls.Add(this.label6);
-            this.grbInputGoods.Controls.Add(this.label2);
-            this.grbInputGoods.Controls.Add(this.label4);
-            this.grbInputGoods.Controls.Add(this.label1);
-            this.grbInputGoods.Controls.Add(this.txtSupaddr);
-            this.grbInputGoods.Controls.Add(this.txtSupphone);
-            this.grbInputGoods.Controls.Add(this.txtSupName);
-            this.grbInputGoods.Controls.Add(this.txtSupID);
-            this.grbInputGoods.Location = new System.Drawing.Point(6, 6);
-            this.grbInputGoods.Name = "grbInputGoods";
-            this.grbInputGoods.Size = new System.Drawing.Size(836, 142);
-            this.grbInputGoods.TabIndex = 5;
-            this.grbInputGoods.TabStop = false;
+            this.grbInput.Controls.Add(this.label6);
+            this.grbInput.Controls.Add(this.label2);
+            this.grbInput.Controls.Add(this.label4);
+            this.grbInput.Controls.Add(this.label1);
+            this.grbInput.Controls.Add(this.txtAddr);
+            this.grbInput.Controls.Add(this.txtPhone);
+            this.grbInput.Controls.Add(this.txtName);
+            this.grbInput.Controls.Add(this.txtID);
+            this.grbInput.Location = new System.Drawing.Point(6, 6);
+            this.grbInput.Name = "grbInput";
+            this.grbInput.Size = new System.Drawing.Size(836, 142);
+            this.grbInput.TabIndex = 5;
+            this.grbInput.TabStop = false;
             // 
             // label6
             // 
@@ -217,45 +235,46 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Supplier ID";
             // 
-            // txtSupaddr
+            // txtAddr
             // 
-            this.txtSupaddr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.txtSupaddr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupaddr.Location = new System.Drawing.Point(514, 88);
-            this.txtSupaddr.Multiline = true;
-            this.txtSupaddr.Name = "txtSupaddr";
-            this.txtSupaddr.Size = new System.Drawing.Size(158, 28);
-            this.txtSupaddr.TabIndex = 0;
+            this.txtAddr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.txtAddr.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddr.Location = new System.Drawing.Point(514, 88);
+            this.txtAddr.Multiline = true;
+            this.txtAddr.Name = "txtAddr";
+            this.txtAddr.Size = new System.Drawing.Size(158, 28);
+            this.txtAddr.TabIndex = 0;
             // 
-            // txtSupphone
+            // txtPhone
             // 
-            this.txtSupphone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.txtSupphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupphone.Location = new System.Drawing.Point(229, 88);
-            this.txtSupphone.Multiline = true;
-            this.txtSupphone.Name = "txtSupphone";
-            this.txtSupphone.Size = new System.Drawing.Size(158, 28);
-            this.txtSupphone.TabIndex = 0;
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(229, 88);
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(158, 28);
+            this.txtPhone.TabIndex = 0;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
-            // txtSupName
+            // txtName
             // 
-            this.txtSupName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.txtSupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupName.Location = new System.Drawing.Point(514, 25);
-            this.txtSupName.Multiline = true;
-            this.txtSupName.Name = "txtSupName";
-            this.txtSupName.Size = new System.Drawing.Size(158, 28);
-            this.txtSupName.TabIndex = 0;
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(514, 25);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(158, 28);
+            this.txtName.TabIndex = 0;
             // 
-            // txtSupID
+            // txtID
             // 
-            this.txtSupID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.txtSupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSupID.Location = new System.Drawing.Point(229, 25);
-            this.txtSupID.Multiline = true;
-            this.txtSupID.Name = "txtSupID";
-            this.txtSupID.Size = new System.Drawing.Size(158, 28);
-            this.txtSupID.TabIndex = 0;
+            this.txtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(229, 25);
+            this.txtID.Multiline = true;
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(158, 28);
+            this.txtID.TabIndex = 0;
             // 
             // frmSupplier
             // 
@@ -264,17 +283,18 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(848, 500);
             this.Controls.Add(this.grbControl);
-            this.Controls.Add(this.grbInputGoods);
+            this.Controls.Add(this.grbInput);
             this.Controls.Add(this.grbView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSupplier";
             this.Text = "frmSupplier";
+            this.Load += new System.EventHandler(this.frmSupplier_Load);
             this.grbView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).EndInit();
             this.grbControl.ResumeLayout(false);
-            this.grbInputGoods.ResumeLayout(false);
-            this.grbInputGoods.PerformLayout();
+            this.grbInput.ResumeLayout(false);
+            this.grbInput.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -289,14 +309,15 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.GroupBox grbInputGoods;
+        private System.Windows.Forms.GroupBox grbInput;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSupaddr;
-        private System.Windows.Forms.TextBox txtSupphone;
-        private System.Windows.Forms.TextBox txtSupName;
-        private System.Windows.Forms.TextBox txtSupID;
+        private System.Windows.Forms.TextBox txtAddr;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.ToolTip toolTipText;
     }
 }

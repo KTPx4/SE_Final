@@ -57,6 +57,7 @@
     <Compile Include="BUS\BUS_Order.cs" />
     <Compile Include="BUS\BUS_O_Detail.cs" />
     <Compile Include="BUS\BUS_Payment.cs" />
+    <Compile Include="BUS\BUS_PaymentDetail.cs" />
     <Compile Include="BUS\BUS_Supplier.cs" />
     <Compile Include="Class\C_Accountant.cs" />
     <Compile Include="Class\C_AdminSystem.cs" />

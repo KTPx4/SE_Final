@@ -140,14 +140,19 @@ namespace SEFinal
                     if (result == DialogResult.Yes) // call edit and edit status of is_deleted
                     {
                         // Call edit
-                        string ids = acc.getID_from_User(); // find old id contain that old employee from user and pass
-                        acc.restore(ids);
+                        if(!acc.restore())
+                        {
+                            MessageBox.Show("Error!. Input invalid or exists in data");
+                            MessageBox.Show("Please Read The Rules of Input");
+                        }
                     }
                     else if (result == DialogResult.No) // add rows with new id and user
                     {
-                        if(acc.add() != 1)
+                        if(!acc.add())
                         {
-                            MessageBox.Show("Error Add new Accountant, Or User Exists in data!");
+                            MessageBox.Show("Error!. Input invalid or exists in data");
+                            MessageBox.Show("Please Read The Rules of Input");
+
                         }
 
                     }
@@ -155,11 +160,17 @@ namespace SEFinal
                 else if(status == 2)
                 {
                     MessageBox.Show("ID or User Exists in data, Try again!");
+
                     return;
                 }
                 else if( status == 1)
                 {
-                    acc.add();
+                    if(!acc.add())
+                    {
+                        MessageBox.Show("Error!. Input invalid or exists in data");
+                        MessageBox.Show("Please Read The Rules of Input");
+
+                    }
                 }
             }
             loadForm();

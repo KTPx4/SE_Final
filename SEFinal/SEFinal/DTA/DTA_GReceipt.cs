@@ -1,6 +1,7 @@
 ﻿using SEFinal.Class;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,10 @@ namespace SEFinal.DTA
             cn = new Connection();
             gr = new C_GReceipt(receiptID, receiptDate, supID, employee, totalAmount);
         }
-
+        public void setTotal(double total)
+        {
+            gr.TotalAmount= total;
+        }
         public bool add_()
         {
             bool isExists_id = cn.is_Exists_data("GoodsReceipt", "ReceiptID", gr.ReceiptID);
@@ -81,7 +85,10 @@ namespace SEFinal.DTA
         {
             return gr.ReceiptID;
         }
-
+        public DataTable Query(string s)
+        {
+            return cn.selectQuery(s);
+        }
 
     }
 }

@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.grbStatus = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grbDelivery = new System.Windows.Forms.GroupBox();
+            this.grbInfoD = new System.Windows.Forms.GroupBox();
+            this.dateD = new System.Windows.Forms.DateTimePicker();
             this.cbbDstatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnDorder = new System.Windows.Forms.Button();
+            this.btnDEm = new System.Windows.Forms.Button();
             this.cbbDorderID = new System.Windows.Forms.ComboBox();
             this.cbbDEmp = new System.Windows.Forms.ComboBox();
             this.txtDid = new System.Windows.Forms.TextBox();
-            this.txtDdate = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -46,19 +48,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTipText = new System.Windows.Forms.ToolTip(this.components);
-            this.txtRDate = new System.Windows.Forms.TextBox();
             this.txtRID = new System.Windows.Forms.TextBox();
-            this.grbMana = new System.Windows.Forms.GroupBox();
+            this.grbReceipt = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRupdateListG = new System.Windows.Forms.Button();
-            this.cbbRGoodsName = new System.Windows.Forms.ComboBox();
+            this.btnRaddG = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtRQuan = new System.Windows.Forms.TextBox();
+            this.txtGName = new System.Windows.Forms.TextBox();
+            this.txtGQuan = new System.Windows.Forms.TextBox();
             this.cbbRGoodsID = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.dateR = new System.Windows.Forms.DateTimePicker();
+            this.btnOpenSup = new System.Windows.Forms.Button();
+            this.btnOpenEmployee = new System.Windows.Forms.Button();
             this.cbbRSupID = new System.Windows.Forms.ComboBox();
             this.cbbREmployee = new System.Windows.Forms.ComboBox();
             this.btnGD = new System.Windows.Forms.Button();
@@ -69,20 +74,13 @@
             this.grbViews = new System.Windows.Forms.GroupBox();
             this.dgvViews = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRaddG = new System.Windows.Forms.Button();
-            this.btnOpenSup = new System.Windows.Forms.Button();
-            this.btnOpenEmployee = new System.Windows.Forms.Button();
-            this.btnDorder = new System.Windows.Forms.Button();
-            this.btnDEm = new System.Windows.Forms.Button();
-            this.grbStatus.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.grbMana.SuspendLayout();
+            this.grbDelivery.SuspendLayout();
+            this.grbInfoD.SuspendLayout();
+            this.grbReceipt.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grbInfo.SuspendLayout();
             this.panelTab.SuspendLayout();
             this.grbItems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
@@ -90,43 +88,52 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvViews)).BeginInit();
             this.SuspendLayout();
             // 
-            // grbStatus
+            // grbDelivery
             // 
-            this.grbStatus.Controls.Add(this.groupBox4);
-            this.grbStatus.Location = new System.Drawing.Point(6, 57);
-            this.grbStatus.Name = "grbStatus";
-            this.grbStatus.Padding = new System.Windows.Forms.Padding(0);
-            this.grbStatus.Size = new System.Drawing.Size(836, 121);
-            this.grbStatus.TabIndex = 23;
-            this.grbStatus.TabStop = false;
+            this.grbDelivery.Controls.Add(this.grbInfoD);
+            this.grbDelivery.Location = new System.Drawing.Point(6, 57);
+            this.grbDelivery.Name = "grbDelivery";
+            this.grbDelivery.Padding = new System.Windows.Forms.Padding(0);
+            this.grbDelivery.Size = new System.Drawing.Size(836, 121);
+            this.grbDelivery.TabIndex = 23;
+            this.grbDelivery.TabStop = false;
             // 
-            // groupBox4
+            // grbInfoD
             // 
-            this.groupBox4.Controls.Add(this.cbbDstatus);
-            this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.btnDorder);
-            this.groupBox4.Controls.Add(this.btnDEm);
-            this.groupBox4.Controls.Add(this.cbbDorderID);
-            this.groupBox4.Controls.Add(this.cbbDEmp);
-            this.groupBox4.Controls.Add(this.txtDid);
-            this.groupBox4.Controls.Add(this.txtDdate);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox4.Location = new System.Drawing.Point(6, 12);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(824, 106);
-            this.groupBox4.TabIndex = 26;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Info";
+            this.grbInfoD.Controls.Add(this.dateD);
+            this.grbInfoD.Controls.Add(this.cbbDstatus);
+            this.grbInfoD.Controls.Add(this.label9);
+            this.grbInfoD.Controls.Add(this.btnDorder);
+            this.grbInfoD.Controls.Add(this.btnDEm);
+            this.grbInfoD.Controls.Add(this.cbbDorderID);
+            this.grbInfoD.Controls.Add(this.cbbDEmp);
+            this.grbInfoD.Controls.Add(this.txtDid);
+            this.grbInfoD.Controls.Add(this.label13);
+            this.grbInfoD.Controls.Add(this.label14);
+            this.grbInfoD.Controls.Add(this.label15);
+            this.grbInfoD.Controls.Add(this.label16);
+            this.grbInfoD.ForeColor = System.Drawing.SystemColors.Control;
+            this.grbInfoD.Location = new System.Drawing.Point(6, 12);
+            this.grbInfoD.Name = "grbInfoD";
+            this.grbInfoD.Size = new System.Drawing.Size(824, 106);
+            this.grbInfoD.TabIndex = 26;
+            this.grbInfoD.TabStop = false;
+            this.grbInfoD.Text = "Info";
+            this.grbInfoD.Enter += new System.EventHandler(this.grbInfoD_Enter);
+            // 
+            // dateD
+            // 
+            this.dateD.Location = new System.Drawing.Point(455, 19);
+            this.dateD.Name = "dateD";
+            this.dateD.Size = new System.Drawing.Size(151, 20);
+            this.dateD.TabIndex = 23;
+            this.dateD.Value = new System.DateTime(2023, 5, 3, 0, 0, 0, 0);
             // 
             // cbbDstatus
             // 
             this.cbbDstatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
             this.cbbDstatus.FormattingEnabled = true;
-            this.cbbDstatus.Location = new System.Drawing.Point(673, 42);
+            this.cbbDstatus.Location = new System.Drawing.Point(673, 51);
             this.cbbDstatus.Name = "cbbDstatus";
             this.cbbDstatus.Size = new System.Drawing.Size(134, 21);
             this.cbbDstatus.TabIndex = 22;
@@ -135,11 +142,37 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(630, 46);
+            this.label9.Location = new System.Drawing.Point(696, 33);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 21;
-            this.label9.Text = "Status";
+            this.label9.Text = "Status Delivery";
+            // 
+            // btnDorder
+            // 
+            this.btnDorder.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnDorder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDorder.FlatAppearance.BorderSize = 0;
+            this.btnDorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDorder.Location = new System.Drawing.Point(585, 63);
+            this.btnDorder.Name = "btnDorder";
+            this.btnDorder.Size = new System.Drawing.Size(21, 21);
+            this.btnDorder.TabIndex = 19;
+            this.btnDorder.UseVisualStyleBackColor = true;
+            this.btnDorder.Click += new System.EventHandler(this.btnDorder_Click);
+            // 
+            // btnDEm
+            // 
+            this.btnDEm.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnDEm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDEm.FlatAppearance.BorderSize = 0;
+            this.btnDEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDEm.Location = new System.Drawing.Point(288, 63);
+            this.btnDEm.Name = "btnDEm";
+            this.btnDEm.Size = new System.Drawing.Size(21, 21);
+            this.btnDEm.TabIndex = 19;
+            this.btnDEm.UseVisualStyleBackColor = true;
+            this.btnDEm.Click += new System.EventHandler(this.btnOpenEmployee_Click);
             // 
             // cbbDorderID
             // 
@@ -147,8 +180,9 @@
             this.cbbDorderID.FormattingEnabled = true;
             this.cbbDorderID.Location = new System.Drawing.Point(454, 63);
             this.cbbDorderID.Name = "cbbDorderID";
-            this.cbbDorderID.Size = new System.Drawing.Size(97, 21);
+            this.cbbDorderID.Size = new System.Drawing.Size(125, 21);
             this.cbbDorderID.TabIndex = 18;
+            this.cbbDorderID.SelectedIndexChanged += new System.EventHandler(this.cbbDorderID_SelectedIndexChanged);
             // 
             // cbbDEmp
             // 
@@ -167,15 +201,6 @@
             this.txtDid.Name = "txtDid";
             this.txtDid.Size = new System.Drawing.Size(124, 22);
             this.txtDid.TabIndex = 11;
-            // 
-            // txtDdate
-            // 
-            this.txtDdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.txtDdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDdate.Location = new System.Drawing.Point(454, 19);
-            this.txtDdate.Name = "txtDdate";
-            this.txtDdate.Size = new System.Drawing.Size(124, 22);
-            this.txtDdate.TabIndex = 10;
             // 
             // label13
             // 
@@ -251,20 +276,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 29);
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Receipt ID";
-            // 
-            // txtRDate
-            // 
-            this.txtRDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.txtRDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRDate.Location = new System.Drawing.Point(351, 24);
-            this.txtRDate.Name = "txtRDate";
-            this.txtRDate.Size = new System.Drawing.Size(124, 22);
-            this.txtRDate.TabIndex = 10;
             // 
             // txtRID
             // 
@@ -275,24 +291,24 @@
             this.txtRID.Size = new System.Drawing.Size(124, 22);
             this.txtRID.TabIndex = 11;
             // 
-            // grbMana
+            // grbReceipt
             // 
-            this.grbMana.Controls.Add(this.groupBox1);
-            this.grbMana.Controls.Add(this.groupBox2);
-            this.grbMana.Location = new System.Drawing.Point(6, 53);
-            this.grbMana.Name = "grbMana";
-            this.grbMana.Padding = new System.Windows.Forms.Padding(0);
-            this.grbMana.Size = new System.Drawing.Size(836, 125);
-            this.grbMana.TabIndex = 22;
-            this.grbMana.TabStop = false;
+            this.grbReceipt.Controls.Add(this.groupBox1);
+            this.grbReceipt.Controls.Add(this.grbInfo);
+            this.grbReceipt.Location = new System.Drawing.Point(6, 53);
+            this.grbReceipt.Name = "grbReceipt";
+            this.grbReceipt.Padding = new System.Windows.Forms.Padding(0);
+            this.grbReceipt.Size = new System.Drawing.Size(836, 125);
+            this.grbReceipt.TabIndex = 22;
+            this.grbReceipt.TabStop = false;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnRupdateListG);
             this.groupBox1.Controls.Add(this.btnRaddG);
-            this.groupBox1.Controls.Add(this.cbbRGoodsName);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtRQuan);
+            this.groupBox1.Controls.Add(this.txtGName);
+            this.groupBox1.Controls.Add(this.txtGQuan);
             this.groupBox1.Controls.Add(this.cbbRGoodsID);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
@@ -318,15 +334,20 @@
             this.btnRupdateListG.TabIndex = 19;
             this.btnRupdateListG.Text = "Update";
             this.btnRupdateListG.UseVisualStyleBackColor = false;
+            this.btnRupdateListG.Click += new System.EventHandler(this.btnRupdateListG_Click);
             // 
-            // cbbRGoodsName
+            // btnRaddG
             // 
-            this.cbbRGoodsName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.cbbRGoodsName.FormattingEnabled = true;
-            this.cbbRGoodsName.Location = new System.Drawing.Point(86, 47);
-            this.cbbRGoodsName.Name = "cbbRGoodsName";
-            this.cbbRGoodsName.Size = new System.Drawing.Size(111, 21);
-            this.cbbRGoodsName.TabIndex = 18;
+            this.btnRaddG.BackgroundImage = global::SEFinal.Properties.Resources.add_to_cart;
+            this.btnRaddG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRaddG.FlatAppearance.BorderSize = 0;
+            this.btnRaddG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaddG.Location = new System.Drawing.Point(245, 9);
+            this.btnRaddG.Name = "btnRaddG";
+            this.btnRaddG.Size = new System.Drawing.Size(41, 41);
+            this.btnRaddG.TabIndex = 19;
+            this.btnRaddG.UseVisualStyleBackColor = true;
+            this.btnRaddG.Click += new System.EventHandler(this.btnRaddG_Click);
             // 
             // label6
             // 
@@ -337,14 +358,25 @@
             this.label6.Size = new System.Drawing.Size(0, 13);
             this.label6.TabIndex = 13;
             // 
-            // txtRQuan
+            // txtGName
             // 
-            this.txtRQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
-            this.txtRQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRQuan.Location = new System.Drawing.Point(86, 74);
-            this.txtRQuan.Name = "txtRQuan";
-            this.txtRQuan.Size = new System.Drawing.Size(111, 22);
-            this.txtRQuan.TabIndex = 11;
+            this.txtGName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.txtGName.Enabled = false;
+            this.txtGName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGName.Location = new System.Drawing.Point(86, 46);
+            this.txtGName.Name = "txtGName";
+            this.txtGName.Size = new System.Drawing.Size(111, 22);
+            this.txtGName.TabIndex = 11;
+            // 
+            // txtGQuan
+            // 
+            this.txtGQuan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(194)))), ((int)(((byte)(194)))));
+            this.txtGQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGQuan.Location = new System.Drawing.Point(86, 74);
+            this.txtGQuan.Name = "txtGQuan";
+            this.txtGQuan.Size = new System.Drawing.Size(111, 22);
+            this.txtGQuan.TabIndex = 11;
+            this.txtGQuan.TextChanged += new System.EventHandler(this.txtGQuan_TextChanged);
             // 
             // cbbRGoodsID
             // 
@@ -354,6 +386,7 @@
             this.cbbRGoodsID.Name = "cbbRGoodsID";
             this.cbbRGoodsID.Size = new System.Drawing.Size(111, 21);
             this.cbbRGoodsID.TabIndex = 18;
+            this.cbbRGoodsID.SelectedIndexChanged += new System.EventHandler(this.cbbRGoodsID_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -385,25 +418,59 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Goods ID";
             // 
-            // groupBox2
+            // grbInfo
             // 
-            this.groupBox2.Controls.Add(this.btnOpenSup);
-            this.groupBox2.Controls.Add(this.btnOpenEmployee);
-            this.groupBox2.Controls.Add(this.cbbRSupID);
-            this.groupBox2.Controls.Add(this.cbbREmployee);
-            this.groupBox2.Controls.Add(this.txtRID);
-            this.groupBox2.Controls.Add(this.txtRDate);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(6, 11);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(515, 110);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Info";
+            this.grbInfo.Controls.Add(this.dateR);
+            this.grbInfo.Controls.Add(this.btnOpenSup);
+            this.grbInfo.Controls.Add(this.btnOpenEmployee);
+            this.grbInfo.Controls.Add(this.cbbRSupID);
+            this.grbInfo.Controls.Add(this.cbbREmployee);
+            this.grbInfo.Controls.Add(this.txtRID);
+            this.grbInfo.Controls.Add(this.label3);
+            this.grbInfo.Controls.Add(this.label1);
+            this.grbInfo.Controls.Add(this.label2);
+            this.grbInfo.Controls.Add(this.label4);
+            this.grbInfo.ForeColor = System.Drawing.SystemColors.Control;
+            this.grbInfo.Location = new System.Drawing.Point(6, 11);
+            this.grbInfo.Name = "grbInfo";
+            this.grbInfo.Size = new System.Drawing.Size(515, 110);
+            this.grbInfo.TabIndex = 19;
+            this.grbInfo.TabStop = false;
+            this.grbInfo.Text = "Info";
+            // 
+            // dateR
+            // 
+            this.dateR.Location = new System.Drawing.Point(351, 26);
+            this.dateR.Name = "dateR";
+            this.dateR.Size = new System.Drawing.Size(151, 20);
+            this.dateR.TabIndex = 20;
+            this.dateR.Value = new System.DateTime(2023, 5, 3, 0, 0, 0, 0);
+            // 
+            // btnOpenSup
+            // 
+            this.btnOpenSup.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnOpenSup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenSup.FlatAppearance.BorderSize = 0;
+            this.btnOpenSup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenSup.Location = new System.Drawing.Point(454, 67);
+            this.btnOpenSup.Name = "btnOpenSup";
+            this.btnOpenSup.Size = new System.Drawing.Size(21, 21);
+            this.btnOpenSup.TabIndex = 19;
+            this.btnOpenSup.UseVisualStyleBackColor = true;
+            this.btnOpenSup.Click += new System.EventHandler(this.btnOpenSup_Click);
+            // 
+            // btnOpenEmployee
+            // 
+            this.btnOpenEmployee.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
+            this.btnOpenEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenEmployee.FlatAppearance.BorderSize = 0;
+            this.btnOpenEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenEmployee.Location = new System.Drawing.Point(185, 68);
+            this.btnOpenEmployee.Name = "btnOpenEmployee";
+            this.btnOpenEmployee.Size = new System.Drawing.Size(21, 21);
+            this.btnOpenEmployee.TabIndex = 19;
+            this.btnOpenEmployee.UseVisualStyleBackColor = true;
+            this.btnOpenEmployee.Click += new System.EventHandler(this.btnOpenEmployee_Click);
             // 
             // cbbRSupID
             // 
@@ -436,7 +503,7 @@
             this.btnGD.TabIndex = 1;
             this.btnGD.Text = "Goods Delivery";
             this.btnGD.UseVisualStyleBackColor = false;
-            this.btnGD.Click += new System.EventHandler(this.btnStatus_Click);
+            this.btnGD.Click += new System.EventHandler(this.btnDelivery_Click);
             // 
             // btnGR
             // 
@@ -451,7 +518,7 @@
             this.btnGR.TabIndex = 0;
             this.btnGR.Text = "Goods Receipt";
             this.btnGR.UseVisualStyleBackColor = false;
-            this.btnGR.Click += new System.EventHandler(this.btnManage_Click);
+            this.btnGR.Click += new System.EventHandler(this.btnReceipt_Click);
             // 
             // panelTab
             // 
@@ -465,7 +532,7 @@
             // grbItems
             // 
             this.grbItems.Controls.Add(this.dgvItem);
-            this.grbItems.ForeColor = System.Drawing.SystemColors.Control;
+            this.grbItems.ForeColor = System.Drawing.Color.DodgerBlue;
             this.grbItems.Location = new System.Drawing.Point(6, 251);
             this.grbItems.Name = "grbItems";
             this.grbItems.Padding = new System.Windows.Forms.Padding(0);
@@ -481,7 +548,6 @@
             this.dgvItem.AllowUserToOrderColumns = true;
             this.dgvItem.AllowUserToResizeColumns = false;
             this.dgvItem.AllowUserToResizeRows = false;
-            this.dgvItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItem.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgvItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItem.Location = new System.Drawing.Point(6, 15);
@@ -489,11 +555,12 @@
             this.dgvItem.RowHeadersVisible = false;
             this.dgvItem.Size = new System.Drawing.Size(294, 222);
             this.dgvItem.TabIndex = 0;
+            this.dgvItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellClick);
             // 
             // grbViews
             // 
             this.grbViews.Controls.Add(this.dgvViews);
-            this.grbViews.ForeColor = System.Drawing.SystemColors.Control;
+            this.grbViews.ForeColor = System.Drawing.Color.DodgerBlue;
             this.grbViews.Location = new System.Drawing.Point(312, 251);
             this.grbViews.Name = "grbViews";
             this.grbViews.Padding = new System.Windows.Forms.Padding(0);
@@ -517,6 +584,7 @@
             this.dgvViews.RowHeadersVisible = false;
             this.dgvViews.Size = new System.Drawing.Size(518, 222);
             this.dgvViews.TabIndex = 0;
+            this.dgvViews.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViews_CellClick);
             // 
             // btnRefresh
             // 
@@ -526,25 +594,12 @@
             this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(673, 193);
+            this.btnRefresh.Location = new System.Drawing.Point(559, 193);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(39, 42);
             this.btnRefresh.TabIndex = 6;
             this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.BackgroundImage = global::SEFinal.Properties.Resources.delete;
-            this.btnRemove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRemove.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Location = new System.Drawing.Point(553, 193);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(43, 42);
-            this.btnRemove.TabIndex = 7;
-            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnSave
             // 
@@ -554,25 +609,12 @@
             this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(425, 193);
+            this.btnSave.Location = new System.Drawing.Point(427, 193);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(45, 42);
             this.btnSave.TabIndex = 8;
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackgroundImage = global::SEFinal.Properties.Resources.edit;
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Location = new System.Drawing.Point(296, 193);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(41, 42);
-            this.btnEdit.TabIndex = 9;
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -583,73 +625,12 @@
             this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(179, 193);
+            this.btnAdd.Location = new System.Drawing.Point(274, 193);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(56, 51);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnRaddG
-            // 
-            this.btnRaddG.BackgroundImage = global::SEFinal.Properties.Resources.add_to_cart;
-            this.btnRaddG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRaddG.FlatAppearance.BorderSize = 0;
-            this.btnRaddG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRaddG.Location = new System.Drawing.Point(245, 9);
-            this.btnRaddG.Name = "btnRaddG";
-            this.btnRaddG.Size = new System.Drawing.Size(41, 41);
-            this.btnRaddG.TabIndex = 19;
-            this.btnRaddG.UseVisualStyleBackColor = true;
-            // 
-            // btnOpenSup
-            // 
-            this.btnOpenSup.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnOpenSup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenSup.FlatAppearance.BorderSize = 0;
-            this.btnOpenSup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenSup.Location = new System.Drawing.Point(454, 67);
-            this.btnOpenSup.Name = "btnOpenSup";
-            this.btnOpenSup.Size = new System.Drawing.Size(21, 21);
-            this.btnOpenSup.TabIndex = 19;
-            this.btnOpenSup.UseVisualStyleBackColor = true;
-            this.btnOpenSup.Click += new System.EventHandler(this.btnOpenSup_Click);
-            // 
-            // btnOpenEmployee
-            // 
-            this.btnOpenEmployee.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnOpenEmployee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenEmployee.FlatAppearance.BorderSize = 0;
-            this.btnOpenEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenEmployee.Location = new System.Drawing.Point(185, 68);
-            this.btnOpenEmployee.Name = "btnOpenEmployee";
-            this.btnOpenEmployee.Size = new System.Drawing.Size(21, 21);
-            this.btnOpenEmployee.TabIndex = 19;
-            this.btnOpenEmployee.UseVisualStyleBackColor = true;
-            this.btnOpenEmployee.Click += new System.EventHandler(this.btnOpenEmployee_Click);
-            // 
-            // btnDorder
-            // 
-            this.btnDorder.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnDorder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDorder.FlatAppearance.BorderSize = 0;
-            this.btnDorder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDorder.Location = new System.Drawing.Point(557, 62);
-            this.btnDorder.Name = "btnDorder";
-            this.btnDorder.Size = new System.Drawing.Size(21, 21);
-            this.btnDorder.TabIndex = 19;
-            this.btnDorder.UseVisualStyleBackColor = true;
-            // 
-            // btnDEm
-            // 
-            this.btnDEm.BackgroundImage = global::SEFinal.Properties.Resources.expand_arrows;
-            this.btnDEm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDEm.FlatAppearance.BorderSize = 0;
-            this.btnDEm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDEm.Location = new System.Drawing.Point(288, 63);
-            this.btnDEm.Name = "btnDEm";
-            this.btnDEm.Size = new System.Drawing.Size(21, 21);
-            this.btnDEm.TabIndex = 19;
-            this.btnDEm.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmOrder
             // 
@@ -658,27 +639,26 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(848, 500);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grbViews);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.panelTab);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.grbItems);
-            this.Controls.Add(this.grbMana);
-            this.Controls.Add(this.grbStatus);
+            this.Controls.Add(this.grbReceipt);
+            this.Controls.Add(this.grbDelivery);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
             this.Name = "frmOrder";
             this.Text = "frmOrder";
-            this.grbStatus.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.grbMana.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.frmOrder_Load);
+            this.grbDelivery.ResumeLayout(false);
+            this.grbInfoD.ResumeLayout(false);
+            this.grbInfoD.PerformLayout();
+            this.grbReceipt.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grbInfo.ResumeLayout(false);
+            this.grbInfo.PerformLayout();
             this.panelTab.ResumeLayout(false);
             this.grbItems.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
@@ -690,15 +670,14 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grbStatus;
+        private System.Windows.Forms.GroupBox grbDelivery;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTipText;
-        private System.Windows.Forms.TextBox txtRDate;
         private System.Windows.Forms.TextBox txtRID;
-        private System.Windows.Forms.GroupBox grbMana;
+        private System.Windows.Forms.GroupBox grbReceipt;
         private System.Windows.Forms.Button btnGD;
         private System.Windows.Forms.Button btnGR;
         private System.Windows.Forms.Panel panelTab;
@@ -708,26 +687,24 @@
         private System.Windows.Forms.DataGridView dgvViews;
         private System.Windows.Forms.ComboBox cbbREmployee;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbbRGoodsName;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtRQuan;
+        private System.Windows.Forms.TextBox txtGQuan;
         private System.Windows.Forms.ComboBox cbbRGoodsID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grbInfo;
         private System.Windows.Forms.Button btnRaddG;
         private System.Windows.Forms.Button btnRupdateListG;
         private System.Windows.Forms.Button btnOpenEmployee;
         private System.Windows.Forms.Button btnOpenSup;
         private System.Windows.Forms.ComboBox cbbRSupID;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grbInfoD;
         private System.Windows.Forms.Button btnDorder;
         private System.Windows.Forms.Button btnDEm;
         private System.Windows.Forms.ComboBox cbbDorderID;
         private System.Windows.Forms.ComboBox cbbDEmp;
         private System.Windows.Forms.TextBox txtDid;
-        private System.Windows.Forms.TextBox txtDdate;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -735,9 +712,10 @@
         private System.Windows.Forms.ComboBox cbbDstatus;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtGName;
+        private System.Windows.Forms.DateTimePicker dateR;
+        private System.Windows.Forms.DateTimePicker dateD;
     }
 }

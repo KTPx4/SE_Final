@@ -53,7 +53,7 @@ namespace SEFinal.BUS
             {
                 return 0; // 0 for message confirm is add new or restore
             }
-            else if (a.is_Exists_())
+            else if (a.is_Exists())
             {
                 return 2; // 2 for exists id or user (that not was deleted)
             }
@@ -62,13 +62,14 @@ namespace SEFinal.BUS
                 return 1; // 1 for success add rows
             }
         }
-        public int add()
+
+        public bool add()
         {
-            if(a.add_())
+            if(!a.check_parameter())
             {
-                return 1; // 1 for success add rows
+                return false;
             }
-            return 0;
+            return a.add_();
             
         }
 
@@ -76,12 +77,23 @@ namespace SEFinal.BUS
         {
            return  a.delete_();
         }
+
         public bool edit()
         {
+            if (!a.check_parameter())
+            {
+                return false;
+            }
             return a.edit_();
         }
-        public bool restore(string id)
+
+        public bool restore()
         {
+            if (!a.check_parameter())
+            {
+                return false;
+            }
+            string id = this.getID_from_User();
             return a.update_status("AID", id, "is_deleted", 0);
         }
 
