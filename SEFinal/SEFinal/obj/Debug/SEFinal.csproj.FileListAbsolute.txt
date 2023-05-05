@@ -48,3 +48,7 @@ D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debu
 D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\New folder\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmViews.resources
 D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmAccountant.resources
 D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.frmViews.resources
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\bin\Debug\BouncyCastle.Crypto.dll
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\bin\Debug\itextsharp.dll
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\bin\Debug\itextsharp.xml
+D:\Px4_TDTU\TDTU\2HK2\CNPM\LT\Final\SE_Final\SE_Final\SEFinal\SEFinal\obj\Debug\SEFinal.csproj.CopyComplete

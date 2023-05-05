@@ -31,15 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnControl = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ptbLogo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnMini = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.pnContent = new System.Windows.Forms.Panel();
-            this.ptbContent = new System.Windows.Forms.PictureBox();
             this.menutrip = new System.Windows.Forms.MenuStrip();
             this.tmiAccountant = new System.Windows.Forms.ToolStripMenuItem();
             this.goodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,16 +43,20 @@
             this.manageAgentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageGoodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ptbContent = new System.Windows.Forms.PictureBox();
+            this.ptbLogo = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnMini = new System.Windows.Forms.Button();
             this.pnControl.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.pnContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbContent)).BeginInit();
             this.menutrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbContent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnControl
@@ -84,20 +84,6 @@
             this.panel3.Size = new System.Drawing.Size(113, 59);
             this.panel3.TabIndex = 4;
             // 
-            // ptbLogo
-            // 
-            this.ptbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ptbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbLogo.Image = global::SEFinal.Properties.Resources.logov3;
-            this.ptbLogo.Location = new System.Drawing.Point(0, 0);
-            this.ptbLogo.Name = "ptbLogo";
-            this.ptbLogo.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.ptbLogo.Size = new System.Drawing.Size(113, 59);
-            this.ptbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbLogo.TabIndex = 0;
-            this.ptbLogo.TabStop = false;
-            this.ptbLogo.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnClose);
@@ -107,36 +93,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(101, 59);
             this.panel2.TabIndex = 4;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::SEFinal.Properties.Resources.cross;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(58, 15);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 31);
-            this.btnClose.TabIndex = 2;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMini
-            // 
-            this.btnMini.BackColor = System.Drawing.Color.Transparent;
-            this.btnMini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMini.BackgroundImage")));
-            this.btnMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMini.FlatAppearance.BorderSize = 0;
-            this.btnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
-            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMini.Location = new System.Drawing.Point(13, 15);
-            this.btnMini.Name = "btnMini";
-            this.btnMini.Size = new System.Drawing.Size(39, 31);
-            this.btnMini.TabIndex = 3;
-            this.btnMini.UseVisualStyleBackColor = false;
-            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
             // 
             // panel1
             // 
@@ -196,16 +152,6 @@
             this.pnContent.Size = new System.Drawing.Size(848, 500);
             this.pnContent.TabIndex = 2;
             this.pnContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContent_Paint);
-            // 
-            // ptbContent
-            // 
-            this.ptbContent.Image = global::SEFinal.Properties.Resources.bunny;
-            this.ptbContent.Location = new System.Drawing.Point(297, 92);
-            this.ptbContent.Name = "ptbContent";
-            this.ptbContent.Size = new System.Drawing.Size(274, 230);
-            this.ptbContent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbContent.TabIndex = 0;
-            this.ptbContent.TabStop = false;
             // 
             // menutrip
             // 
@@ -293,6 +239,61 @@
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
+            // ptbContent
+            // 
+            this.ptbContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbContent.Image = global::SEFinal.Properties.Resources.background;
+            this.ptbContent.Location = new System.Drawing.Point(0, 0);
+            this.ptbContent.Name = "ptbContent";
+            this.ptbContent.Size = new System.Drawing.Size(848, 500);
+            this.ptbContent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbContent.TabIndex = 0;
+            this.ptbContent.TabStop = false;
+            // 
+            // ptbLogo
+            // 
+            this.ptbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ptbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbLogo.Image = global::SEFinal.Properties.Resources.logov3;
+            this.ptbLogo.Location = new System.Drawing.Point(0, 0);
+            this.ptbLogo.Name = "ptbLogo";
+            this.ptbLogo.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.ptbLogo.Size = new System.Drawing.Size(113, 59);
+            this.ptbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbLogo.TabIndex = 0;
+            this.ptbLogo.TabStop = false;
+            this.ptbLogo.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::SEFinal.Properties.Resources.cross;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(58, 15);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 31);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMini
+            // 
+            this.btnMini.BackColor = System.Drawing.Color.Transparent;
+            this.btnMini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMini.BackgroundImage")));
+            this.btnMini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMini.FlatAppearance.BorderSize = 0;
+            this.btnMini.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cyan;
+            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMini.Location = new System.Drawing.Point(13, 15);
+            this.btnMini.Name = "btnMini";
+            this.btnMini.Size = new System.Drawing.Size(39, 31);
+            this.btnMini.TabIndex = 3;
+            this.btnMini.UseVisualStyleBackColor = false;
+            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,7 +313,6 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnControl.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -321,9 +321,10 @@
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
             this.pnContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbContent)).EndInit();
             this.menutrip.ResumeLayout(false);
             this.menutrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbContent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
