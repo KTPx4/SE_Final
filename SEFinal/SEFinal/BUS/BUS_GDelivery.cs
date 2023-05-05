@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -71,42 +72,113 @@ namespace SEFinal.BUS
             string s = $"select Top {top} * from GoodsDelivery where (status = 0 or status = 1)";
             return d.Query(s);
         }
+            
+        private DataTable Reports(string query_month, string query_year) // report delivery for month or year or both
+        {
+            string s = "SELECT Goods.GoodsID, Goods.GoodsName, SUM(Quantity) AS TotalGoodsDelivered, DeliveryDate, OrderDetail.OrderID " +
+                " FROM GoodsDelivery " +
+                " JOIN OrderDetail ON GoodsDelivery.OrderID = OrderDetail.OrderID " +
+                " JOIN Goods ON OrderDetail.GoodsID = Goods.GoodsID " +
+                " WHERE Status != -1 " + query_month + query_year +
+                " GROUP BY Goods.GoodsID, Goods.GoodsName, DeliveryDate, OrderDetail.OrderID" +
+                " ORDER BY  OrderDetail.OrderID ASC";
 
-        public DataTable getMonth(string month)
-        {
-           string s = $"select* from GoodsDelivery where month(DeliveryDate) = '{month}' and (status = 0 or status = 1)";
-            return d.Query(s);
-        }
-        public DataTable getMonth(string month, string top)
-        {
-            string s = $"select Top {top} * from GoodsDelivery where month(DeliveryDate) = '{month}'  and (status = 0 or status = 1)";
-            return d.Query(s);
-        }
-
-        public DataTable getYear(string year)
-        {
-            string s = $"select* from GoodsDelivery where Year(DeliveryDate) = '{year} and (status = 0 or status = 1)";
-            return d.Query(s);
-        }
-        public DataTable getYear(string year, string top)
-        {
-            string s = $"select Top {top} * from GoodsDelivery where Year(DeliveryDate) = '{year}'  and (status = 0 or status = 1)";
             return d.Query(s);
         }
 
+        private DataTable Report_Tops(string top, string query_month, string query_year)
+        {
+            string s = "SELECT TOP "+top+ " Goods.GoodsID, Goods.GoodsName, SUM(Quantity) AS TotalGoodsDelivered, DeliveryDate, OrderDetail.OrderID" +
+                " FROM GoodsDelivery" +
+                " JOIN OrderDetail ON GoodsDelivery.OrderID = OrderDetail.OrderID" +
+                " JOIN Goods ON OrderDetail.GoodsID = Goods.GoodsID" +
+                " WHERE Status != -1 " + query_month + query_year +
+                " GROUP BY Goods.GoodsID, Goods.GoodsName, DeliveryDate, OrderDetail.OrderID" +
+                " ORDER BY TotalGoodsDelivered DESC";
+            return d.Query(s);
 
-        public DataTable getMonth_Year(string month, string year) 
-        {
-            string s = $"select* from GoodsDelivery where month(DeliveryDate) = '{month}' and year(DeliveryDate)= '{year}' and (status = 0 or status = 1)";
-            return d.Query(s);
         }
-                
-        public DataTable getMonth_Year(string month, string year, string top)
+
+
+
+        // report not have top
+        /*
+        public DataTable  Report_Month(string month) // report follow month
         {
-            string s = $"select Top {top} * from GoodsDelivery where month(DeliveryDate) = '{month}' and year(DeliveryDate)= '{year}' and (status = 0 or status = 1)";
-            return d.Query(s);
+            string quey_month = " AND MONTH(DeliveryDate) = " + month;
+            return this.Reports(quey_month, "");
+        }
+
+        public DataTable Report_Year(string year) // report follow year
+        {
+            string quey_year = " AND YEAR(DeliveryDate) = " + year;
+            return this.Reports("", quey_year);
+        }
+        
+        public DataTable Report() // get all report not both month and year
+        {            
+            return this.Reports("", "");
+        }
+        */
+
+        public DataTable Report(string month, string year) // report follow both month and year
+        {
+            string query_month = "";
+            string query_year = "";
+            if(month != "")
+            {
+                query_month = " AND MONTH(DeliveryDate) = " + month;
+            }
+            if(year != "")
+            {
+                query_year = " AND YEAR(DeliveryDate) = " + year;
+
+            }
+            return this.Reports(query_month, query_year);
+        }
+
+
+
+
+        // report have top
+
+        /*public DataTable Report_Top_Month(string top, string month)
+        {
+            string query_month = " AND MONTH(DeliveryDate) = " + month;
+            return this.Report_Tops(top, query_month, "");
+        }
+        
+        public DataTable Report_Top_Year(string top, string year)
+        {
+            string query_year = " AND YEAR(DeliveryDate) = " + year;
+            return this.Report_Tops(top, "", query_year);
+        }
+
+        public DataTable Report_Top(string top)
+        {
+            return this.Report_Tops(top, "", "");
+        }
+        */
+
+        public DataTable Report_Top(string top, string month, string year)
+        {
+            string query_month = "";
+            string query_year = "";
+            if (month != "") 
+            {
+                query_month = " AND MONTH(DeliveryDate) = " + month;
+            }
+            if(year != "")
+            {
+                query_year = " AND YEAR(DeliveryDate) = " + year;
+            }
+
+            return this.Report_Tops(top, query_month, query_year);
         }
 
         
+
+
+
     }
 }

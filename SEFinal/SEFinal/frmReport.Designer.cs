@@ -54,13 +54,14 @@
             // grbView
             // 
             this.grbView.Controls.Add(this.dgvViews);
-            this.grbView.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grbView.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.grbView.Location = new System.Drawing.Point(349, 3);
             this.grbView.Name = "grbView";
             this.grbView.Padding = new System.Windows.Forms.Padding(0);
             this.grbView.Size = new System.Drawing.Size(491, 488);
             this.grbView.TabIndex = 3;
             this.grbView.TabStop = false;
+            this.grbView.Text = "Report";
             // 
             // dgvViews
             // 
@@ -120,6 +121,7 @@
             this.btnExportReport.Size = new System.Drawing.Size(50, 46);
             this.btnExportReport.TabIndex = 21;
             this.btnExportReport.UseVisualStyleBackColor = true;
+            this.btnExportReport.Click += new System.EventHandler(this.btnExportReport_Click);
             // 
             // btnRef
             // 
@@ -177,6 +179,7 @@
             this.txtYear.Name = "txtYear";
             this.txtYear.Size = new System.Drawing.Size(57, 20);
             this.txtYear.TabIndex = 5;
+            this.txtYear.TextChanged += new System.EventHandler(this.txtYear_TextChanged);
             // 
             // cbbTop
             // 
@@ -184,6 +187,10 @@
             this.cbbTop.FormattingEnabled = true;
             this.cbbTop.Items.AddRange(new object[] {
             "",
+            "1",
+            "2",
+            "3",
+            "4",
             "5",
             "10",
             "20",
@@ -199,6 +206,7 @@
             this.cbbTop.Name = "cbbTop";
             this.cbbTop.Size = new System.Drawing.Size(55, 21);
             this.cbbTop.TabIndex = 4;
+            this.cbbTop.SelectedIndexChanged += new System.EventHandler(this.cbbTop_SelectedIndexChanged);
             // 
             // cbbMonth
             // 
@@ -222,6 +230,7 @@
             this.cbbMonth.Name = "cbbMonth";
             this.cbbMonth.Size = new System.Drawing.Size(55, 21);
             this.cbbMonth.TabIndex = 4;
+            this.cbbMonth.SelectedIndexChanged += new System.EventHandler(this.cbbMonth_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -249,9 +258,7 @@
             this.cbbFilter.FormattingEnabled = true;
             this.cbbFilter.Items.AddRange(new object[] {
             "Goods Delivery",
-            "Goods Receipt",
-            "Best-selling",
-            "Revenue report"});
+            "Goods Receipt"});
             this.cbbFilter.Location = new System.Drawing.Point(118, 128);
             this.cbbFilter.Name = "cbbFilter";
             this.cbbFilter.Size = new System.Drawing.Size(174, 21);

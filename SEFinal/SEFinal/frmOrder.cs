@@ -360,7 +360,7 @@ namespace SEFinal
 
                 gr = new BUS_GR_Detail(idRDetail, rid, goodsID, quan, money); // create Detail for Receipt
 
-                MessageBox.Show("" + idRDetail + " ," + rid + ", " + goodsID + ", " + quan + ", " + money);
+                //MessageBox.Show("" + idRDetail + " ," + rid + ", " + goodsID + ", " + quan + ", " + money);
                 if (!gr.add())
                 {
                     MessageBox.Show("Can not create Receipt Detail!. Try Again");
