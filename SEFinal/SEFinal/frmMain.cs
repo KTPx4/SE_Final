@@ -245,7 +245,7 @@ namespace SEFinal
         {
             lbTitle.Text = "Manage System";
             pnContent.Controls.Clear();
-            pnContent.Controls.Add(ptbContent);
+            pnContent.Controls.Add(pnContent);
         }
 
         private void pnContent_Paint(object sender, PaintEventArgs e)
@@ -253,6 +253,9 @@ namespace SEFinal
 
         }
 
-       
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
